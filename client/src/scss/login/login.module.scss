@@ -1,0 +1,172 @@
+$Yellow:#FFD166;
+$Green:#06D6A0;
+$Red:#d90429;
+$LightGreen:#0CB0A9;
+$LightBlue:#118AB2;
+$DarkBlue:#0C637F;
+$Pink:#EF476F;
+$DarkGreen:#09C3A5;
+$White: #FFFFFF;
+$Black: #231B1B;
+
+@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+.example{
+font-family: 'B612', sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Major Mono Display', monospace;
+}
+
+.containerLogin{
+width: 100%;
+background-color: $DarkBlue;
+height: fit-content;
+min-height: 100vh;
+}
+
+.iconsLogin{
+padding-bottom: 5%;
+width: 2rem;
+}
+
+.sortLogin{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding-top: 15%;
+width: 100%;
+}
+
+.sortZoom{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+.sortTitle{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
+background-color: $Pink;
+text-align: center;
+padding-top: 2%;
+margin-bottom: 2%;
+border-bottom: solid .5rem $Black;
+}
+
+.fontTitle{
+font-size: 6vh;
+margin: 0;
+margin-bottom: 2%;
+font-weight: bold;
+font-family: 'Major Mono Display', monospace;
+color: $White;
+}
+
+
+.boxLogin{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background: linear-gradient(120deg, $LightBlue 40%, $White 30%);
+width: 90%;
+margin-bottom: 15%;
+box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sortForm{
+display: flex;
+width: 90%;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.form{
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.eachInput{
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: column;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+.label{
+font-family: 'B612', sans-serif;
+font-size: 4vh;
+font-weight: bold;
+margin-bottom: 5%;
+color: $Black;
+}
+
+.input{
+width: 15rem;
+height: 2.5rem;
+background-color: $White;
+border:solid .2rem $Red ;
+font-size: 2vh;
+font-weight: bold;
+border-radius: 10px 10px 10px 10px;
+font-family: 'B612', sans-serif;
+&:focus{
+background-color: $White;
+transition-duration: 2s;
+width: 18rem;
+}
+}
+
+.sortButtons{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+width: 90%;
+margin-bottom: 5%;
+margin-top: 2%;
+}
+
+.eachButtonLogin{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50%;
+}
+
+.buttonLogin{
+font-size: 3vh;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 3%;
+letter-spacing: .1rem;
+border-radius: 10px 10px 10px 10px;
+border: solid .4rem $Red;
+background-color: $White;
+background: {
+image: linear-gradient(45deg,$Black 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $White;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+}

@@ -1,0 +1,220 @@
+$Yellow:#FFD166;
+$Green:#06D6A0;
+$Red:#d90429;
+$LightGreen:#0CB0A9;
+$LightBlue:#118AB2;
+$DarkBlue:#0C637F;
+$Pink:#EF476F;
+$DarkGreen:#09C3A5;
+$White: #FFFFFF;
+$Black: #231B1B;
+
+@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
+.example{
+font-family: 'B612', sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Simonetta', cursive;
+font-family: 'Major Mono Display', monospace;
+}
+
+
+.header {
+display: flex;
+box-shadow: 0px 0px;
+justify-content:space-between;
+background: $Yellow;
+align-items: center;
+height: 15vh;
+width: 100%;
+top: 0;
+border-bottom: solid .5rem $Black;
+font-family: 'Abel', sans-serif;
+position: fixed;
+z-index: 4;
+}
+
+
+.PContainer{
+display: flex;
+position: relative;
+text-align: center;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 20%;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+.PLink{
+display: flex;
+flex-direction: row;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Major Mono Display', monospace;
+font-size: 4vh;
+margin-left: 10%;
+color: $Black;
+font-weight: bold;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+.logoNav{
+width: 30%;
+}
+
+.PLink:hover{
+animation-name: tada;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+@keyframes tada {
+    0% {transform: scale(1);} 
+    10%, 20% {transform: scale(0.9) rotate(0deg);} 
+    30%, 50%, 70%, 90% {transform: scale(1.1) rotate(0deg);} 
+    40%, 60%, 80% {transform: scale(0.9) rotate(0deg);} 
+    100% {transform: scale(1) rotate(0);} 
+ } 
+
+.nav_options {
+display: flex;
+justify-content:space-evenly;
+list-style-type: none;
+width: 100%;
+}
+
+.SortNav{
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+width: 20%;
+margin-right: 5%;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+.mobile_option {
+display: none;
+}
+
+.mobile_menu {
+display: none;
+}
+
+.IconsNav{
+min-width: 2rem;
+min-height: 2rem;
+max-height: 2rem;
+max-width: 2rem;
+padding-bottom: 9%;
+}
+
+.iconCart{
+display: flex;
+margin-right: 5%;
+align-items: center;
+width: 15%;
+}
+
+.Links{
+    display: flex;
+align-items: center;
+text-transform: uppercase;
+justify-content: center;
+font-family: 'B612', sans-serif;
+letter-spacing: .1rem;
+font-size: 3vh;
+color: $Black;
+font-weight: bold;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+.Links:hover{
+animation-name: tada;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
+
+@media (max-width: 1248px) {
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.header {
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+.nav_options {
+display: flex;
+width: 100%;
+height: 350px;
+position: absolute;
+top: 80px;
+left: -100%;
+opacity: 0;
+transition: all 0.5s ease;
+flex-direction: column;
+list-style-type: none;
+grid-gap: 0px;	
+}
+.nav_options_active {
+display: flex;
+flex-direction: column;
+background:$LightBlue;
+justify-content: center;
+position: absolute;
+height: fit-content;
+border-radius: .5rem;
+left: 0;
+right: 0;
+bottom: 0;
+top: 90%;
+border: solid .2rem $Red;
+align-items: center;
+justify-content: center;
+transition: all 0.5s ease;
+z-index: 3;
+align-content: center;
+padding-top: 5%;
+padding-bottom: 5%;
+padding-left: 40%;
+padding-right: 40%;
+}
+
+.PLink{
+font-size: 3.5vh;
+padding-left: 15%;
+}
+
+.Search{
+width: 6rem;
+&:focus{
+width: 8rem;
+}
+}
+
+.MenuIcon {
+color: $Pink;
+min-width: 2.5rem;
+min-height: 2.5rem;
+max-width: 2.5rem;
+max-height: 2.5rem;
+padding-right: 25%;
+}
+
+.Links{
+padding-top: 10%;
+padding-bottom: 10%;
+}
+
+}
+.mobile_menu {
+display: block;
+}
