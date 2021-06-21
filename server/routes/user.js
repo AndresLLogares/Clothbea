@@ -75,6 +75,19 @@ UsersRoute.post("/login", async (req, res) => {
         });
 });
 
+UsersRoute.post('/currentuser', async (req, res) => {
+    const Email = req.body.email
+    await User.findOne({ email: Email })
+        .then(user => {
+            if (!user) {
+                return res.send("Email not found");
+            }
+            else {
+                res.json(user)
+            }
+        })
+})
+
 UsersRoute.post("/reset", async (req, res) => {
 
     const Email = req.body.email;
@@ -111,15 +124,15 @@ UsersRoute.post("/addwish", async (req, res) => {
     const Email = req.body.email;
     const Name = req.body.name;
     const Image = req.body.image
-    const Price = req.body.price
+    const Id = req.body.Id
 
     await User.findOne({ email: Email })
         .then(user => {
             if (!user) {
                 return res.send("Email not found");
             }
-            else if (!user.wishlist.find(item => item.name === Name)) {
-                user.wishlist.push({ name: Name, image: Image, price: Price })
+            else if (!user.wishlist.find(item => item.id === Id)) {
+                user.wishlist.push({ Id: Id, name: Name, image: Image })
                 user.save()
                 return res.json(user.wishlist)
             }
@@ -135,13 +148,15 @@ UsersRoute.post("/addcart", async (req, res) => {
     const Id = req.body.Id
     const quantity = req.body.quantity
     const size = req.body.size
+    const stock = req.body.stock
+
     await User.findOne({ email: Email })
         .then(user => {
             if (!user) {
                 return res.send("Email not found");
             }
             else if (!user.cart.find(item => item.Id === Id)) {
-                user.cart.push({ name: Name, image: Image, price: Price, Id: Id, quantity: quantity, size: size })
+                user.cart.push({ name: Name, image: Image, price: Price, Id: Id, quantity: quantity, size: size, stock: stock, newPrice: Price })
                 user
                     .save()
                     .then(user => res.send("Product added"))
@@ -157,7 +172,6 @@ UsersRoute.post("/removecart", async (req, res) => {
 
     const Email = req.body.email;
     const Id = req.body.Id;
-
     await User.findOne({ email: Email })
         .then(user => {
             if (!user) {
@@ -171,16 +185,9 @@ UsersRoute.post("/removecart", async (req, res) => {
         });
 });
 
-
-
-
-
-UsersRoute.post("/removewish", async (req, res) => {
+UsersRoute.post("/cleancart", async (req, res) => {
 
     const Email = req.body.email;
-    const Name = req.body.name;
-    const Image = req.body.image
-    const Price = req.body.price
 
     await User.findOne({ email: Email })
         .then(user => {
@@ -188,16 +195,34 @@ UsersRoute.post("/removewish", async (req, res) => {
                 return res.send("Email not found");
             }
             else {
-                user.wishlist = user.wishlist.filter(item => item.name !== Name)
+                user.cart = []
+                user.save()
+                return res.send("Cart Clean")
+            }
+        });
+});
+
+UsersRoute.post("/removewish", async (req, res) => {
+    const Email = req.body.email;
+    const Id = req.body.Id;
+
+
+    await User.findOne({ email: Email })
+        .then(user => {
+            if (!user) {
+                return res.send("Email not found");
+            }
+            else {
+                user.wishlist = user.wishlist.filter(item => item.Id !== Id)
                 user.save()
                 return res.json(user.wishlist)
             }
         });
 });
 
-UsersRoute.post("/getcart", async (req, res) => {
-
-    const Email = req.body.email;
+UsersRoute.post("/addquantity", async (req, res) => {
+    const Email = req.body.email
+    const newCart = req.body.cart
 
     await User.findOne({ email: Email })
         .then(user => {
@@ -205,11 +230,47 @@ UsersRoute.post("/getcart", async (req, res) => {
                 return res.send("Email not found");
             }
             else {
+                user.cart = newCart
+                user
+                    .save()
+                    .then(user => res.send("Product added"))
+                    .catch(err => console.log(err));
+            }
+        })
+})
+
+UsersRoute.post("/lessquantity", async (req, res) => {
+
+    const Email = req.body.email
+    const newCart = req.body.cart
+
+    await User.findOne({ email: Email })
+        .then(user => {
+            if (!user) {
+                return res.send("Email not found");
+            }
+            else {
+                user.cart = newCart
+                user
+                    .save()
+                    .then(user => res.send("Product removed"))
+                    .catch(err => console.log("ERROR"));
+            }
+        })
+})
+
+UsersRoute.post("/getcart", async (req, res) => {
+    const Email = req.body.email;
+    await User.findOne({ email: Email })
+        .then(user => {
+            if (!user) {
+                return res.send([]);
+            }
+            else {
                 return res.json(user.cart)
             }
         });
 });
-
 
 UsersRoute.post("/getwishlist", async (req, res) => {
 
@@ -218,12 +279,51 @@ UsersRoute.post("/getwishlist", async (req, res) => {
     await User.findOne({ email: Email })
         .then(user => {
             if (!user) {
-                return res.send("Email not found");
+                return res.send([]);
             }
             else {
                 return res.json(user.wishlist)
             }
         });
 });
+
+UsersRoute.post("/google", async (req, res) => {
+    
+    const email = req.body.email
+    const username = req.body.username
+    const googleId = req.body.googleId
+    const token = req.body.token
+
+    await User.findOne({ email: email })
+        .then(user => {
+            if (!user) {
+                const newUser = new User({
+                    username: username,
+                    email: email,
+                    password: "",
+                    level: 'User',
+                    googleId: googleId,
+                    city: req.body.city || '',
+                    address: req.body.address || '',
+                    country: req.body.country || '',
+                    ZIP: req.body.ZIP || ''
+                });
+                newUser
+                .save()
+                .then(user => res.send('Sign Up Ok'))
+            }
+            else {
+                res.json({
+                    email: user.email,
+                    username: user.username,
+                    success: true,
+                    token: "Bearer " + token,
+                    level: user.level,
+                    googleId: user.googleId
+                });
+            }
+        })
+})
+
 
 export default UsersRoute

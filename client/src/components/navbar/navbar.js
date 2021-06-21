@@ -6,6 +6,8 @@ import { ReactComponent as MenuIcon } from "../assets/menu.svg";
 import Logo from '../images/Logo.png'
 import { Cart3 } from '@styled-icons/bootstrap/Cart3';
 import DropDown from './dropdown.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { GETCART } from '../actions/index';
 
 const NavigationBar = () => {
 
@@ -19,8 +21,13 @@ const NavigationBar = () => {
 
     const [changeDrop, setChangeDrop] = useState(false)
 
+    const dispatch = useDispatch()
+
+    const numberCart = useSelector(state => state.Clothbea.cart)
+
     useEffect(() => {
         setNameUser(localStorage.getItem('UserName'));
+        dispatch(GETCART)
     })
 
     const handleDrop = () => {
@@ -38,7 +45,12 @@ const NavigationBar = () => {
             </div>
             <ul className={click ? styles.nav_options_active : styles.nav_options}>
                 <li className={styles.SortNav} onClick={closeMobileMenu} >
-                    <div className={styles.Links}><Cart3 className={styles.iconCart} /> 0</div>
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to='/Shopping' >
+                        <div className={styles.Links}><Cart3 className={styles.iconCart} />
+                        {typeof(numberCart) !== Array ? numberCart.length : 0}</div>
+                    </Link>
                 </li>
                 <li className={styles.SortNav} onClick={closeMobileMenu} >
                     <Link
@@ -47,8 +59,15 @@ const NavigationBar = () => {
                         <div className={styles.Links}>Home</div>
                     </Link>
                 </li>
+                <li className={styles.SortNav} onClick={closeMobileMenu} >
+                    <Link
+                        style={{ textDecoration: 'none' }}
+                        to='/AboutMe' >
+                        <div className={styles.Links}>About Me</div>
+                    </Link>
+                </li>
                 {nameUser ?
-                    <li className={styles.SortNav} onClick={closeMobileMenu} >
+                    <li className={styles.SortNav} >
                         <div onClick={handleDrop} className={styles.Links}>{nameUser}</div>
                         {changeDrop ?
                             <DropDown />

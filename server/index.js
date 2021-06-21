@@ -7,7 +7,6 @@ import Products from './routes/products.js';
 import Categories from './routes/categories.js';
 import Users from './routes/user.js';
 import passport from 'passport';
-
 dotenv.config()
 
 const app = express();
@@ -16,8 +15,10 @@ app.use(bodyparser.json({ limit: "30mb", extende: true }));
 app.use(bodyparser.urlencoded({ limit: "30mb", extende: true }));
 app.use(cors());
 app.use(passport.initialize());
-import {passportconfig} from './validation/passport.js';
+app.use(passport.session());
+import { passportconfig } from './validation/passport.js';
 passportconfig(passport);
+
 
 app.use('/Products', Products)
 app.use('/Products', Categories)
@@ -31,8 +32,9 @@ app.get('/', (req, res) => {
     res.send("Welcome to Clothbea")
 })
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => app.listen( PORT,  () => console.log(`Server running on server ${PORT}`)))
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => app.listen(PORT, () => console.log(`Server running on server ${PORT}`)))
     .catch((error) => console.log(error.message))
 
 mongoose.set('useFindAndModify', false);
+

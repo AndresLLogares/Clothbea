@@ -6,7 +6,7 @@ import { LockOpen } from '@styled-icons/boxicons-regular/LockOpen';
 import { StarFill } from '@styled-icons/bootstrap/StarFill';
 import styles from '../../scss/navbar/dropdown.module.scss';
 import { Link } from 'react-router-dom';
-import {CategoryAlt} from '@styled-icons/boxicons-solid/CategoryAlt';
+import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt';
 import { Create } from '@styled-icons/ionicons-outline/Create';
 import { CreateNewFolder } from '@styled-icons/material-outlined/CreateNewFolder';
 const DropUser = () => {
@@ -15,8 +15,11 @@ const DropUser = () => {
 
     const [levelUser, setLevelUser] = useState('')
 
+    const [googleId, setgoogleId] = useState('')
+
     useEffect(() => {
         setLevelUser(localStorage.getItem('LevelUser'))
+        setgoogleId(localStorage.getItem('googleId'))
     }, [])
 
     const handleLogOut = async () => {
@@ -27,20 +30,35 @@ const DropUser = () => {
     return (
         <div className={styles.ContainerDrop} >
             {levelUser === 'User' ?
-                <div className={styles.BoxDrop} >
-                    <div className={styles.SortEachDrop} >
-                        <p onClick={handleLogOut} className={styles.StyleDrop}><UserMinus className={styles.IconDrop} />Log Out</p>
-                    </div>
-                    <Link style={{ textDecoration: 'none' }} to='/Reset'>
-                        <div className={styles.SortEachDrop} >
-                            <p className={styles.StyleDrop}><LockOpen className={styles.IconDrop} />Reset Password</p>
+                <div className={styles.auxDiv} > 
+                    {googleId === '' ?
+                        <div className={styles.BoxDrop} >
+                            <div className={styles.SortEachDrop} >
+                                <p onClick={handleLogOut} className={styles.StyleDrop}><UserMinus className={styles.IconDrop} />Log Out</p>
+                            </div>
+                            <Link style={{ textDecoration: 'none' }} to='/Reset'>
+                                <div className={styles.SortEachDrop} >
+                                    <p className={styles.StyleDrop}><LockOpen className={styles.IconDrop} />Reset Password</p>
+                                </div>
+                            </Link>
+                            <Link style={{ textDecoration: 'none' }} to='/Wishlist'>
+                                <div className={styles.SortEachDrop} >
+                                    <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
-                    <Link style={{ textDecoration: 'none' }} to='/Favorites'>
-                        <div className={styles.SortEachDrop} >
-                            <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
+                        :
+                        <div className={styles.BoxDrop} >
+                            <div className={styles.SortEachDrop} >
+                                <p onClick={handleLogOut} className={styles.StyleDrop}><UserMinus className={styles.IconDrop} />Log Out</p>
+                            </div>
+                            <Link style={{ textDecoration: 'none' }} to='/Wishlist'>
+                                <div className={styles.SortEachDrop} >
+                                    <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+                    }
                 </div>
                 :
                 <div className={styles.BoxDrop} >

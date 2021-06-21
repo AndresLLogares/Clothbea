@@ -1,4 +1,4 @@
-$Yellow:#FFD166;
+$Yellow:#ffbe0b;
 $Green:#06D6A0;
 $Red:#d90429;
 $LightGreen:#0CB0A9;
@@ -29,12 +29,17 @@ top: 100%;
 right: 5%;
 }
 
+.auxDiv{
+    width: 100%;
+}
+
 .BoxDrop{
 width: 100%;
 background-color: $Yellow;
 border-radius: 0px 0px 15px 15px;
 border: solid $Black .2rem;
 }
+
 
 .SortEachDrop{
 display: flex;

@@ -6,6 +6,10 @@ import { LOG_IN } from '../actions';
 import { EDIT_PRODUCT } from "../actions";
 import { GET_CART } from "../actions";
 import { ADD_CART } from "../actions";
+import { LESS_MORE } from "../actions";
+import { ADD_MORE } from "../actions";
+import { GET_WISHLIST } from "../actions";
+import { CURRENT_USER } from "../actions";
 
 const initialState = {
     products: [],
@@ -16,6 +20,10 @@ const initialState = {
     responseAddCart: [],
     cart: [],
     responseEditProduct: [],
+    responseAdd: [],
+    responseLess: [],
+    wishlist: [],
+    currentuser: []
 }
 
 const reducers = (state = initialState, action) => {
@@ -65,6 +73,30 @@ const reducers = (state = initialState, action) => {
         return {
             ...state,
             responseAddCart: action.payload
+        }
+    }
+    if (action.type === ADD_MORE) {
+        return {
+            ...state,
+            responseAdd: action.payload
+        }
+    }
+    if (action.type === LESS_MORE) {
+        return {
+            ...state,
+            responseLess: action.payload
+        }
+    }
+    if (action.type === GET_WISHLIST) {
+        return {
+            ...state,
+            wishlist: action.payload
+        }
+    }
+    if (action.type === CURRENT_USER) {
+        return {
+            ...state,
+            currentuser: action.payload
         }
     }
     return state;

@@ -1,12 +1,12 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import Products from '../models/products.js';
-const products = express.Router();
+const productsRoute = express.Router();
 
-products.use(bodyParser.json({ limit: "30mb", extended: true }));
-products.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+productsRoute.use(bodyParser.json({ limit: "30mb", extended: true }));
+productsRoute.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
-products.get('/all', async (req, res) => {
+productsRoute.get('/all', async (req, res) => {
     try {
         const allProducts = await Products.find({})
         res.status(200).json(allProducts)
@@ -17,10 +17,8 @@ products.get('/all', async (req, res) => {
     }
 });
 
-products.post('/byId', async (req, res) => {
+productsRoute.post('/byId', async (req, res) => {
     const Id = req.body.Id
-    console.log(Id)
-    console.log("AQUI 2")
     try {
         const productById = await Products.findOne({ Id })
         res.json(productById)
@@ -31,7 +29,41 @@ products.post('/byId', async (req, res) => {
     }
 })
 
-products.post('/editproduct', async (req, res) => {
+productsRoute.post('/addcomment', async (req, res) => {
+    const Id = req.body.Id
+    const email = req.body.email
+    const comment = req.body.comment
+    const title = req.body.title
+
+    await Products.findOne({ Id: Id}).then(product => {
+        if(!product) {
+            return res.send("Product Id doesn't match")
+        }
+        else {
+            product.comments.push({Id:Id, email: email, title: title ,comment: comment})
+            product.save()
+            return res.send("Product match")
+        }
+    })
+})
+
+productsRoute.post('/removecomment', async (req, res) => {
+    const Id = req.body.Id
+    console.log(Id)
+    await Products.findOne({ Id: Id}).then(product => {
+        if(!product) {
+            return res.send("Product Id doesn't match")
+        }
+        else {
+            product.comments = []
+            product.save()
+            return res.send("Product match")
+        }
+    })
+})
+
+
+productsRoute.post('/editproduct', async (req, res) => {
     const id = req.body.Id
     const name = req.body.name
     const price = req.body.price
@@ -60,4 +92,4 @@ products.post('/editproduct', async (req, res) => {
         })
 })
 
-export default products;
+export default productsRoute;

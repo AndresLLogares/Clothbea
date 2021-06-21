@@ -4,15 +4,28 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true
+        required: false
+    },
+    googleId:{
+        type: String,
+        required: false
     },
     password: {
         type: String,
-        required: true
+        required: false
     },
     email: {
         type: String,
         required: true
+    },
+    name:{
+        type:String,
+        
+        required:false
+    },
+    lastname:{
+        typr:String,
+        required:false
     },
     wishlist: {
         type: Array,
@@ -23,6 +36,10 @@ const userSchema = new Schema({
         required: true
     },
     city: {
+        type: String,
+        required: false
+    },
+    state: {
         type: String,
         required: false
     },

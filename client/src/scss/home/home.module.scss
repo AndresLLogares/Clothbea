@@ -1,4 +1,4 @@
-$Yellow:#FFD166;
+$Yellow:#ffbe0b;
 $Green:#06D6A0;
 $Red:#d90429;
 $LightGreen:#0CB0A9;
@@ -44,7 +44,7 @@ animation: spin 2s linear infinite;
 
 .sortHome{
 width: 100%;
-padding-top: 15%;
+padding-top: 10%;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -354,4 +354,42 @@ background-color: transparent;
 transition-duration: 2s;
 box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
 cursor: url(../../components/images/pointer.png),pointer;
+}
+
+.sortStar{
+display: flex;
+position: relative;
+left:  70%;
+padding-top: 5%;
+}
+
+.star{
+    width: 40%;
+}
+
+.buttonStar{
+width: 25%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 2%;
+border-radius: 10% 50%;
+border: transparent;
+background-color: $White;
+background: {
+image: linear-gradient(45deg,$Black 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $Yellow;
+cursor: url(../../components/images/pointer.png),pointer;
+}
 }

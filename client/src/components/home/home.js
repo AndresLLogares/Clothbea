@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../scss/home/home.module.scss'
 import { Zoom } from "react-awesome-reveal";
-import { GETPRODUCTS, GETCATEGORIES, ADDCART, EDITPRODUCT, REMOVECART } from '../actions';
+import { GETPRODUCTS, GETCATEGORIES, ADDCART, GETWISH, REMOVECART, GETCART, ADDWISH, REMOVEWISH } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Women } from '@styled-icons/remix-line/Women';
 import { Men } from '@styled-icons/remix-line/Men';
@@ -26,8 +26,6 @@ const Home = () => {
 
     const [genre, setGenre] = useState('Men');
 
-    const [stock, setStock] = useState(false);
-
     const [filtredStock, setFiltredStock] = useState([]);
 
     const [changeCategory, setChangeCategory] = useState("Dresses")
@@ -35,8 +33,6 @@ const Home = () => {
     const products = useSelector(state => state.Clothbea.products);
 
     const categories = useSelector(state => state.Clothbea.categories);
-
-    const [minusCart, setMinusCart] = useState([])
 
     const [limits, setLimits] = useState({
         base: 0,
@@ -48,15 +44,21 @@ const Home = () => {
         id: ''
     })
 
-    const [changeCar, setChangeCar] = useState(true)
-
     const [emailUser, setEmailUser] = useState('')
 
+    const emailUserToGet = localStorage.getItem('Email')
+
+    const userCart = useSelector(state => state.Clothbea.cart)
+
+    const wishes = useSelector(state => state.Clothbea.wishlist)
+
     useEffect(async () => {
+        await setEmailUser(localStorage.getItem('Email'));
         await dispatch(GETPRODUCTS())
         await dispatch(GETCATEGORIES())
         !products ? setLoading(true) : setLoading(false);
-        setEmailUser(localStorage.getItem('Email'));
+        await dispatch(GETCART(emailUserToGet))
+        await dispatch(GETWISH(emailUserToGet))
     }, [])
 
     const setGenreWomen = () => {
@@ -82,17 +84,15 @@ const Home = () => {
     }
 
     const handleSelect = async (id, sizeSelect) => {
-        await setFiltredStock(products.filter(item => item.Id === id)[0].stock)
         setSizeHome({ id: id, size: sizeSelect })
     }
 
-    const handleCartAdd = async (name, price, brand, id, image) => {
+    const handleCartAdd = async (name, price, brand, id, image, stock) => {
         if (!emailUser) { return toast.error('You must be logged to add products') }
         localStorage.removeItem("ResponseAdd")
         if (id !== setSizeHome.id) {
             setSizeHome({ size: 'S' })
         }
-        await setMinusCart([...minusCart, id])
         await dispatch(ADDCART({
             name: name,
             price: price,
@@ -101,9 +101,11 @@ const Home = () => {
             quantity: 1,
             email: emailUser,
             image: image,
-            size: sizeHome.size
+            size: sizeHome.size,
+            stock: stock
         }))
-        setChangeCar(false)
+        setTimeout( async() =>  await dispatch(GETCART(emailUserToGet)), 1000 )
+
         const responceAdd = await localStorage.getItem('ResponseAdd')
         responceAdd === "Product added" ? toast.success(responceAdd) : toast.error(responceAdd)
     }
@@ -115,10 +117,40 @@ const Home = () => {
             Id: id,
             email: emailUser
         }))
+        setTimeout( async() =>  await dispatch(GETCART(emailUserToGet)), 1000 )
         const ResponseRemove = await localStorage.getItem('ResponseRemove')
         ResponseRemove === "Product removed" ? toast.success(ResponseRemove) : toast.error(ResponseRemove)
     }
 
+    const handleAddWish = async (Id, name, image) => {
+        if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        if (wishes.find(item => item.Id === Id)) {
+            return toast.success('This product is already in your wishlist')
+        }
+        await dispatch(ADDWISH({
+            email: emailUser,
+            Id: Id,
+            image: image,
+            name: name
+        }))
+        setTimeout( async() =>  await dispatch(GETWISH(emailUserToGet)), 1000 )
+        toast.success("Product added to your wishlist")
+    }
+
+    const handleRemoveWish = async (Id) => {
+        if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        await dispatch(REMOVEWISH({
+            email: emailUser,
+            Id: Id,
+        }))
+        setTimeout( async() =>  await dispatch(GETWISH(emailUserToGet)), 1000 )
+
+        toast.success("Product removed of your wishlist")
+    }
+
+    const handleNoStock = () => {
+        toast.error('Sorry, we don`t have stock for this product')
+    }
 
     return (
         <div className={styles.containeHome} >
@@ -133,10 +165,10 @@ const Home = () => {
                         <Zoom className={styles.zoom1}>
                             <div className={styles.separateHome1} >
                                 <div className={styles.sortEachGenre}>
-                                    <button onClick={setGenreMen} className={styles.btnGenre} ><Men className={styles.genreIcon} />Men</button>
+                                    <p onClick={setGenreMen} className={styles.btnGenre} ><Men className={styles.genreIcon} />Men</p>
                                 </div>
                                 <div className={styles.sortEachGenre}>
-                                    <button onClick={setGenreWomen} className={styles.btnGenre} ><Women className={styles.genreIcon} /> Women</button>
+                                    <p onClick={setGenreWomen} className={styles.btnGenre} ><Women className={styles.genreIcon} /> Women</p>
                                 </div>
                             </div>
                         </Zoom>
@@ -154,6 +186,23 @@ const Home = () => {
                                 <div className={animation ? styles.animation : styles.sortCarts} >
                                     {products && products.filter(item => item.subcategory === categorieFilter && item.category === genre).slice(limits.base, limits.top).map((item, index) => (
                                         <div className={styles.boxCard} >
+                                            {typeof (wishes) !== String  && !wishes.find(wish => wish.Id === item.Id) ?
+                                                <div className={styles.sortStar} >
+                                                    <button
+                                                        onClick={() => { handleAddWish(item.Id, item.name, item.image) }}
+                                                        className={styles.buttonStar} ><Star className={styles.star} />
+                                                    </button>
+                                                </div>
+                                                :
+                                                <div
+
+                                                    className={styles.sortStar} >
+                                                    <button
+                                                        onClick={() => handleRemoveWish(item.Id)}
+                                                        className={styles.buttonStar}  ><StarFill className={styles.star} />
+                                                    </button>
+                                                </div>
+                                            }
                                             <Link to={{
                                                 pathname: '/Details',
                                                 state: {
@@ -188,18 +237,20 @@ const Home = () => {
                                                 </div>
                                                 {item.stock === 0 ?
                                                     <div className={styles.eachBottom2} >
-                                                        <button className={styles.cartButtom}> <CancelPresentation /></button>
+                                                        <button onClick={handleNoStock} className={styles.cartButtom}> <CancelPresentation /></button>
                                                     </div>
                                                     :
                                                     <div className={styles.eachBottom2}>
-                                                        {!minusCart.find(id => id === item.Id) ?
+                                                        {typeof (userCart) !== String && !userCart.find(product => product.Id === item.Id) ?
                                                             <button
-                                                                onClick={() => handleCartAdd(item.name, item.price, item.brand, item.Id, item.image)}
-                                                                className={styles.cartButtom}> <CartPlusFill /></button>
+                                                                onClick={() => handleCartAdd(item.name, item.price, item.brand, item.Id, item.image, item.stock)}
+                                                                className={styles.cartButtom}> <CartPlusFill />
+                                                            </button>
                                                             :
                                                             <button
                                                                 onClick={() => handleRemoveAdd(item.Id)}
-                                                                className={styles.cartButtom}> <CartDashFill /></button>
+                                                                className={styles.cartButtom}> <CartDashFill />
+                                                            </button>
                                                         }
                                                     </div>
 

@@ -1,15 +1,4 @@
-$Sage:#C9CBA3;
-$Peach:#FFE1A8;
-$Red:#E26D5C;
-$LightBrown:#E4D6A6;
-$LightPurple:#AA5551;
-$DarkPurple:#723D46;
-$DarkBrown:#472D30;
-$Gray:#584043;
-$White: #FFFFFF;
-$Black: #231B1B;
-
-$Yellow:#FFD166;
+$Yellow:#ffbe0b;
 $Green:#06D6A0;
 $Red:#d90429;
 $LightGreen:#0CB0A9;
@@ -39,6 +28,11 @@ border-radius: 10%;
 width: 120px;
 height: 120px;
 animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
 }
 
 
@@ -198,13 +192,10 @@ cursor: url(../../components/images/pointer.png),pointer;
 width: 30%;
 }
 
-
-
-
 .secondBox{
 display: flex;
 width: 90%;
-background-color: $LightGreen;
+background-color: $LightBlue;
 padding: 2%;
 justify-content: center;
 align-items: center;
@@ -298,20 +289,11 @@ margin-bottom: 5%;
 .sortReview{
 width: 50%;
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 }
 
-$Yellow:#FFD166;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#073B4C;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
 
 .buttonSend{
 width: 70%;
@@ -325,7 +307,7 @@ border-radius: 10px 10px 10px 10px;
 border: solid .4rem $Red;
 background-color: transparent;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$Red 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -334,6 +316,7 @@ transition: background 300ms ease-in-out;
 transition-duration: 0.2s;
 background-position: 0;
 color: $White;
+border: solid .4rem $White;
 cursor: url(../../components/images/pointer.png),pointer;
 }
 }
@@ -341,6 +324,7 @@ cursor: url(../../components/images/pointer.png),pointer;
 .sortTitleReview{
 display: flex;
 align-items: flex-start;
+flex-direction: column;
 justify-content: flex-start;
 width: 100%;
 }
@@ -351,4 +335,72 @@ font-family: 'Oswald', sans-serif;
 font-size: 5vh;
 color: $White;
 font-weight: bold;
+}
+
+
+.sortComments{
+margin-top: 5%;
+display: flex;
+align-items: flex-start;
+flex-direction: column;
+justify-content: flex-start;
+width: 90%;
+background-color: $White;
+border-radius: 10px 10px 10px 10px;
+border: solid .4rem $Red;
+box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.eachItemComment{
+display: flex;
+flex-direction: column;
+width: 100%;
+padding-left: 2%;
+}
+
+.comments{
+font-size: 2vh;
+font-family: 'B612', sans-serif;
+font-weight: bold;
+color: $Black;
+}
+
+.sortStar{
+display: flex;
+position: relative;
+left:  20%;
+align-self:flex-end;
+padding-top: 5%;
+}
+
+.star{
+width: 40%;
+}
+
+.buttonStar{
+width: 25%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 2%;
+border-radius: 10% 50%;
+border: transparent;
+background-color: $White;
+background: {
+image: linear-gradient(45deg,$Black 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $Yellow;
+cursor: url(../../components/images/pointer.png),pointer;
+}
 }

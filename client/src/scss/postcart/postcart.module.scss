@@ -12,73 +12,89 @@ $Black: #231B1B;
 @import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
+
 .example{
 font-family: 'B612', sans-serif;
 font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
+font-family: 'Simonetta', cursive;
 font-family: 'Major Mono Display', monospace;
+font-family: 'Oswald', sans-serif;
 }
 
-.containerLogin{
+.loader {
+border: 16px solid $White; 
+border-top: 16px solid $Pink; 
+border-left: solid 16px $DarkBlue;
+border-right: solid 16px $Black;
+border-radius: 10%;
+width: 120px;
+height: 120px;
+animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+.ContainerPost{
 width: 100%;
-background-color: $DarkBlue;
 height: fit-content;
 min-height: 100vh;
+background-color: $DarkGreen;
 }
 
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
-}
-
-.sortLogin{
+.sortPost{
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-padding-top: 15%;
-width: 100%;
+padding-top: 10%;
 }
 
-.sortZoom{
+.zoom{
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-width: 100%;
+}
+
+.boxPost{
+width: 90%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: $LightGreen;
+border-radius: 10px 10px 10px 10px;
+box-shadow: 5px 5px 5px 5px $Black;
+margin-bottom: 10%;
 }
 
 .sortTitle{
-display: flex;
 width: 100%;
+display: flex;
 align-items: center;
 justify-content: center;
-background-color: $Pink;
-text-align: center;
-padding-top: 2%;
-margin-bottom: 2%;
+background-color: $DarkBlue;
 border-bottom: solid .5rem $Black;
 }
 
-.fontTitle{
-font-size: 6vh;
-margin: 0;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Major Mono Display', monospace;
+.titlePost{
 color: $White;
+font-family: 'B612', sans-serif;
+font-size: 4vh;
+display: flex;
+align-items: center;
+text-transform: uppercase; 
+justify-content: center;
 }
 
-
-.boxLogin{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background: linear-gradient(120deg, $LightBlue 40%, $LightGreen 30%);
-width: 90%;
-margin-bottom: 15%;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+.truck{
+    width: 10%;
+    padding-left: 5%;
 }
 
 .sortForm{
@@ -108,10 +124,13 @@ margin-bottom: 2%;
 
 .label{
 font-family: 'B612', sans-serif;
-font-size: 4vh;
+font-size: 3vh;
+display: flex;
+align-items: center;
+justify-content: center;
 font-weight: bold;
 margin-bottom: 5%;
-color: $Black;
+color: $White;
 }
 
 .input{
@@ -130,25 +149,89 @@ width: 18rem;
 }
 }
 
-.sortButtons{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
+.iconLabel{
+padding-right: 5%;
+width: 2rem;
+}
+
+.productsBox{
 width: 90%;
-margin-bottom: 5%;
-margin-top: 2%;
-}
-
-.eachButtonLogin{
 display: flex;
 align-items: center;
 justify-content: center;
-width: 50%;
+flex-direction: column;
+background-color: $Red;
+border: double .3rem $White;
+border-radius: 10px 10px 10px 10px;
+box-shadow: 5px 5px 5px 5px $Black;
+padding: 2%;
 }
 
-.buttonLogin{
+.eachProduct{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+flex-direction: row;
+}
+
+.itemProduct{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+width: 100%;
+}
+
+.pProduct{
+width: 40%;
+align-items: center;
+justify-content: center;
+font-family: 'B612', sans-serif;
 font-size: 3vh;
+flex-direction: row;
+font-weight: bolds;
+color: $White;
+}
+
+.sortTotal{
+display: flex;
+flex-direction: column;
+width: 90%;
+border: double .5rem $White;
+background-color: $Red;
+align-items: center;
+justify-content: center;
+padding: 2%;
+border-radius: 10px 10px 10px 10px;
+box-shadow: 5px 5px 5px 5px $Black;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+.TotalStyle{
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: 'Oswald', sans-serif;
+font-size: 6vh;
+font-weight: bold;
+width: 100%;
+color: $White;
+}
+
+.sortButton{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30%;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.buttonSend{
+width: 100%;
+font-size: 5vh;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
 color: $Black;
@@ -167,35 +250,6 @@ transition: background 300ms ease-in-out;
 transition-duration: 0.2s;
 background-position: 0;
 color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
-}
-
-.sortGoogle{
-display: flex;
-align-items: center;
-width: 100%;
-justify-content: center;
-margin-bottom: 5%;
-}
-
-.buttonGoogle{
-width: 40%;
-display: flex;
-align-items: center;
-justify-content: center;   
-background-color: $LightGreen;
-border: transparent;
-margin-bottom: 5%;
-&:hover{
-transition-duration: 0.2s;
-transform:scale(1, 1.2);
-}
-}
-
-.google{
-cursor: url(../../components/images/pointer.png),pointer;
-&:hover{
 cursor: url(../../components/images/pointer.png),pointer;
 }
 }

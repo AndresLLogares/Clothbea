@@ -8,9 +8,11 @@ import { Mailbox } from '@styled-icons/bootstrap/Mailbox';
 import { City } from '@styled-icons/boxicons-solid/City';
 import { Flag } from '@styled-icons/boxicons-regular/Flag';
 import { Mail } from '@styled-icons/entypo/Mail';
+import { RealEstate } from '@styled-icons/fluentui-system-filled/RealEstate';
 import { Address } from '@styled-icons/entypo/Address';
-import { SIGNUPACTION, LOGINACTION } from '../actions/index.js';
+import { SIGNUPACTION, LOGINACTION, GOOGLELOGIN } from '../actions/index.js';
 import { ToastContainer, toast } from 'react-toastify';
+import { GoogleLogin } from 'react-google-login';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
@@ -54,6 +56,7 @@ const Login = () => {
             password: '',
             controlpassword: '',
             country: '',
+            state: '',
             city: '',
             address: '',
             ZIP: ''
@@ -85,6 +88,7 @@ const Login = () => {
             password: '',
             controlpassword: '',
             country: '',
+            state: '',
             city: '',
             address: '',
             ZIP: ''
@@ -93,6 +97,35 @@ const Login = () => {
 
     const handleLoginFunction = () => {
         setHandleLogin(!handleLogin)
+    }
+
+    const handleGoogleSucces = async (response) => {
+        let name = response.profileObj.givenName;
+
+        let email = response.profileObj.email;
+
+        let googleId = response.profileObj.googleId;
+
+        let token = response.mc.access_token;
+
+        await dispatch(GOOGLELOGIN({
+            name: name,
+            email: email,
+            googleId: googleId,
+            token: token
+        }))
+        const userName = await localStorage.getItem('UserName')
+        if (!userName) {
+            toast.error('Error in Login')
+        }
+        else {
+            toast.success(`Welcome ${userName}`)
+        }
+        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
+    }
+
+    const handleGoogleError = (response) => {
+        toast.error("Error with Google")
     }
 
     return (
@@ -140,6 +173,18 @@ const Login = () => {
                                         </div>
                                     </div>
                                 </form>
+                                <div className={styles.sortGoogle} >
+                                    <div className={styles.buttonGoogle} >
+                                        <GoogleLogin
+                                            clientId="185504142730-agvph6n2ktg1hf53mm0krm7193rgfji7.apps.googleusercontent.com"
+                                            className={styles.google}
+                                            buttonText="Login with Google"
+                                            onSuccess={handleGoogleSucces}
+                                            onFailure={handleGoogleError}
+                                            cookiePolicy={'single_host_origin'}
+                                        />,
+                                    </div>
+                                </div>
                             </div>
                             :
                             <div className={styles.sortForm}>
@@ -193,17 +238,6 @@ const Login = () => {
                                         />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><City className={styles.iconsLogin} />City</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.city}
-                                            type='text'
-                                            className={styles.input}
-                                            name='city'
-                                            required={false}
-                                        />
-                                    </div>
-                                    <div className={styles.eachInput} >
                                         <label className={styles.label}><Flag className={styles.iconsLogin} />Country</label>
                                         <input
                                             onChange={handleInputChange}
@@ -211,6 +245,28 @@ const Login = () => {
                                             type='text'
                                             className={styles.input}
                                             name='country'
+                                            required={false}
+                                        />
+                                    </div>
+                                    <div className={styles.eachInput} >
+                                        <label className={styles.label}><RealEstate className={styles.iconsLogin} />State</label>
+                                        <input
+                                            onChange={handleInputChange}
+                                            value={infoUser.country}
+                                            type='text'
+                                            className={styles.input}
+                                            name='state'
+                                            required={false}
+                                        />
+                                    </div>
+                                    <div className={styles.eachInput} >
+                                        <label className={styles.label}><City className={styles.iconsLogin} />City</label>
+                                        <input
+                                            onChange={handleInputChange}
+                                            value={infoUser.city}
+                                            type='text'
+                                            className={styles.input}
+                                            name='city'
                                             required={false}
                                         />
                                     </div>
