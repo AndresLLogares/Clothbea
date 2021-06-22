@@ -24,24 +24,24 @@ const DropUser = () => {
 
     const handleLogOut = async () => {
         await dispatch(LOGOUTUSER())
-        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
+        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 500)
     }
 
     return (
         <div className={styles.ContainerDrop} >
             {levelUser === 'User' ?
                 <div className={styles.auxDiv} > 
-                    {googleId === '' ?
+                    {googleId === null ?
                         <div className={styles.BoxDrop} >
                             <div className={styles.SortEachDrop} >
                                 <p onClick={handleLogOut} className={styles.StyleDrop}><UserMinus className={styles.IconDrop} />Log Out</p>
                             </div>
-                            <Link style={{ textDecoration: 'none' }} to='/Reset'>
+                            <Link className={styles.link} style={{ textDecoration: 'none' }} to='/Reset'>
                                 <div className={styles.SortEachDrop} >
                                     <p className={styles.StyleDrop}><LockOpen className={styles.IconDrop} />Reset Password</p>
                                 </div>
                             </Link>
-                            <Link style={{ textDecoration: 'none' }} to='/Wishlist'>
+                            <Link className={styles.link} style={{ textDecoration: 'none' }} to='/Wishlist'>
                                 <div className={styles.SortEachDrop} >
                                     <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
                                 </div>
@@ -65,7 +65,7 @@ const DropUser = () => {
                     <div className={styles.SortEachDrop} >
                         <p onClick={handleLogOut} className={styles.StyleDrop}><UserMinus className={styles.IconDrop} />Log Out</p>
                     </div>
-                    <Link style={{ textDecoration: 'none' }} to='/Reset'>
+                    <Link style={{ textDecoration: 'none' }} to='/EditProduct'>
                         <div className={styles.SortEachDrop} >
                             <p className={styles.StyleDrop}><Create className={styles.IconDrop} />Edit Product</p>
                         </div>

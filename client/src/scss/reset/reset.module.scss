@@ -19,33 +19,39 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Major Mono Display', monospace;
 }
 
-.containerLogin{
+.containerReset{
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    background-color: $Green;
+}
+
+.sortReset{
 width: 100%;
-background-color: $DarkBlue;
-height: fit-content;
-min-height: 100vh;
-}
-
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
-}
-
-.sortLogin{
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 padding-top: 15%;
-width: 100%;
 }
 
-.sortZoom{
+.Zoom{
+width: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-width: 100%;
+}
+
+.boxReset{
+width: 90%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: $DarkGreen;
+margin-bottom: 15%;
+box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .sortTitle{
@@ -53,7 +59,7 @@ display: flex;
 width: 100%;
 align-items: center;
 justify-content: center;
-background-color: $Pink;
+background-color: $Red;
 text-align: center;
 padding-top: 2%;
 margin-bottom: 2%;
@@ -67,26 +73,6 @@ margin-bottom: 2%;
 font-weight: bold;
 font-family: 'Major Mono Display', monospace;
 color: $White;
-}
-
-
-.boxLogin{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: $LightGreen;
-width: 90%;
-margin-bottom: 15%;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
-}
-
-.sortForm{
-display: flex;
-width: 90%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
 }
 
 .form{
@@ -130,29 +116,23 @@ width: 18rem;
 }
 }
 
-.sortButtons{
+.sortButton{
 display: flex;
-flex-direction: row;
+width: 100%;
 align-items: center;
 justify-content: center;
-width: 90%;
+margin-top: 5%;
 margin-bottom: 5%;
-margin-top: 2%;
 }
 
-.eachButtonLogin{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 50%;
-}
-
-.buttonLogin{
+.buttonReset{
+width: 20%;
+height: fit-content;
 font-size: 3vh;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
 color: $Black;
-padding: 3%;
+padding: 1%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
 border: solid .4rem $Red;
@@ -171,31 +151,8 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 }
 
-.sortGoogle{
-display: flex;
-align-items: center;
-width: 100%;
-justify-content: center;
-margin-bottom: 5%;
-}
 
-.buttonGoogle{
-width: 40%;
-display: flex;
-align-items: center;
-justify-content: center;   
-background-color: $LightGreen;
-border: transparent;
-margin-bottom: 5%;
-&:hover{
-transition-duration: 0.2s;
-transform:scale(1, 1.2);
-}
-}
-
-.google{
-cursor: url(../../components/images/pointer.png),pointer;
-&:hover{
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.iconsLogin{
+padding-bottom: 5%;
+width: 2rem;
 }

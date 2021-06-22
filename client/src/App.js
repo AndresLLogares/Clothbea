@@ -9,9 +9,10 @@ import Details from './components/details/details.js';
 import Shopping from './components/shoppingcart/shoppingcart.js';
 import AboutMe from './components/aboutme/aboutme.js';
 import WishList from './components/wishlist/wishlist.js';
-import PosCart from './components/postcart/postcart.js';
-import './scss/app/app.css';
 import PostCart from './components/postcart/postcart.js';
+import Reset from './components/reset/reset.js';
+import EditProduct from './components/editproduct/editproduct.js';
+import './scss/app/app.css';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
       <Route exact path='/AboutMe' component={Navbar} />
       <Route exact path='/Wishlist' component={Navbar} />
       <Route exact path='/Shipments' component={Navbar} />
+      <Route exact path='/Reset' component={Navbar} />
+      <Route exact path='/EditProduct' component={Navbar} />
       <ScrollToTop />
       <Switch>
         <Route exact path='/' component={LandPage} />
@@ -33,6 +36,8 @@ function App() {
         <Route exact path='/AboutMe' component={AboutMe} />
         <Route exact path='/Wishlist' component={WishList} />
         <Route exact path='/Shipments' component={PostCart} />
+        <Route exact path='/Reset' component={Reset} />
+        <Route exact path='/EditProduct' component={EditProduct} />
       </Switch>
     </BrowserRouter>
   );

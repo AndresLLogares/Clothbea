@@ -35,12 +35,12 @@ productsRoute.post('/addcomment', async (req, res) => {
     const comment = req.body.comment
     const title = req.body.title
 
-    await Products.findOne({ Id: Id}).then(product => {
-        if(!product) {
+    await Products.findOne({ Id: Id }).then(product => {
+        if (!product) {
             return res.send("Product Id doesn't match")
         }
         else {
-            product.comments.push({Id:Id, email: email, title: title ,comment: comment})
+            product.comments.push({ Id: Id, email: email, title: title, comment: comment })
             product.save()
             return res.send("Product match")
         }
@@ -50,8 +50,8 @@ productsRoute.post('/addcomment', async (req, res) => {
 productsRoute.post('/removecomment', async (req, res) => {
     const Id = req.body.Id
     console.log(Id)
-    await Products.findOne({ Id: Id}).then(product => {
-        if(!product) {
+    await Products.findOne({ Id: Id }).then(product => {
+        if (!product) {
             return res.send("Product Id doesn't match")
         }
         else {
@@ -79,16 +79,14 @@ productsRoute.post('/editproduct', async (req, res) => {
             }
             else if (name !== '') { product.name = name }
             else if (price !== '') { product.price = price }
-            else if (stock !== '' || stock !== '-1' || stock !== '+1' ) { product.stock = stock }
-            else if (stock === '-1') { product.stock = product.stock - 1 }
-            else if (stock === '+1') { product.stock = product.stock + 1 }
+            else if (stock !== '') { product.stock = stock }
             else if (category !== '') { product.category = category }
             else if (subcategory !== '') { product.subcategory = subcategory }
             else if (brand !== '') { product.brand = brand }
             product
                 .save()
-                .then(product => res.json(product))
-                .catch(err => console.log("FAIL EDIT PRODUCT"));
+                .then(product => res.send('Edit Success'))
+                .catch(err => res.send("Error Edit"));
         })
 })
 

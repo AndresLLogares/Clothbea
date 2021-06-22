@@ -10,14 +10,19 @@ import { Flag } from '@styled-icons/boxicons-regular/Flag';
 import { Mail } from '@styled-icons/entypo/Mail';
 import { RealEstate } from '@styled-icons/fluentui-system-filled/RealEstate';
 import { Address } from '@styled-icons/entypo/Address';
-import { SIGNUPACTION, LOGINACTION, GOOGLELOGIN } from '../actions/index.js';
+import { SETCURRENTUSER } from '../actions/index.js';
 import { ToastContainer, toast } from 'react-toastify';
 import { GoogleLogin } from 'react-google-login';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import jwt_decode from "jwt-decode";
+import setAuthToken from '../Utils/SethAuthToken.js';
 
 const Login = () => {
 
     const dispatch = useDispatch()
+
+    let URL = 'http://localhost:5000';
 
     const [infoUser, setInfoUser] = useState({
         username: '',
@@ -37,19 +42,34 @@ const Login = () => {
     }
 
     const handleSubmitLogin = async (event) => {
-        await localStorage.removeItem('UserName')
         event.preventDefault()
-        await dispatch(LOGINACTION({
-            email: infoUser.email.toLocaleLowerCase(),
-            password: infoUser.password.toString()
-        }))
-        const userName = await localStorage.getItem('UserName')
-        if (userName === 'undefined') {
-            toast.error('Error in Login')
-        }
-        else {
-            toast.success(`Welcome ${userName}`)
-        }
+        await axios.post(URL + '/Users/login', {
+            password: infoUser.password,
+            email: infoUser.email.toLocaleLowerCase()
+        })
+            .then(async (response) => {
+                console.log(response)
+                if (!response.data.token) {
+                    return toast.error('Error in Login')
+                }
+                else {
+                    toast.success(`Hello ${response.data.username}`)
+                }
+                const { token } = response.data;
+                const { username } = response.data;
+                const { email } = response.data;
+                const { level } = response.data;
+                await localStorage.setItem("jwtToken", token);
+                await localStorage.setItem("UserName", username);
+                await localStorage.setItem("Email", email);
+                await localStorage.setItem('LevelUser', level)
+                setAuthToken(token);
+                const decoded = jwt_decode(token);
+                dispatch(SETCURRENTUSER(decoded));
+            })
+            .catch(err =>
+                console.log(err)
+            );
         setInfoUser({
             username: '',
             email: '',
@@ -61,27 +81,28 @@ const Login = () => {
             address: '',
             ZIP: ''
         })
-        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
     }
 
     const handleSubmitSignIn = async (event) => {
-        await localStorage.removeItem('SignInOK')
         event.preventDefault()
         if (infoUser.password !== infoUser.controlpassword) {
             return toast.error("Passwords dosn't match")
         }
-        await dispatch(SIGNUPACTION({
+        await axios.post(URL + '/Users/signup', {
             username: infoUser.username,
+            password: infoUser.password,
             email: infoUser.email.toLocaleLowerCase(),
-            password: infoUser.password.toString(),
-            address: infoUser.address,
-            city: infoUser.city,
-            country: infoUser.country,
-            ZIP: infoUser.ZIP
-        }))
-        const controlSignIn = await localStorage.getItem('SignInOK')
+            city: infoUser.city || '',
+            address: infoUser.address || '',
+            country: infoUser.country || '',
+            ZIP: infoUser.ZIP || ''
 
-        controlSignIn === 'Email already exists' ? toast.error('Email already exists') : toast.success('Now you can Login')
+        })
+            .then((response) => response.data)
+            .then(data => {
+                toast.info(data)
+            })
+
         setInfoUser({
             username: '',
             email: '',
@@ -100,27 +121,51 @@ const Login = () => {
     }
 
     const handleGoogleSucces = async (response) => {
+
         let name = response.profileObj.givenName;
 
         let email = response.profileObj.email;
 
         let googleId = response.profileObj.googleId;
 
-        let token = response.mc.access_token;
+        let token = response.tokenId;
 
-        await dispatch(GOOGLELOGIN({
-            name: name,
+        await axios.post(URL + '/Users/google', {
             email: email,
+            username: name,
             googleId: googleId,
             token: token
-        }))
-        const userName = await localStorage.getItem('UserName')
-        if (!userName) {
-            toast.error('Error in Login')
-        }
-        else {
-            toast.success(`Welcome ${userName}`)
-        }
+        })
+            .then(async (response) => {
+                console.log(response.data)
+                if (!response.data.token) {
+                    return toast.error('Error in Login')
+                }
+                else {
+                    toast.success(`Hello ${response.data.username}`)
+                }
+                const { token } = response.data;
+                const { username } = response.data;
+                const { email } = response.data;
+                const { level } = response.data;
+                const { googleId } = response.data
+                await localStorage.setItem("jwtToken", token);
+                await localStorage.setItem("UserName", username);
+                await localStorage.setItem("Email", email);
+                await localStorage.setItem('LevelUser', level);
+                await localStorage.setItem("googleId", googleId)
+            })
+        setInfoUser({
+            username: '',
+            email: '',
+            password: '',
+            controlpassword: '',
+            country: '',
+            state: '',
+            city: '',
+            address: '',
+            ZIP: ''
+        })
         setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
     }
 

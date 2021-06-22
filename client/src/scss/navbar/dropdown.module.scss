@@ -65,6 +65,10 @@ text-transform: uppercase;
 font-family: 'B612', sans-serif;
 }
 
+.link:hover{
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
 .StyleDrop:hover {
 cursor: url(../../components/images/pointer.png),pointer;
 animation-name: tada;

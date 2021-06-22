@@ -4,8 +4,14 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config()
-const secret = process.env.Secret
 import User from '../models/users.js';
+import { OAuth2Client } from 'google-auth-library';
+
+const secret = process.env.Secret;
+
+const clientId = process.env.GOOGLE_CLIENT_ID;
+
+const client = new OAuth2Client(clientId)
 
 UsersRoute.post("/signup", async (req, res) => {
     await User.findOne({ email: req.body.email }).then(user => {
@@ -28,7 +34,7 @@ UsersRoute.post("/signup", async (req, res) => {
                     newUser.password = hash;
                     newUser
                         .save()
-                        .then(user => res.send('Sign Up Ok'))
+                        .then(user => res.send('Now you can Login'))
                         .catch(err => console.log(err));
                 });
             });
@@ -105,15 +111,15 @@ UsersRoute.post("/reset", async (req, res) => {
                         bcrypt.genSalt(10, (err, salt) => {
                             bcrypt.hash(Newpassword, salt, (err, hash) => {
                                 if (err) throw err;
-                                user.Password = hash;
+                                user.password = hash;
                                 user
                                     .save()
-                                    .then(user => res.json(user))
-                                    .catch(err => console.log("FALLO RESET"));
+                                    .then(user => res.send('Reset Password Correct'))
+                                    .catch(err => res.send("Reset Incorrect"));
                             });
                         });
                     } else {
-                        return res.send("Password incorrect");
+                        return res.send("Password Incorrect");
                     }
                 });
         });
@@ -288,40 +294,43 @@ UsersRoute.post("/getwishlist", async (req, res) => {
 });
 
 UsersRoute.post("/google", async (req, res) => {
-    
+
     const email = req.body.email
     const username = req.body.username
     const googleId = req.body.googleId
-    const token = req.body.token
+    const tokenId = req.body.token
 
-    await User.findOne({ email: email })
-        .then(user => {
-            if (!user) {
-                const newUser = new User({
-                    username: username,
-                    email: email,
-                    password: "",
-                    level: 'User',
-                    googleId: googleId,
-                    city: req.body.city || '',
-                    address: req.body.address || '',
-                    country: req.body.country || '',
-                    ZIP: req.body.ZIP || ''
-                });
-                newUser
-                .save()
-                .then(user => res.send('Sign Up Ok'))
-            }
-            else {
-                res.json({
-                    email: user.email,
-                    username: user.username,
-                    success: true,
-                    token: "Bearer " + token,
-                    level: user.level,
-                    googleId: user.googleId
-                });
-            }
+    await client.verifyIdToken({ idToken: tokenId, audience: clientId })
+        .then(async () => {
+            await User.findOne({ email: email })
+                .then(user => {
+                    if (!user) {
+                        const newUser = new User({
+                            username: username,
+                            email: email,
+                            password: "",
+                            level: 'User',
+                            googleId: googleId,
+                            city: req.body.city || '',
+                            address: req.body.address || '',
+                            country: req.body.country || '',
+                            ZIP: req.body.ZIP || ''
+                        });
+                        newUser
+                            .save()
+                            .then(user => res.send('Sign Up Ok'))
+                    }
+                    else {
+                        res.json({
+                            email: user.email,
+                            username: user.username,
+                            success: true,
+                            token: "Bearer " + tokenId,
+                            level: user.level,
+                            googleId: user.googleId
+                        });
+                    }
+                })
         })
 })
 
