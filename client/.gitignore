@@ -4,8 +4,8 @@
 /node_modules
 /.pnpc
 .pnp.js
-/src/components/secret
-
+client/src/components/secret
+client\src\components\secret
 # testing
 /coverage
 
