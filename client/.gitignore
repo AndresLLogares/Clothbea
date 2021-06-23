@@ -2,10 +2,9 @@
 
 # dependencies
 /node_modules
-/src/components/secret
 /.pnpc
-\src\components\secret
 .pnp.js
+/src/components/secret
 
 # testing
 /coverage
