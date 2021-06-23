@@ -1,7 +1,6 @@
 import { GET_PRODUCTS } from "../actions";
 import { GET_CATEGORIES } from "../actions";
 import { PRODUCTS_ID } from "../actions";
-import { EDIT_PRODUCT } from "../actions";
 import { GET_CART } from "../actions";
 import { ADD_CART } from "../actions";
 import { LESS_MORE } from "../actions";
@@ -15,7 +14,6 @@ const initialState = {
     productById: [],
     responseAddCart: [],
     cart: [],
-    responseEditProduct: [],
     responseAdd: [],
     responseLess: [],
     wishlist: [],
@@ -45,12 +43,6 @@ const reducers = (state = initialState, action) => {
         return {
             ...state,
             cart: action.payload
-        }
-    }
-    if (action.type === EDIT_PRODUCT) {
-        return {
-            ...state,
-            responseEditProduct: action.payload
         }
     }
     if (action.type === ADD_CART) {

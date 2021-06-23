@@ -50,6 +50,10 @@ text-align: center;
 width: 100%;
 }
 
+.SortEachDrop:hover{
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
 .StyleDrop{
 display: flex;
 width: 100%;

@@ -5,6 +5,7 @@ import { Zoom } from "react-awesome-reveal";
 import { StarFill } from '@styled-icons/bootstrap/StarFill';
 import { SquaredCross } from '@styled-icons/entypo/SquaredCross';
 import SadStar from '../images/SadStar.gif';
+import { Link } from 'react-router-dom';
 import styles from '../../scss/wishlist/wishlist.module.scss';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -62,9 +63,16 @@ const WishList = () => {
                                                 onClick={() => removeWish(item.Id)}
                                                 >Remove <SquaredCross className={styles.cross} /> </button>
                                             </div>
+                                            <Link to={{
+                                                pathname: '/Details',
+                                                state: {
+                                                    Id: item.Id,
+                                                }
+                                            }}>
                                             <div className={styles.sortImageCart} >
                                                 <img className={styles.imageCart} src={item.image} alt='' />
                                             </div>
+                                            </Link>
                                         </div>
                                     ))
                                     :

@@ -62,12 +62,46 @@ productsRoute.post('/removecomment', async (req, res) => {
     })
 })
 
+productsRoute.post('/createproduct', async (req, res) => {
+    const id = req.body.Id
+    const name = req.body.name
+    const price = req.body.price
+    const stock = req.body.stock
+    const category = req.body.category
+    const subcategory = req.body.subcategory
+    const image = req.body.image
+    const brand = req.body.brand
+    
+    await Products.findOne({ Id: id })
+        .then(product => {
+            if (product) {
+                return res.send("Product already exists");
+            }
+            else {
+                const newProduct = new Products({
+                    Id: id,
+                    name: name,
+                    price: price,
+                    image: image,
+                    stock: stock,
+                    category: category,
+                    subcategory: subcategory,
+                    brand: brand
+                })
+                newProduct
+                    .save()
+                    .then(response => res.send('Product created'))
+                    .catch(err => res.send(err));
+            }
+        })
+})
 
 productsRoute.post('/editproduct', async (req, res) => {
     const id = req.body.Id
     const name = req.body.name
     const price = req.body.price
     const stock = req.body.stock
+    const image = req.body.image
     const category = req.body.category
     const subcategory = req.body.subcategory
     const brand = req.body.brand
@@ -77,12 +111,13 @@ productsRoute.post('/editproduct', async (req, res) => {
             if (!product) {
                 return res.send("Product not found");
             }
-            else if (name !== '') { product.name = name }
-            else if (price !== '') { product.price = price }
-            else if (stock !== '') { product.stock = stock }
-            else if (category !== '') { product.category = category }
-            else if (subcategory !== '') { product.subcategory = subcategory }
-            else if (brand !== '') { product.brand = brand }
+            product.name = name
+            product.price = price
+            product.stock = stock
+            product.image = image
+            product.category = category
+            product.subcategory = subcategory
+            product.brand = brand
             product
                 .save()
                 .then(product => res.send('Edit Success'))

@@ -26,9 +26,7 @@ const Home = () => {
 
     const [genre, setGenre] = useState('Men');
 
-    const [filtredStock, setFiltredStock] = useState([]);
-
-    const [changeCategory, setChangeCategory] = useState("Dresses")
+    const [changeCategory, setChangeCategory] = useState("Men")
 
     const products = useSelector(state => state.Clothbea.products);
 
@@ -64,8 +62,8 @@ const Home = () => {
     const setGenreWomen = () => {
         setAnimation(true)
         setGenre('Women')
-        setChangeCategory("Shirts")
         setCategorieFilter('T-Shirt')
+        setChangeCategory("Women")
         setTimeout(() => setAnimation(false), 1000)
     }
 
@@ -73,7 +71,7 @@ const Home = () => {
         setAnimation(true)
         setGenre('Men')
         setCategorieFilter('T-Shirt')
-        setChangeCategory("Dresses")
+        setChangeCategory("Men")
         setTimeout(() => setAnimation(false), 1000)
     }
 
@@ -175,7 +173,7 @@ const Home = () => {
                         <div className={styles.separateHome2} >
                             <Zoom className={styles.zoom2} >
                                 <div className={styles.sortCategories} >
-                                    {categories && categories.filter(item => item.name !== changeCategory).map((item, index) => (
+                                    {categories && categories.filter((item) => {return item.category.indexOf(changeCategory) >= 0}).map((item, index) => (
                                         <div className={styles.boxCategory} >
                                             <p onClick={() => setCategory(item.name)} className={styles.fontCategory} >{item.name}</p>
                                         </div>

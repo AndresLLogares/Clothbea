@@ -54,6 +54,7 @@ const Login = () => {
                 }
                 else {
                     toast.success(`Hello ${response.data.username}`)
+                    setTimeout(() => window.location.href = 'http://localhost:3000/Home',2000)
                 }
                 const { token } = response.data;
                 const { username } = response.data;
@@ -143,6 +144,7 @@ const Login = () => {
                 }
                 else {
                     toast.success(`Hello ${response.data.username}`)
+                    setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
                 }
                 const { token } = response.data;
                 const { username } = response.data;
@@ -166,7 +168,6 @@ const Login = () => {
             address: '',
             ZIP: ''
         })
-        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
     }
 
     const handleGoogleError = (response) => {

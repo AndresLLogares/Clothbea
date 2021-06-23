@@ -12,6 +12,8 @@ import WishList from './components/wishlist/wishlist.js';
 import PostCart from './components/postcart/postcart.js';
 import Reset from './components/reset/reset.js';
 import EditProduct from './components/editproduct/editproduct.js';
+import CreateCategory from './components/createcategory/createcategory.js';
+import CreateProduct from './components/createproduct/createproduct.js';
 import './scss/app/app.css';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route exact path='/Shipments' component={Navbar} />
       <Route exact path='/Reset' component={Navbar} />
       <Route exact path='/EditProduct' component={Navbar} />
+      <Route exact path='/CreateProduct' component={Navbar} />
+      <Route exact path='/CreateCategory' component={Navbar} />
       <ScrollToTop />
       <Switch>
         <Route exact path='/' component={LandPage} />
@@ -38,6 +42,8 @@ function App() {
         <Route exact path='/Shipments' component={PostCart} />
         <Route exact path='/Reset' component={Reset} />
         <Route exact path='/EditProduct' component={EditProduct} />
+        <Route exact path='/CreateProduct' component={CreateProduct} />
+        <Route exact path='/CreateCategory' component={CreateCategory} />
       </Switch>
     </BrowserRouter>
   );

@@ -2,6 +2,14 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const subCategorySchema = new Schema({
+    Id: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: Array,
+        required: true
+    },
     name: {
         type: String,
         required: true

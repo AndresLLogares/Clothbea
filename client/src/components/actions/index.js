@@ -8,7 +8,6 @@ export const SET_CURRENT_USER = 'SETCURRENTUSER';
 export const ADD_CART = 'ADDCART';
 export const REMOVE_CART = 'REMOVECART';
 export const GET_CART = 'GETCART';
-export const EDIT_PRODUCT = 'EDITPRODUCT';
 export const CLEAN_CART = 'CLEANCART';
 export const ADD_MORE = 'ADDMORE';
 export const LESS_MORE = 'LESSMORE';
@@ -221,22 +220,5 @@ export const REMOVECOMMENT = (info) => {
             .then((response) => response.data)
             .then(data =>
                 dispatch({ type: REMOVE_COMMENT, payload: data }))
-    }
-}
-
-export const EDITPRODUCT = (info) => {
-    return async (dispath) => {
-        return await axios.post(URL + '/Products/editproduct', {
-            Id: info.Id,
-            name: info.name || '',
-            category: info.category || '',
-            subcategory: info.subcategory || '',
-            brand: info.brand || '',
-            price: info.price || '',
-            stock: info.stock || '',
-        })
-            .then((response) => response.data)
-            .then(data =>
-                dispath({ type: EDIT_PRODUCT, payload: data }))
     }
 }

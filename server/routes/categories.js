@@ -17,4 +17,29 @@ subcategories.get('/subcategories', async (req, res) => {
     }
 });
 
+subcategories.post('/createcategories', async (req, res) => {
+
+    let name = req.body.name
+    let Id = req.body.Id
+    let category = req.body.category
+
+    await SubCategories.findOne({ Id: Id })
+        .then(subcategory => {
+            if (subcategory) {
+                res.send('Category already exist')
+            }
+            else {
+                const newSubCategory = new SubCategories({
+                    Id: Id,
+                    name: name,
+                    category: category
+                })
+                newSubCategory
+                    .save()
+                    .then(response => res.send('Category Created'))
+                    .catch(err => res.send(err))
+            }
+        })
+})
+
 export default subcategories;

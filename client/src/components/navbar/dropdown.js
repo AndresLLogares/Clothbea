@@ -70,12 +70,12 @@ const DropUser = () => {
                             <p className={styles.StyleDrop}><Create className={styles.IconDrop} />Edit Product</p>
                         </div>
                     </Link>
-                    <Link style={{ textDecoration: 'none' }} to='/Favorites'>
+                    <Link style={{ textDecoration: 'none' }} to='/CreateCategory'>
                         <div className={styles.SortEachDrop} >
                             <p className={styles.StyleDrop}><CategoryAlt className={styles.IconDrop} />Create Category</p>
                         </div>
                     </Link>
-                    <Link style={{ textDecoration: 'none' }} to='/Favorites'>
+                    <Link style={{ textDecoration: 'none' }} to='/CreateProduct'>
                         <div className={styles.SortEachDrop} >
                             <p className={styles.StyleDrop}><CreateNewFolder className={styles.IconDrop} />Create Product</p>
                         </div>
