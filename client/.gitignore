@@ -3,7 +3,8 @@
 # dependencies
 /node_modules
 /src/components/secret
-/.pnp
+/.pnpc
+\src\components\secret
 .pnp.js
 
 # testing
