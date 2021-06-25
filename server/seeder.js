@@ -8,6 +8,7 @@ import Product from './models/products.js';
 import Category from './models/categories.js';
 import SubCategory from './models/subcategories.js';
 import Users from './models/users.js';
+import Orders from './models/orders.js';
 dotenv.config()
 
 connectDB();
@@ -15,6 +16,7 @@ connectDB();
 const importData = async () => {
   try {
     await Product.deleteMany({});
+    await Orders.deleteMany({});
     await Category.deleteMany({});
     await SubCategory.deleteMany({});
     await Users.deleteMany({});

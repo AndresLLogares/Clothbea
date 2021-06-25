@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GETWISH, REMOVEWISH } from '../actions';
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { StarFill } from '@styled-icons/bootstrap/StarFill';
 import { SquaredCross } from '@styled-icons/entypo/SquaredCross';
 import SadStar from '../images/SadStar.gif';
@@ -40,7 +40,7 @@ const WishList = () => {
         <div className={styles.containerWish} >
             <div className={styles.sortWish} >
             <ToastContainer />
-                <Zoom className={styles.zoom} >
+                <Reveal className={styles.zoom} >
                     {loading ?
                         <div>
                             <div className={styles.loader} />
@@ -88,7 +88,7 @@ const WishList = () => {
                             </div>
                         </div>
                     }
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

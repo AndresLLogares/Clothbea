@@ -7,6 +7,8 @@ import Products from './routes/products.js';
 import Categories from './routes/categories.js';
 import Users from './routes/user.js';
 import passport from 'passport';
+import Orders from './routes/order.js';
+
 dotenv.config()
 
 const app = express();
@@ -23,6 +25,7 @@ passportconfig(passport);
 app.use('/Products', Products)
 app.use('/Products', Categories)
 app.use('/Users', Users)
+app.use('/Orders', Orders)
 
 const PORT = process.env.PORT || 5000;
 const MongoURL = process.env.MongoURL;

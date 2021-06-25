@@ -6,7 +6,7 @@ import { GETCATEGORIES } from '../actions';
 import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt'
 import { Category } from '@styled-icons/material-rounded/Category';
 import { ToastContainer, toast } from 'react-toastify';
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 
 const CreateCategory = () => {
 
@@ -68,7 +68,7 @@ const CreateCategory = () => {
         <div className={styles.containerCreateCat} >
             <div className={styles.sortCreate} >
                 <ToastContainer />
-                <Zoom className={styles.Effect} >
+                <Reveal className={styles.Effect} >
                     <div className={styles.createBoxCat} >
                         <div className={styles.sortTitle} >
                             <p className={styles.titleCreate} >Create Category</p>
@@ -128,7 +128,7 @@ const CreateCategory = () => {
                             </form>
                         </div>
                     </div>
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

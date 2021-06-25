@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom } from 'react-awesome-reveal';
+import { Reveal } from 'react-awesome-reveal';
 import styles from '../../scss/login/login.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { DriveFileRenameOutline } from '@styled-icons/material/DriveFileRenameOutline';
 import { LockPassword } from '@styled-icons/remix-fill/LockPassword';
-import { Mailbox } from '@styled-icons/bootstrap/Mailbox';
-import { City } from '@styled-icons/boxicons-solid/City';
-import { Flag } from '@styled-icons/boxicons-regular/Flag';
 import { Mail } from '@styled-icons/entypo/Mail';
-import { RealEstate } from '@styled-icons/fluentui-system-filled/RealEstate';
-import { Address } from '@styled-icons/entypo/Address';
 import { SETCURRENTUSER } from '../actions/index.js';
 import { ToastContainer, toast } from 'react-toastify';
 import { GoogleLogin } from 'react-google-login';
@@ -27,8 +22,11 @@ const Login = () => {
     const [infoUser, setInfoUser] = useState({
         username: '',
         email: '',
+        name: '',
+        lastname: '',
         password: '',
         controlpassword: '',
+        state: '',
         country: '',
         city: '',
         address: '',
@@ -54,7 +52,7 @@ const Login = () => {
                 }
                 else {
                     toast.success(`Hello ${response.data.username}`)
-                    setTimeout(() => window.location.href = 'http://localhost:3000/Home',2000)
+                    setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
                 }
                 const { token } = response.data;
                 const { username } = response.data;
@@ -74,6 +72,8 @@ const Login = () => {
         setInfoUser({
             username: '',
             email: '',
+            name: '',
+            lastname: '',
             password: '',
             controlpassword: '',
             country: '',
@@ -92,7 +92,10 @@ const Login = () => {
         await axios.post(URL + '/Users/signup', {
             username: infoUser.username,
             password: infoUser.password,
+            name: infoUser.name,
+            lastname: infoUser.lastname,
             email: infoUser.email.toLocaleLowerCase(),
+            state: infoUser.state || '',
             city: infoUser.city || '',
             address: infoUser.address || '',
             country: infoUser.country || '',
@@ -106,6 +109,8 @@ const Login = () => {
 
         setInfoUser({
             username: '',
+            name: '',
+            lastname: '',
             email: '',
             password: '',
             controlpassword: '',
@@ -160,6 +165,8 @@ const Login = () => {
         setInfoUser({
             username: '',
             email: '',
+            name: '',
+            lastname: '',
             password: '',
             controlpassword: '',
             country: '',
@@ -178,7 +185,7 @@ const Login = () => {
         <div className={styles.containerLogin} >
             <div className={styles.sortLogin} >
                 <ToastContainer />
-                <Zoom className={styles.sortZoom}>
+                <Reveal className={styles.sortZoom}>
                     <div className={styles.boxLogin} >
                         <div className={styles.sortTitle} >
                             <p className={styles.fontTitle} >Introduce your information</p>
@@ -283,61 +290,6 @@ const Login = () => {
                                             required={true}
                                         />
                                     </div>
-                                    <div className={styles.eachInput} >
-                                        <label className={styles.label}><Flag className={styles.iconsLogin} />Country</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.country}
-                                            type='text'
-                                            className={styles.input}
-                                            name='country'
-                                            required={false}
-                                        />
-                                    </div>
-                                    <div className={styles.eachInput} >
-                                        <label className={styles.label}><RealEstate className={styles.iconsLogin} />State</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.country}
-                                            type='text'
-                                            className={styles.input}
-                                            name='state'
-                                            required={false}
-                                        />
-                                    </div>
-                                    <div className={styles.eachInput} >
-                                        <label className={styles.label}><City className={styles.iconsLogin} />City</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.city}
-                                            type='text'
-                                            className={styles.input}
-                                            name='city'
-                                            required={false}
-                                        />
-                                    </div>
-                                    <div className={styles.eachInput} >
-                                        <label className={styles.label}><Address className={styles.iconsLogin} />Address</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.address}
-                                            type='text'
-                                            className={styles.input}
-                                            name='address'
-                                            required={false}
-                                        />
-                                    </div>
-                                    <div className={styles.eachInput} >
-                                        <label className={styles.label}><Mailbox className={styles.iconsLogin} />ZIP</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.ZIP}
-                                            type='text'
-                                            className={styles.input}
-                                            name='ZIP'
-                                            required={false}
-                                        />
-                                    </div>
                                     <div className={styles.sortButtons} >
                                         <div className={styles.eachButtonLogin}>
                                             <button type='submit' className={styles.buttonLogin} >Create</button>
@@ -350,7 +302,7 @@ const Login = () => {
                             </div>
                         }
                     </div>
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

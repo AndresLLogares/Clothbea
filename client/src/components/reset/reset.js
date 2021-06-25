@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../../scss/reset/reset.module.scss';
 import { LockPassword } from '@styled-icons/remix-fill/LockPassword';
 import { Mail } from '@styled-icons/entypo/Mail';
-import { Zoom } from 'react-awesome-reveal';
+import { Reveal } from 'react-awesome-reveal';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 
@@ -43,7 +43,7 @@ const Reset = () => {
         <div className={styles.containerReset} >
             <div className={styles.sortReset} >
                 <ToastContainer />
-                <Zoom className={styles.Zoom} >
+                <Reveal className={styles.Zoom} >
                     <div className={styles.boxReset} >
                         <div className={styles.sortTitle} >
                             <p className={styles.fontTitle} >Reset Password</p>
@@ -96,7 +96,7 @@ const Reset = () => {
                             </div>
                         </form>
                     </div>
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

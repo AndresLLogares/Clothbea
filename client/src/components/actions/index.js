@@ -17,6 +17,8 @@ export const GET_WISHLIST = 'GETWISHLIST';
 export const CURRENT_USER = 'CURRENTUSER';
 export const ADD_COMMENT = 'ADDCOMENT';
 export const REMOVE_COMMENT = 'REMOVECOMMENT';
+export const GET_ORDERS = 'GETORDERS';
+export const GET_ORDER_BYID = 'GETORDERBYID';
 
 let URL = 'http://localhost:5000';
 
@@ -37,6 +39,27 @@ export const GETCATEGORIES = () => {
             .then(data => {
                 dispatch({ type: GET_CATEGORIES, payload: data })
             })
+    }
+}
+
+export const GETORDERS = () => {
+    return async (dispatch) => {
+        return await axios.get(URL + '/Orders/allorders')
+            .then((response) => response.data)
+            .then(data => {
+                dispatch({ type: GET_ORDERS, payload: data })
+            })
+    }
+}
+
+export const GETORDERBYID = (info) => {
+    return async (dispatch) => {
+        return await axios.post(URL + '/Orders/orderbyId', {
+            Id: info
+        })
+        .then((response) => response.data)
+        .then(data => 
+            dispatch({type: GET_ORDER_BYID, payload: data}))
     }
 }
 

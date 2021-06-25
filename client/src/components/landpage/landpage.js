@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { Link } from 'react-router-dom';
 import styles from '../../scss/landpage/landpage.module.scss';
 import logo from '../images/Logo.png';
@@ -56,7 +56,7 @@ const Landpage = () => {
     return (
         <div className={styles.containerLand} >
             <div className={styles.sortLand} >
-                <Zoom className={styles.fade}>
+                <Reveal className={styles.fade}>
                     <div className={styles.boxLand}>
                         <div className={styles.sortTitleLand} >
                             <div className={styles.containerTitle1} >
@@ -98,7 +98,7 @@ const Landpage = () => {
                             </Link>
                         </div>
                     </div>
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

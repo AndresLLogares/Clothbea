@@ -14,6 +14,7 @@ import Reset from './components/reset/reset.js';
 import EditProduct from './components/editproduct/editproduct.js';
 import CreateCategory from './components/createcategory/createcategory.js';
 import CreateProduct from './components/createproduct/createproduct.js';
+import Payment from './components/payment/payment.js';
 import './scss/app/app.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route exact path='/EditProduct' component={Navbar} />
       <Route exact path='/CreateProduct' component={Navbar} />
       <Route exact path='/CreateCategory' component={Navbar} />
+      <Route exact path='/Payment' component={Navbar} />
       <ScrollToTop />
       <Switch>
         <Route exact path='/' component={LandPage} />
@@ -44,6 +46,7 @@ function App() {
         <Route exact path='/EditProduct' component={EditProduct} />
         <Route exact path='/CreateProduct' component={CreateProduct} />
         <Route exact path='/CreateCategory' component={CreateCategory} />
+        <Route exact path='/Payment' component={Payment} />
       </Switch>
     </BrowserRouter>
   );

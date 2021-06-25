@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { ToastContainer, toast } from 'react-toastify';
 import { GETPRODUCTS, GETCATEGORIES } from '../actions';
 import 'react-toastify/dist/ReactToastify.css';
@@ -96,7 +96,7 @@ const EditProduct = () => {
         <div className={styles.containerEdit} >
             <div className={styles.sortEdit} >
                 <ToastContainer />
-                <Zoom className={styles.Jack} >
+                <Reveal className={styles.Jack} >
                     {loading ?
                         <div>
                             <div className={styles.loader} />
@@ -206,7 +206,7 @@ const EditProduct = () => {
                             </div>
                         </div>
                     }
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

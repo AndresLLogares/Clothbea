@@ -14,32 +14,37 @@ const clientId = process.env.GOOGLE_CLIENT_ID;
 const client = new OAuth2Client(clientId)
 
 UsersRoute.post("/signup", async (req, res) => {
-    await User.findOne({ email: req.body.email }).then(user => {
-        if (user) {
-            return res.send("Email already exists");
-        } else {
-            const newUser = new User({
-                username: req.body.username,
-                email: req.body.email,
-                password: req.body.password,
-                level: 'User',
-                city: req.body.city || '',
-                address: req.body.address || '',
-                country: req.body.country || '',
-                ZIP: req.body.ZIP || ''
-            });
-            bcrypt.genSalt(10, (err, salt) => {
-                bcrypt.hash(newUser.password, salt, (err, hash) => {
-                    if (err) throw err;
-                    newUser.password = hash;
-                    newUser
-                        .save()
-                        .then(user => res.send('Now you can Login'))
-                        .catch(err => console.log(err));
+
+    await User.findOne({ email: req.body.email })
+        .then(user => {
+            if (user) {
+                return res.send("Email already exists");
+            } else {
+                const newUser = new User({
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: req.body.password,
+                    name: req.body.name || '',
+                    lastname: req.body.lastname || '',
+                    level: 'User',
+                    city: req.body.city || '',
+                    state: req.body.state || '',
+                    address: req.body.address || '',
+                    country: req.body.country || '',
+                    ZIP: req.body.ZIP || ''
                 });
-            });
-        }
-    });
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
+                        if (err) throw err;
+                        newUser.password = hash;
+                        newUser
+                            .save()
+                            .then(user => res.send('Now you can Login'))
+                            .catch(err => console.log(err));
+                    });
+                });
+            }
+        });
 });
 
 UsersRoute.post("/login", async (req, res) => {
@@ -178,6 +183,7 @@ UsersRoute.post("/removecart", async (req, res) => {
 
     const Email = req.body.email;
     const Id = req.body.Id;
+
     await User.findOne({ email: Email })
         .then(user => {
             if (!user) {
@@ -211,7 +217,6 @@ UsersRoute.post("/cleancart", async (req, res) => {
 UsersRoute.post("/removewish", async (req, res) => {
     const Email = req.body.email;
     const Id = req.body.Id;
-
 
     await User.findOne({ email: Email })
         .then(user => {

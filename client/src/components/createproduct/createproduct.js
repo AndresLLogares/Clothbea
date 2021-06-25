@@ -11,9 +11,9 @@ import { Stock } from '@styled-icons/remix-fill/Stock';
 import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt'
 import { Category } from '@styled-icons/material-rounded/Category';
 import { ToastContainer, toast } from 'react-toastify';
-import { CLOUDINARY_URL } from '../secret/secret.js';
-import { CLOUDINARY_UPLOAD_PRESET } from '../secret/secret.js';
-import { Zoom } from "react-awesome-reveal";
+import { CLOUDINARY_URL } from '../Secret/secret.js';
+import { CLOUDINARY_UPLOAD_PRESET } from '../Secret/secret.js';
+import { Reveal } from "react-awesome-reveal";
 
 const CreateProduct = () => {
 
@@ -116,7 +116,7 @@ const CreateProduct = () => {
         <div className={styles.containerCreate} >
             <div className={styles.sortCreate} >
                 <ToastContainer />
-                <Zoom className={styles.Effect} >
+                <Reveal className={styles.Effect} >
                     <div className={styles.createBox} >
                         <div className={styles.sortTitle} >
                             <p className={styles.titleCreate} >Create Product</p>
@@ -205,7 +205,7 @@ const CreateProduct = () => {
                             </form>
                         </div>
                     </div>
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

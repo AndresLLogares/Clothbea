@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin';
 import { Email } from '@styled-icons/evaicons-solid/Email';
 import { Github } from '@styled-icons/boxicons-logos/Github';
@@ -12,7 +12,7 @@ const AboutMe = () => {
     return (
         <div className={styles.containerAbout} >
             <div className={styles.sortAbout} >
-                <Fade className={styles.slide} >
+                <Reveal className={styles.slide} >
                     <div className={styles.boxAbout} >
                         <div className={styles.sortTitle1} >
                             <p className={styles.titleAbout} >Hi, i'm Andrés Luis Logares, the person behind this website, you can contact me by the next ways</p>
@@ -46,7 +46,7 @@ const AboutMe = () => {
                             </div>
                         </div>
                     </div>
-                </Fade>
+                </Reveal>
             </div>
         </div>
     )

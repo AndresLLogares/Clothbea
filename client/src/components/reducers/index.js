@@ -7,6 +7,8 @@ import { LESS_MORE } from "../actions";
 import { ADD_MORE } from "../actions";
 import { GET_WISHLIST } from "../actions";
 import { CURRENT_USER } from "../actions";
+import { GET_ORDERS } from "../actions";
+import { GET_ORDER_BYID } from "../actions";
 
 const initialState = {
     products: [],
@@ -18,6 +20,8 @@ const initialState = {
     responseLess: [],
     wishlist: [],
     currentuser: [],
+    orders: [],
+    ordersById:[]
 }
 
 const reducers = (state = initialState, action) => {
@@ -73,6 +77,18 @@ const reducers = (state = initialState, action) => {
         return {
             ...state,
             currentuser: action.payload
+        }
+    }
+    if (action.type === GET_ORDERS) {
+        return {
+            ...state,
+            orders: action.payload
+        }
+    }
+    if (action.type === GET_ORDER_BYID) {
+        return {
+            ...state,
+            ordersById: action.payload
         }
     }
     return state;

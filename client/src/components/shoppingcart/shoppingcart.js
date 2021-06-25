@@ -8,7 +8,7 @@ import { Trash } from '@styled-icons/bootstrap/Trash';
 import { SquaredCross } from '@styled-icons/entypo/SquaredCross';
 import { PlusCircle } from '@styled-icons/boxicons-regular/PlusCircle';
 import { MinusCircle } from '@styled-icons/boxicons-regular/MinusCircle';
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { CashRegister } from '@styled-icons/fa-solid/CashRegister';
 import Sad from '../images/Sad.gif';
 
@@ -112,7 +112,7 @@ const ShoppingCart = () => {
                         <div className={styles.loader} />
                     </div>
                     :
-                    <Zoom className={styles.zoom} >
+                    <Reveal className={styles.zoom} >
                         <div className={styles.boxShopping} >
                             <div className={styles.sortTitleShopping}>
                                 <p className={styles.styleTitle} >These are your products {nameUser}</p>
@@ -185,7 +185,7 @@ const ShoppingCart = () => {
                                 </div>
                             </div>
                         </div>
-                    </Zoom>
+                    </Reveal>
                 }
             </div>
         </div>

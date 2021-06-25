@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../scss/home/home.module.scss'
-import { Zoom } from "react-awesome-reveal";
+import { Reveal } from "react-awesome-reveal";
 import { GETPRODUCTS, GETCATEGORIES, ADDCART, GETWISH, REMOVECART, GETCART, ADDWISH, REMOVEWISH } from '../actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { Women } from '@styled-icons/remix-line/Women';
@@ -160,7 +160,7 @@ const Home = () => {
                     </div>
                     :
                     <div className={styles.forced}>
-                        <Zoom className={styles.zoom1}>
+                        <Reveal className={styles.zoom1}>
                             <div className={styles.separateHome1} >
                                 <div className={styles.sortEachGenre}>
                                     <p onClick={setGenreMen} className={styles.btnGenre} ><Men className={styles.genreIcon} />Men</p>
@@ -169,9 +169,9 @@ const Home = () => {
                                     <p onClick={setGenreWomen} className={styles.btnGenre} ><Women className={styles.genreIcon} /> Women</p>
                                 </div>
                             </div>
-                        </Zoom>
+                        </Reveal>
                         <div className={styles.separateHome2} >
-                            <Zoom className={styles.zoom2} >
+                            <Reveal className={styles.zoom2} >
                                 <div className={styles.sortCategories} >
                                     {categories && categories.filter((item) => {return item.category.indexOf(changeCategory) >= 0}).map((item, index) => (
                                         <div className={styles.boxCategory} >
@@ -179,8 +179,8 @@ const Home = () => {
                                         </div>
                                     ))}
                                 </div>
-                            </Zoom>
-                            <Zoom className={styles.zoom3} >
+                            </Reveal>
+                            <Reveal className={styles.zoom3} >
                                 <div className={animation ? styles.animation : styles.sortCarts} >
                                     {products && products.filter(item => item.subcategory === categorieFilter && item.category === genre).slice(limits.base, limits.top).map((item, index) => (
                                         <div className={styles.boxCard} >
@@ -258,7 +258,7 @@ const Home = () => {
                                         </div>
                                     ))}
                                 </div>
-                            </Zoom>
+                            </Reveal>
                         </div>
                     </div>
                 }

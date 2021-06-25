@@ -57,6 +57,7 @@ background-color: $Pink;
 text-align: center;
 padding-top: 2%;
 margin-bottom: 2%;
+border-radius: 10px 10px 0px 0px;
 border-bottom: solid .5rem $Black;
 }
 
@@ -78,6 +79,7 @@ justify-content: center;
 background-color: $LightGreen;
 width: 90%;
 margin-bottom: 15%;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -128,6 +130,14 @@ background-color: $White;
 transition-duration: 2s;
 width: 18rem;
 }
+}
+
+.span{
+color: $Black;
+font-size: 2vh;
+margin-bottom: 5%;
+font-weight: bold;
+font-family: 'B612', sans-serif;
 }
 
 .sortButtons{

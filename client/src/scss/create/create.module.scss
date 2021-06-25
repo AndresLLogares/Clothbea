@@ -260,15 +260,81 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 }
 
+.buttonCreateDisabled {
+width: 20%;
+font-size: 3vh;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 1%;
+letter-spacing: .1rem;
+border-radius: 10px 10px 10px 10px;
+border: solid .4rem $Black;
+background-color: $White;
+opacity: 0.5;
+background: {
+image: linear-gradient(45deg,$Red 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $White;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+}
+
+
 .imageCreate{
-    width: 100%;
-    margin-bottom: 5%;
+width: 100%;
+margin-bottom: 5%;
 }
 
 .inputImage{
-    display: flex;
-    flex-direction: column;
-    background-color: $White;
-    width: 100%;
-    height: fit-content;
+display: flex;
+flex-direction: column;
+background-color: $White;
+width: 100%;
+height: fit-content;
+}
+
+.labelCard{
+font-family: 'B612', sans-serif;
+font-size: 4vh;
+font-weight: bold;
+color: $Black;
+}
+
+.labelCardExample{
+font-family: 'B612', sans-serif;
+font-size: 2vh;
+font-weight: bold;
+color: $Black;
+}
+
+.divLabel{
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-bottom: 2%;
+}
+
+.sortForm{
+display: flex;
+width: 90%;
+margin-top: 5%;
+margin-bottom: 5%;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.Card{
+width: 50%;
+padding: 2%;
+border-radius: 10px 10px 10px 10px;
+border: solid .3rem $Red;
+background-color: $White;
 }

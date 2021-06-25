@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom } from 'react-awesome-reveal';
+import { Reveal } from 'react-awesome-reveal';
 import styles from '../../scss/details/details.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { PRODUCTSBYID, GETWISH, GETCART, ADDWISH, REMOVEWISH, ADDCART, REMOVECART, ADDCOMMENT, REMOVECOMMENT } from '../actions';
@@ -155,7 +155,7 @@ const Details = (props) => {
         <div className={styles.containerDetails} >
             <div className={styles.sortDetails} >
                 <ToastContainer />
-                <Zoom className={styles.zoom} >
+                <Reveal className={styles.zoom} >
                     <div className={styles.boxDetails} >
                         {loading ?
                             <div>
@@ -227,8 +227,8 @@ const Details = (props) => {
                             </div>
                         }
                     </div>
-                </Zoom>
-                <Zoom className={styles.zoom} >
+                </Reveal>
+                <Reveal className={styles.zoom} >
                     {loading ?
                         <div>
                             <div className={styles.loader} />
@@ -289,7 +289,7 @@ const Details = (props) => {
                             </div>
                         </div>
                     }
-                </Zoom>
+                </Reveal>
             </div>
         </div>
     )

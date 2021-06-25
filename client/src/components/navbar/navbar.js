@@ -23,11 +23,13 @@ const NavigationBar = () => {
 
     const dispatch = useDispatch()
 
+    const emailUser = localStorage.getItem('Email')
+
     const numberCart = useSelector(state => state.Clothbea.cart)
 
     useEffect(() => {
         setNameUser(localStorage.getItem('UserName'));
-        dispatch(GETCART)
+        dispatch(GETCART(emailUser))
     })
 
     const handleDrop = () => {
