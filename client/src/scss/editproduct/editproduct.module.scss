@@ -49,7 +49,7 @@ justify-content: center;
 width: 90%;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius:  10px 10px 10px 10px;
-background-color: $LightBlue;
+background-color: $LightGreen;
 margin-bottom: 10%;
 }
 
@@ -57,10 +57,10 @@ margin-bottom: 10%;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: $White;
+background-color: $Pink;
 width: 100%;
 border-radius:  10px 10px 0 0 ;
-border-bottom: solid .5rem $Black;
+border-bottom: solid .5rem $DarkBlue;
 }
 
 .titleEdit{
@@ -70,7 +70,7 @@ margin-top: 2%;
 margin-bottom: 2%;
 font-weight: bold;
 font-family: 'Major Mono Display', monospace;
-color: $Black;
+color: $White;
 }
 
 .sortCards{
@@ -99,13 +99,24 @@ border-radius:  10px 10px 10px 10px;
 .titleCard{
 width: 100%;
 display: flex;
-background-color: $Red;
+background-color: $Pink;
 align-items: center;
 text-align: center;
+margin-bottom: 5%;
 justify-content: center;
-
 border-radius:  10px 10px 0 0 ;
-border-bottom: solid .5rem $Black;
+border-bottom: solid .2rem $DarkBlue;
+}
+
+.titleCardOther{
+width: 100%;
+display: flex;
+background-color: $Pink;
+align-items: center;
+text-align: center;
+margin-bottom: 5%;
+justify-content: center;
+border-bottom: solid .2rem $DarkBlue;
 }
 
 .titlecardStyle{
@@ -125,14 +136,15 @@ justify-content: center;
 width: 100%;
 margin-top: 2%;
 margin-bottom: 2%;
-border-bottom: solid .5rem $Black;
+border-top: solid .5rem $Pink;
 }
 
 .imageCard{
-min-width: 10rem;
-max-width: 10rem;
-min-height: 10rem;
-max-height: 10rem;
+margin-top: 5%;
+min-width: 20rem;
+max-width: 20rem;
+min-height: 20rem;
+max-height: 20rem;
 }
 
 .sortButtonCard{
@@ -153,10 +165,10 @@ color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -199,14 +211,14 @@ font-family: 'B612', sans-serif;
 font-size: 4vh;
 font-weight: bold;
 margin-bottom: 5%;
-color: $Black;
+color: $White;
 }
 
 .select{
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -217,7 +229,7 @@ font-family: 'B612', sans-serif;
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -251,10 +263,10 @@ color: $Black;
 padding: 1%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }

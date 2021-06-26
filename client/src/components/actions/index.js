@@ -19,6 +19,7 @@ export const ADD_COMMENT = 'ADDCOMENT';
 export const REMOVE_COMMENT = 'REMOVECOMMENT';
 export const GET_ORDERS = 'GETORDERS';
 export const GET_ORDER_BYID = 'GETORDERBYID';
+export const GET_ORDER_BYUSER = 'GETORDERBYUSER';
 
 let URL = 'http://localhost:5000';
 
@@ -57,9 +58,20 @@ export const GETORDERBYID = (info) => {
         return await axios.post(URL + '/Orders/orderbyId', {
             Id: info
         })
-        .then((response) => response.data)
-        .then(data => 
-            dispatch({type: GET_ORDER_BYID, payload: data}))
+            .then((response) => response.data)
+            .then(data =>
+                dispatch({ type: GET_ORDER_BYID, payload: data }))
+    }
+}
+
+export const GETORDERBYUSER = (info) => {
+    return async (dispatch) => {
+        return await axios.post(URL + '/Orders/orderbyuser', {
+            email: info
+        })
+            .then((response) => response.data)
+            .then(data =>
+                dispatch({ type: GET_ORDER_BYUSER, payload: data }))
     }
 }
 

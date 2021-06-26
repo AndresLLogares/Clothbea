@@ -24,7 +24,7 @@ font-family: 'Major Mono Display', monospace;
 .loader {
 border: 16px solid $White; 
 border-top: 16px solid $Pink; 
-border-left: solid 16px $DarkBlue;
+border-left: solid 16px $LightBlue;
 border-right: solid 16px $Black;
 border-radius: 10%;
 width: 120px;
@@ -41,7 +41,7 @@ animation: spin 2s linear infinite;
 width: 100%;
 min-height: 100vh;
 height: fit-content;
-background-color: $Yellow;
+background-color: $DarkBlue;
 }
 
 .sortShopping{
@@ -68,20 +68,21 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: $LightBlue;
-box-shadow: 5px 5px 5px 5px $Black;
+background-color: $LightGreen;
+box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+border-radius: 10px 10px 10px 10px;
 margin-bottom: 10%;
 }
 
 .sortTitleShopping{
 width: 100%;
-padding-top: 2%;
 display: flex;
 align-items: center;
 text-align: center;
+border-radius: 10px 10px 0px 0px;
 justify-content: center;
-background-color: $Red;
-border-bottom: solid .5rem $Black; 
+background-color: $Pink;
+border-bottom: solid .5rem $DarkBlue; 
 margin-bottom: 5%;
 }
 
@@ -127,10 +128,10 @@ color: $Black;
 padding: 2%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Black 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -156,10 +157,10 @@ color: $Black;
 padding: 2%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Black;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -190,10 +191,10 @@ color: $Black;
 padding: 2%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Black;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -217,10 +218,10 @@ color: $Black;
 padding: 2%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Black;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -323,10 +324,11 @@ display: flex;
 align-items: center;
 justify-content: center;
 width: 30%;
+
 }
 
 .eachBottonDisabeld{
-    display: flex;
+display: flex;
 align-items: center;
 justify-content: center;
 width: 30%;
@@ -340,9 +342,10 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 width: 90%;
-background-color: $DarkGreen;
+background-color: $LightBlue;
 margin-bottom: 5%;
 margin-top: 5%;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 5px 5px 5px 5px $Black;
 padding: 2%;
 }
@@ -352,6 +355,14 @@ display: flex;
 align-items: center;
 justify-content: center;
 width: 30%;
+}
+
+.hr{
+height: 5rem;
+width: 1rem;
+border: transparent;
+border-radius: 10px 10px 10px 10px;
+background-color: $Pink;
 }
 
 .sortSad{

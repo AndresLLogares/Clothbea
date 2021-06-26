@@ -110,10 +110,13 @@ const EditProduct = () => {
                                 {products && products.map((item, index) => (
                                     <div className={styles.boxEachProduct} >
                                         <div className={styles.titleCard} >
-                                            <p className={styles.titlecardStyle}>{item.name}</p>
+                                            <p className={styles.titlecardStyle}>Name: {item.name}</p>
                                         </div>
-                                        <div className={styles.imageCardsize} >
-                                            <img className={styles.imageCard} src={item.image} alt='' />
+                                        <div className={styles.titleCardOther} >
+                                            <p className={styles.titlecardStyle}>Price: $ {item.price}</p>
+                                        </div>
+                                        <div className={styles.titleCardOther} >
+                                            <p className={styles.titlecardStyle}>Id: {item.Id}</p>
                                         </div>
                                         <div className={styles.sortButtonCard} >
                                             <button
@@ -124,6 +127,9 @@ const EditProduct = () => {
                                 ))}
                             </div>
                             <div className={styles.sortForm}>
+                                <div className={styles.imageCardsize} >
+                                    <img className={styles.imageCard} src={productToEdit.image} alt='' />
+                                </div>
                                 <form onSubmit={handleSubmit} className={styles.form}>
                                     <div className={styles.eachInput} >
                                         <label className={styles.label} ><Rename className={styles.iconsLogin} /> Name</label>

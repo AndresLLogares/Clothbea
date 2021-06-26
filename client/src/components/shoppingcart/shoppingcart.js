@@ -177,9 +177,11 @@ const ShoppingCart = () => {
                                 <div className={styles.eachInside} >
                                     <p className={styles.pCart} >Total</p>
                                 </div>
+                                <hr className={styles.hr} />
                                 <div className={styles.eachInside} >
                                     <p className={styles.pCart} >$ {totalProducts}</p>
                                 </div>
+                                <hr className={styles.hr} />
                                 <div className={styles.eachInside} >
                                     <button onClick={handeLinkToPost} className={styles.bottonBuy}>BUY <CashRegister className={styles.cash} /></button>
                                 </div>

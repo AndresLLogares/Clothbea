@@ -19,18 +19,43 @@ font-family: 'Oswald', sans-serif;
 font-family: 'Major Mono Display', monospace;
 }
 
+
+.loader {
+border: 16px solid $White; 
+border-top: 16px solid $Pink; 
+border-left: solid 16px $LightBlue;
+border-right: solid 16px $Black;
+border-radius: 10%;
+width: 120px;
+height: 120px;
+animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+
 .containerCreate{
 width: 100%;
 min-height: 100vh;
 height: fit-content;
-background-color: $Green;
+background-color: $DarkBlue;
 }
 
 .containerCreateCat{
 width: 100%;
 min-height: 150vh;
 height: fit-content;
-background-color: $LightBlue;
+background-color: $DarkBlue;
+}
+
+.ContainerOrders{
+width: 100%;
+min-height: 150vh;
+height: fit-content;
+background-color: $DarkBlue;
 }
 
 .sortCreate{
@@ -56,7 +81,7 @@ flex-direction: column;
 width: 90%;
 align-items: center;
 justify-content: center;
-background-color: $DarkBlue;
+background-color: $LightGreen;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius:  10px 10px 10px 10px;
 margin-bottom: 10%;
@@ -68,7 +93,7 @@ flex-direction: column;
 width: 90%;
 align-items: center;
 justify-content: center;
-background-color: $Green;
+background-color: $LightGreen;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius:  10px 10px 10px 10px;
 margin-bottom: 10%;
@@ -76,10 +101,10 @@ margin-bottom: 10%;
 
 .sortTitle{
 display: flex;
-background-color: $DarkGreen;
+background-color: $Pink;
 width: 100%;
 border-radius:  10px 10px 0 0 ;
-border-bottom: solid .5rem $Black;
+border-bottom: solid .5rem $DarkBlue;
 align-items: center;
 justify-content: center;
 }
@@ -134,12 +159,12 @@ display: flex;
 width: 20%;
 align-items: center;
 justify-content: center;
-background-color: $Red;
+background-color: $Pink;
 padding: 2%;
 margin: 2%;
-border: solid .2rem $Black;
+border: solid .2rem $DarkBlue;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .styleCategory{
@@ -188,7 +213,7 @@ color: $White;
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -199,7 +224,7 @@ font-family: 'B612', sans-serif;
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -244,10 +269,10 @@ color: $Black;
 padding: 1%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Black;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -285,7 +310,6 @@ color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
 }
 }
-
 
 .imageCreate{
 width: 100%;
@@ -335,6 +359,6 @@ flex-direction: column;
 width: 50%;
 padding: 2%;
 border-radius: 10px 10px 10px 10px;
-border: solid .3rem $Red;
+border: solid .3rem $Pink;
 background-color: $White;
 }

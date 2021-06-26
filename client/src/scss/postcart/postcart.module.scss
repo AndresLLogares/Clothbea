@@ -24,7 +24,7 @@ font-family: 'Oswald', sans-serif;
 .loader {
 border: 16px solid $White; 
 border-top: 16px solid $Pink; 
-border-left: solid 16px $DarkBlue;
+border-left: solid 16px $LightBlue;
 border-right: solid 16px $Black;
 border-radius: 10%;
 width: 120px;
@@ -41,7 +41,7 @@ animation: spin 2s linear infinite;
 width: 100%;
 height: fit-content;
 min-height: 100vh;
-background-color: $DarkGreen;
+background-color: $DarkBlue;
 }
 
 .sortPost{
@@ -69,7 +69,7 @@ align-items: center;
 justify-content: center;
 background-color: $LightGreen;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 5px 5px 5px 5px $Black;
+box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 margin-bottom: 10%;
 }
 
@@ -77,9 +77,10 @@ margin-bottom: 10%;
 width: 100%;
 display: flex;
 align-items: center;
+border-radius: 10px 10px 0px 0px;
 justify-content: center;
-background-color: $DarkBlue;
-border-bottom: solid .5rem $Black;
+background-color: $Pink;
+border-bottom: solid .5rem $DarkBlue;
 }
 
 .titlePost{
@@ -137,7 +138,7 @@ color: $White;
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -160,7 +161,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-background-color: $Red;
+background-color: $Pink;
 border: double .3rem $White;
 border-radius: 10px 10px 10px 10px;
 box-shadow: 5px 5px 5px 5px $Black;
@@ -199,7 +200,7 @@ display: flex;
 flex-direction: column;
 width: 90%;
 border: double .5rem $White;
-background-color: $Red;
+background-color: $Pink;
 align-items: center;
 justify-content: center;
 padding: 2%;
@@ -238,10 +239,10 @@ color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }

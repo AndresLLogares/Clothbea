@@ -23,7 +23,7 @@ font-family: 'Major Mono Display', monospace;
 width: 100%;
 height: fit-content;
 min-height: 100vh;
-background-color: $LightBlue;
+background-color: $DarkBlue;
 }
 
 .sortAbout{
@@ -48,6 +48,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 background-color: $LightGreen;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 margin-bottom: 10%;
 }
@@ -57,7 +58,8 @@ display: flex;
 width: 100%;
 align-items: center;
 justify-content: center;
-background-color: $Red;
+background-color: $Pink;
+border-radius: 10px 10px 0px 0px;
 border-bottom: solid .4rem $DarkBlue;
 }
 
@@ -75,6 +77,7 @@ margin-bottom: 3%;
 flex-direction: row;
 align-items: center;
 background-color: $LightBlue;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 justify-content: center;
 }

@@ -136,8 +136,8 @@ const Payment = (props) => {
             }
         },
         invalid: {
-            iconColor: "#d90429",
-            color: "#d90429"
+            iconColor: "#EF476F",
+            color: "#EF476F"
         },
         complete: {
             iconColor: "#06D6A0"

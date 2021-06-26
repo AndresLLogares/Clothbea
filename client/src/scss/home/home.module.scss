@@ -21,7 +21,7 @@ font-family: 'Major Mono Display', monospace;
 
 .containeHome{
 width: 100%;
-background-color: $LightGreen; 
+background-color: $DarkBlue; 
 height: fit-content;
 min-height: 100vh;
 }
@@ -29,7 +29,7 @@ min-height: 100vh;
 .loader {
 border: 16px solid $White; 
 border-top: 16px solid $Pink; 
-border-left: solid 16px $DarkBlue;
+border-left: solid 16px $LightBlue;
 border-right: solid 16px $Black;
 border-radius: 10%;
 width: 120px;
@@ -96,7 +96,7 @@ align-items:center;
 justify-content:center;
 font-size: 4vh;
 font-family: 'B612', sans-serif;
-background-color: $Red;
+background-color: $Pink;
 border: transparent;
 color: $White;
 border-radius: 10px 10px 10px 10px;
@@ -151,9 +151,9 @@ display: flex;
 align-items:flex-start;
 justify-content:left;
 flex-direction: column;
-background-color: $Green;
+background-color: $DarkGreen;
 border-radius: 10px/30px;
-border: solid .5rem $Black;
+border: solid .5rem $Pink;
 padding: 2%;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
 }

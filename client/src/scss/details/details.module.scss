@@ -22,7 +22,7 @@ font-family: 'Major Mono Display', monospace;
 .loader {
 border: 16px solid $White; 
 border-top: 16px solid $Pink; 
-border-left: solid 16px $DarkBlue;
+border-left: solid 16px $LightBlue;
 border-right: solid 16px $Black;
 border-radius: 10%;
 width: 120px;
@@ -38,7 +38,7 @@ animation: spin 2s linear infinite;
 
 .containerDetails{
 width: 100%;
-background-color: $DarkGreen; 
+background-color: $DarkBlue; 
 height: fit-content;
 min-height: 100vh;
 }
@@ -62,12 +62,13 @@ justify-content: center;
 
 .boxDetails{
 width: 90%;
-background-color: $LightBlue;
+background-color: $Green;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 padding: 2%;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 margin-bottom: 5%;
 }
@@ -96,7 +97,7 @@ justify-content: flex-start;
 display: flex;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius: 10px 10px 10px 10px;
-background-color: $DarkBlue;
+background-color: $LightGreen;
 padding: 2%;
 margin: 0;
 justify-content: center;
@@ -126,7 +127,7 @@ width: 10rem;
 height: 2.5rem;
 background-color: $White;
 color: $Black;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -168,13 +169,13 @@ justify-content: center;
 width: 40%;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
-color: $White;
+color: $Black;
 padding: 1%;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
-background-color: transparent;
+border: solid .4rem $DarkBlue;
+background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -182,7 +183,6 @@ transition: background 300ms ease-in-out;
 &:hover {
 transition-duration: 0.2s;
 background-position: 0;
-border: solid .4rem $White;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
 }
@@ -194,12 +194,12 @@ width: 30%;
 
 .secondBox{
 display: flex;
-width: 90%;
-background-color: $LightBlue;
-padding: 2%;
+width: 95%;
+background-color: $LightGreen;
 justify-content: center;
 align-items: center;
 margin-bottom: 10%;
+border-radius: 10px 10px 10px 10px;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -215,10 +215,11 @@ justify-content: center;
 width: 100%;
 display: flex;
 align-items: center;
-margin-top: 2%;
-margin-bottom: 3%;
 justify-content: center;
-border-bottom: solid 1rem $Red;
+background-color: $Pink;
+border-radius: 10px 10px 0px 0px;
+border-bottom: solid .5rem $DarkBlue;
+margin-bottom: 2%;
 }
 
 .titleComment{
@@ -259,7 +260,7 @@ width: 10rem;
 height: 2.5rem;
 background-color: $White;
 color: $Black;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -277,7 +278,7 @@ height: 10rem;
 background-color: $White;
 color: $Black;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -300,14 +301,14 @@ width: 70%;
 font-size: 3.5vh;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
-color: $White;
+color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
-background-color: transparent;
+border: solid .4rem $DarkBlue;
+background-color: $White;
 background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -316,7 +317,6 @@ transition: background 300ms ease-in-out;
 transition-duration: 0.2s;
 background-position: 0;
 color: $White;
-border: solid .4rem $White;
 cursor: url(../../components/images/pointer.png),pointer;
 }
 }

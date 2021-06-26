@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt';
 import { Create } from '@styled-icons/ionicons-outline/Create';
 import { CreateNewFolder } from '@styled-icons/material-outlined/CreateNewFolder';
+import { BorderWidth } from '@styled-icons/bootstrap/BorderWidth'
+
 const DropUser = () => {
 
     const dispatch = useDispatch()
@@ -30,7 +32,7 @@ const DropUser = () => {
     return (
         <div className={styles.ContainerDrop} >
             {levelUser === 'User' ?
-                <div className={styles.auxDiv} > 
+                <div className={styles.auxDiv} >
                     {googleId === null ?
                         <div className={styles.BoxDrop} >
                             <div className={styles.SortEachDrop} >
@@ -46,6 +48,11 @@ const DropUser = () => {
                                     <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
                                 </div>
                             </Link>
+                            <Link style={{ textDecoration: 'none' }} to='/OrdersUsers'>
+                                <div className={styles.SortEachDrop} >
+                                    <p className={styles.StyleDrop}><BorderWidth className={styles.IconDrop} />Orders</p>
+                                </div>
+                            </Link>
                         </div>
                         :
                         <div className={styles.BoxDrop} >
@@ -55,6 +62,11 @@ const DropUser = () => {
                             <Link style={{ textDecoration: 'none' }} to='/Wishlist'>
                                 <div className={styles.SortEachDrop} >
                                     <p className={styles.StyleDrop}><StarFill className={styles.IconDrop} />Wishlist</p>
+                                </div>
+                            </Link>
+                            <Link style={{ textDecoration: 'none' }} to='/OrdersUsers'>
+                                <div className={styles.SortEachDrop} >
+                                    <p className={styles.StyleDrop}><BorderWidth className={styles.IconDrop} />Orders</p>
                                 </div>
                             </Link>
                         </div>
@@ -78,6 +90,11 @@ const DropUser = () => {
                     <Link style={{ textDecoration: 'none' }} to='/CreateProduct'>
                         <div className={styles.SortEachDrop} >
                             <p className={styles.StyleDrop}><CreateNewFolder className={styles.IconDrop} />Create Product</p>
+                        </div>
+                    </Link>
+                    <Link style={{ textDecoration: 'none' }} to='/OrdersAdmin'>
+                        <div className={styles.SortEachDrop} >
+                            <p className={styles.StyleDrop}><BorderWidth className={styles.IconDrop} />Orders</p>
                         </div>
                     </Link>
                 </div>

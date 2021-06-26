@@ -92,6 +92,24 @@ OrderRoute.post('/orderbyuser', async (req, res) => {
         })
 })
 
+OrderRoute.post('/changestatus', async (req, res) => {
+    const { Id, status } = req.body
+
+    await Order.findOne({ Id: Id })
+        .then(order => {
+            if (!order) {
+                return res.send('Order doen´t exists')
+            }
+            else {
+                order.status = status
+                order
+                    .save()
+                    .then(response => res.send('Order modified'))
+                    .catch(err => res.send(err))
+            }
+        })
+})
+
 OrderRoute.post('/paymentcheckout', async (req, res) => {
 
     const Id = req.body.Id

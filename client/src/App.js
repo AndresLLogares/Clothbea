@@ -15,6 +15,8 @@ import EditProduct from './components/editproduct/editproduct.js';
 import CreateCategory from './components/createcategory/createcategory.js';
 import CreateProduct from './components/createproduct/createproduct.js';
 import Payment from './components/payment/payment.js';
+import OrdersAdmin from './components/orders/ordersadmin.js';
+import OrdersUsers from './components/orders/ordersuser.js';
 import './scss/app/app.css';
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
       <Route exact path='/CreateProduct' component={Navbar} />
       <Route exact path='/CreateCategory' component={Navbar} />
       <Route exact path='/Payment' component={Navbar} />
+      <Route exact path='/OrdersAdmin' component={Navbar} />
+      <Route exact path='/OrdersUsers' component={Navbar} />
       <ScrollToTop />
       <Switch>
         <Route exact path='/' component={LandPage} />
@@ -47,6 +51,8 @@ function App() {
         <Route exact path='/CreateProduct' component={CreateProduct} />
         <Route exact path='/CreateCategory' component={CreateCategory} />
         <Route exact path='/Payment' component={Payment} />
+        <Route exact path='/OrdersAdmin' component={OrdersAdmin} />
+        <Route exact path='/OrdersUsers' component={OrdersUsers} />
       </Switch>
     </BrowserRouter>
   );

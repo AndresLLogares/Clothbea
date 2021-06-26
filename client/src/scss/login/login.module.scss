@@ -58,7 +58,7 @@ text-align: center;
 padding-top: 2%;
 margin-bottom: 2%;
 border-radius: 10px 10px 0px 0px;
-border-bottom: solid .5rem $Black;
+border-bottom: solid .5rem $DarkBlue;
 }
 
 .fontTitle{
@@ -113,14 +113,14 @@ font-family: 'B612', sans-serif;
 font-size: 4vh;
 font-weight: bold;
 margin-bottom: 5%;
-color: $Black;
+color: $White;
 }
 
 .input{
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
-border:solid .2rem $Red ;
+border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
 border-radius: 10px 10px 10px 10px;
@@ -165,10 +165,10 @@ color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
+border: solid .4rem $DarkBlue;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
