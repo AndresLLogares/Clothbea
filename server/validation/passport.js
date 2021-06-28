@@ -7,11 +7,11 @@ const User = mongoose.model("users");
 import dotenv from 'dotenv';
 import passport from 'passport';
 dotenv.config()
-const secret = process.env.Secret
-
+const secret = process.env.SECRET
+console.log(secret)
 const opts = {};
 opts.jwtFromRequest = ExtractJwtaux.fromAuthHeaderAsBearerToken();
-opts.secretOrKey = secret;
+opts.secretOrKey = process.env.SECRET;
 
 export const passportconfig =  passport => {
     passport.use(

@@ -6,6 +6,7 @@ import { GETORDERBYUSER } from '../actions';
 import axios from 'axios';
 import { Reveal } from "react-awesome-reveal";
 import stylesOrders from '../../scss/orders/orders.module.scss';
+import SadBag from '../images/SadBag.gif';
 
 const OrdersUsers = () => {
 
@@ -15,7 +16,7 @@ const OrdersUsers = () => {
 
     const nameUser = localStorage.getItem('UserName')
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     let orders = useSelector(state => state.Clothbea.ordersByUser)
 
@@ -26,14 +27,17 @@ const OrdersUsers = () => {
         setLoading(false)
     }, [])
 
-    if (typeof orders !== Array) {
+    if (typeof orders !== Array || orders !== "order doesn't exist" ) {
         orders = [orders]
     }
 
-    const handleChange = async (Id) => {
+    console.log(orders.toString())
+
+    const handleChange = async (Id, email) => {
         await axios.post(URL + '/Orders/changestatus', {
             Id: Id,
-            status: 'Canceled'
+            status: 'Canceled',
+            email: email
         })
             .then((response) => {
                 toast.info(response.data)
@@ -56,7 +60,7 @@ const OrdersUsers = () => {
                                 <p className={styles.titleCreate} >Orders of {nameUser}</p>
                             </div>
                             <div className={stylesOrders.sortOders}>
-                                {orders && orders.map((item, index) => (
+                            {orders.length > 0 && orders.toString() !== "order doesn't exist" ? orders.map((item, index) => (
                                     <div className={stylesOrders.sortEachOrder}>
                                         <div className={stylesOrders.sortUpOrder}>
                                             <div className={stylesOrders.eachUpUser} >
@@ -96,14 +100,20 @@ const OrdersUsers = () => {
                                         <div className={stylesOrders.sortButtons} >
                                             <div className={stylesOrders.eachButton} >
                                                 {item.status !== 'Canceled' ?
-                                                    <button onClick={() => handleChange(item.Id)} className={stylesOrders.buttons} >Cancel</button>
+                                                    <button onClick={() => handleChange(item.Id, item.email)} className={stylesOrders.buttonsUser} >Cancel</button>
                                                     :
-                                                    <button className={stylesOrders.buttonsDisabled} >Cancel</button>
+                                                    <button className={stylesOrders.buttonsUserDisabled} >Cancel</button>
                                                 }
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                )) 
+                                :
+                                    <div className={stylesOrders.empty}>
+                                        <p className={stylesOrders.pEmpty}>You doesn't have any order emited</p>
+                                        <img className={stylesOrders.Bag} src={SadBag} alt='' />
+                                    </div>
+                                }
                             </div>
                         </div>
                     }

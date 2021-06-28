@@ -26,7 +26,7 @@ const DropUser = () => {
 
     const handleLogOut = async () => {
         await dispatch(LOGOUTUSER())
-        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 500)
+        setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Home', 500)
     }
 
     return (

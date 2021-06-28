@@ -159,3 +159,33 @@ width: 30%;
 .imageAbout{
 width: 90%;
 }
+
+@media (max-width: 1248px) {
+
+    .sortAbout{
+        padding-top: 40%;
+    }
+
+    .sortTitle1{
+        display: flex;
+        text-align: center;   
+    }
+
+    .secondBox{
+        display: flex;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        flex-direction: column-reverse;
+    }
+
+    .firstSide{
+        width: 90%;
+    }
+
+    .secondSide{
+        width: 90%;
+        margin-bottom: 10%;
+        align-items: center;
+        justify-content: center;
+    }
+}

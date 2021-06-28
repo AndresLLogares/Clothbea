@@ -12,25 +12,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import setAuthToken from '../Utils/SethAuthToken.js';
+import { GOOGLEID } from '../Secret/secret.js'
 
 const Login = () => {
 
     const dispatch = useDispatch()
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const [infoUser, setInfoUser] = useState({
         username: '',
         email: '',
-        name: '',
-        lastname: '',
         password: '',
         controlpassword: '',
-        state: '',
-        country: '',
-        city: '',
-        address: '',
-        ZIP: ''
     })
 
     const [handleLogin, setHandleLogin] = useState(true)
@@ -52,7 +46,7 @@ const Login = () => {
                 }
                 else {
                     toast.success(`Hello ${response.data.username}`)
-                    setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
+                    setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Home', 1000)
                 }
                 const { token } = response.data;
                 const { username } = response.data;
@@ -72,15 +66,8 @@ const Login = () => {
         setInfoUser({
             username: '',
             email: '',
-            name: '',
-            lastname: '',
             password: '',
-            controlpassword: '',
-            country: '',
-            state: '',
-            city: '',
-            address: '',
-            ZIP: ''
+            controlpassword: ''
         })
     }
 
@@ -92,15 +79,7 @@ const Login = () => {
         await axios.post(URL + '/Users/signup', {
             username: infoUser.username,
             password: infoUser.password,
-            name: infoUser.name,
-            lastname: infoUser.lastname,
             email: infoUser.email.toLocaleLowerCase(),
-            state: infoUser.state || '',
-            city: infoUser.city || '',
-            address: infoUser.address || '',
-            country: infoUser.country || '',
-            ZIP: infoUser.ZIP || ''
-
         })
             .then((response) => response.data)
             .then(data => {
@@ -109,16 +88,9 @@ const Login = () => {
 
         setInfoUser({
             username: '',
-            name: '',
-            lastname: '',
             email: '',
             password: '',
-            controlpassword: '',
-            country: '',
-            state: '',
-            city: '',
-            address: '',
-            ZIP: ''
+            controlpassword: ''
         })
     }
 
@@ -149,7 +121,7 @@ const Login = () => {
                 }
                 else {
                     toast.success(`Hello ${response.data.username}`)
-                    setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
+                    setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Home', 1000)
                 }
                 const { token } = response.data;
                 const { username } = response.data;
@@ -165,26 +137,26 @@ const Login = () => {
         setInfoUser({
             username: '',
             email: '',
-            name: '',
-            lastname: '',
             password: '',
-            controlpassword: '',
-            country: '',
-            state: '',
-            city: '',
-            address: '',
-            ZIP: ''
+            controlpassword: ''
         })
     }
 
     const handleGoogleError = (response) => {
         toast.error("Error with Google")
+        console.log(response)
+    }
+
+    const handleAdmin = () => {
+        setInfoUser({ email: 'adminClothbea@hotmail.com', password: '123456' })
     }
 
     return (
         <div className={styles.containerLogin} >
             <div className={styles.sortLogin} >
-                <ToastContainer />
+                <ToastContainer
+                    autoClose={800}
+                />
                 <Reveal className={styles.sortZoom}>
                     <div className={styles.boxLogin} >
                         <div className={styles.sortTitle} >
@@ -192,6 +164,14 @@ const Login = () => {
                         </div>
                         {handleLogin ?
                             <div className={styles.sortForm}>
+                                <div className={styles.addInfo}>
+                                    <div className={styles.titleAdd}>
+                                        <p className={styles.pInfo} >If you want to see the administrator privileges you can use the following data:</p>
+                                    </div>
+                                    <div className={styles.littleBox} >
+                                        <button onClick={handleAdmin} className={styles.buttonInfo}>adminClothbea@hotmail.com</button>
+                                    </div>
+                                </div>
                                 <form onSubmit={handleSubmitLogin} className={styles.form}>
                                     <div className={styles.eachInput} >
                                         <label className={styles.label} ><Mail className={styles.iconsLogin} /> Email</label>
@@ -229,7 +209,7 @@ const Login = () => {
                                 <div className={styles.sortGoogle} >
                                     <div className={styles.buttonGoogle} >
                                         <GoogleLogin
-                                            clientId="185504142730-agvph6n2ktg1hf53mm0krm7193rgfji7.apps.googleusercontent.com"
+                                            clientId={GOOGLEID}
                                             className={styles.google}
                                             buttonText="Login with Google"
                                             onSuccess={handleGoogleSucces}

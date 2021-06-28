@@ -39,7 +39,7 @@ animation: spin 2s linear infinite;
 
 .containerCreate{
 width: 100%;
-min-height: 100vh;
+min-height: 150vh;
 height: fit-content;
 background-color: $DarkBlue;
 }
@@ -362,3 +362,81 @@ border-radius: 10px 10px 10px 10px;
 border: solid .3rem $Pink;
 background-color: $White;
 }
+
+@media (max-width: 1248px) {
+
+.sortCreate{
+padding-top: 40%;
+}
+
+.sortCategories{
+display: flex;
+width: 90%;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.eachCategory{
+width: 90%;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.sortTitle{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.titleCreate{
+font-size: 3vh;
+text-align: center;
+}
+
+.sortForm{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.form{
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.eachInput{
+width:80%;
+display: flex;
+align-items:flex-start;
+justify-content: left;
+}
+
+.label{
+font-size: 3vh;
+}
+
+.Card{
+width: 100%;
+margin-top: 10%;
+}
+
+.labelCard{
+font-size: 2vh;
+}
+
+.buttonCreate{
+margin-top: 10%;
+width: 50%;
+}
+
+.buttonCreateDisabled{
+margin-top: 10%;
+width: 50%;
+}
+}   

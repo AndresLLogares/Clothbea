@@ -6,13 +6,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { GETORDERS } from '../actions';
 import { Reveal } from "react-awesome-reveal";
-
+import SadBag from '../images/SadBag.gif';
 
 const OrdersAdmin = () => {
 
     const dispatch = useDispatch()
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
+
+    const emailUser = localStorage.getItem('Email')
 
     const orders = useSelector(state => state.Clothbea.orders)
 
@@ -23,10 +25,11 @@ const OrdersAdmin = () => {
         setLoading(false)
     }, [])
 
-    const handleSubmitSend = async (Id) => {
+    const handleSubmitSend = async (Id, email) => {
         await axios.post(URL + '/Orders/changestatus', {
             Id: Id,
-            status: 'Sended'
+            status: 'Sended',
+            email: email
         })
             .then((response) => {
                 toast.info(response.data)
@@ -34,10 +37,11 @@ const OrdersAdmin = () => {
         await dispatch(GETORDERS())
     }
 
-    const handleSubmitCancel = async (Id) => {
+    const handleSubmitCancel = async (Id, email) => {
         await axios.post(URL + '/Orders/changestatus', {
             Id: Id,
-            status: 'Canceled'
+            status: 'Canceled',
+            email: email
         })
             .then((response) => {
                 toast.info(response.data)
@@ -60,7 +64,7 @@ const OrdersAdmin = () => {
                                 <p className={styles.titleCreate} >Orders</p>
                             </div>
                             <div className={stylesOrders.sortOders}>
-                                {orders && orders.map((item, index) => (
+                                {orders.length > 0 ? orders.map((item, index) => (
                                     <div className={stylesOrders.sortEachOrder}>
                                         <div className={stylesOrders.sortUpOrder}>
                                             <div className={stylesOrders.eachUp} >
@@ -88,6 +92,7 @@ const OrdersAdmin = () => {
                                                     <div className={stylesOrders.eachProduct} >
                                                         <p className={stylesOrders.pUp} >Price X unity: $ {item.price}</p>
                                                     </div>
+                                                    <hr className={styles.hr} />
                                                 </div>
                                             ))}
                                             <div className={stylesOrders.sortTitleProducts} >
@@ -103,21 +108,27 @@ const OrdersAdmin = () => {
                                         <div className={stylesOrders.sortButtons} >
                                             <div className={stylesOrders.eachButton} >
                                                 {item.status !== 'Sended' && item.status !== 'Canceled' ?
-                                                    <button onClick={() => handleSubmitSend(item.Id)} className={stylesOrders.buttons} >Send</button>
+                                                    <button onClick={() => handleSubmitSend(item.Id, item.email)} className={stylesOrders.buttons} >Send</button>
                                                     :
                                                     <button className={stylesOrders.buttonsDisabled} >Send</button>
                                                 }
                                             </div>
                                             <div className={stylesOrders.eachButton} >
                                                 {item.status !== 'Canceled' ?
-                                                    <button onClick={() => handleSubmitCancel(item.Id)} className={stylesOrders.buttons} >Cancel</button>
+                                                    <button onClick={() => handleSubmitCancel(item.Id, item.email)} className={stylesOrders.buttons} >Cancel</button>
                                                     :
                                                     <button className={stylesOrders.buttonsDisabled} >Cancel</button>
                                                 }
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                ))
+                                    :
+                                    <div className={stylesOrders.empty}>
+                                        <p className={stylesOrders.pEmpty}>Any order was emited</p>
+                                        <img className={stylesOrders.Bag} src={SadBag} alt='' />
+                                    </div>
+                                }
                             </div>
                         </div>
                     }

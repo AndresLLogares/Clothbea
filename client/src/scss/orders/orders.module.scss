@@ -160,6 +160,57 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 }
 
+.buttonsUser{
+width: 25%;
+font-size: 3vh;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 1%;
+letter-spacing: .1rem;
+border-radius: 10px 10px 10px 10px;
+border: solid .4rem $DarkBlue;
+background-color: $White;
+background: {
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $White;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+}
+
+.buttonsUserDisabled{
+width: 25%;
+font-size: 3vh;
+font-family: 'Oswald', sans-serif;
+font-weight: bold;
+color: $Black;
+padding: 1%;
+letter-spacing: .1rem;
+border-radius: 10px 10px 10px 10px;
+border: solid .4rem $DarkBlue;
+background-color: $White;
+opacity: 0.5;
+background: {
+image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+position: 100%;
+size: 400%;
+}
+transition: background 300ms ease-in-out;
+&:hover {
+transition-duration: 0.2s;
+background-position: 0;
+color: $White;
+cursor: url(../../components/images/pointer.png),pointer;
+}
+}
+
 .buttonsDisabled{
 width: 50%;
 font-size: 3vh;
@@ -183,5 +234,85 @@ transition-duration: 0.2s;
 background-position: 0;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
+}
+}
+
+.empty{
+display: flex;
+align-items: center;
+width: 100%;
+flex-direction: column;
+justify-content: center;
+}
+
+.pEmpty{
+color: $White;
+font-size: 3vh;
+font-family: 'B612', sans-serif;
+}
+
+.Bag{
+width: 50%;
+border-radius: 50%;
+}
+
+@media (max-width: 1248px) {
+
+.sortUpOrder{
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+}
+
+.eachUp{
+width: 95%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.sortEachProduct{
+display: flex;
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: center;
+border-bottom: solid .5rem $Pink;
+
+}
+
+.eachProduct{
+width: 90%;
+align-items: center;
+justify-content: center;
+}
+.pUp{
+margin: 0;
+padding: 0;
+margin-top: 2%;
+margin-bottom: 2%;
+font-size: 2vh;
+}
+
+.sortTitleProducts{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.createBox{
+margin-bottom: 10%;
+}
+
+.sortOders{
+margin-bottom: 5%;
+}
+
+.sortEachOrder{
+margin-bottom: 10%;
 }
 }

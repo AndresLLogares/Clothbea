@@ -14,7 +14,7 @@ const Reset = () => {
         newpassword: ''
     })
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const handleInput = (event) => {
         setDataUser({ ...dataUser, [event.target.name]: event.target.value })
@@ -42,7 +42,9 @@ const Reset = () => {
     return (
         <div className={styles.containerReset} >
             <div className={styles.sortReset} >
-                <ToastContainer />
+                <ToastContainer
+                    autoClose={800}
+                />
                 <Reveal className={styles.Zoom} >
                     <div className={styles.boxReset} >
                         <div className={styles.sortTitle} >

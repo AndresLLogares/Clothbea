@@ -15,7 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const PostCart = (props) => {
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const search = props.location.search;
 
@@ -26,8 +26,6 @@ const PostCart = (props) => {
     const dispatch = useDispatch()
 
     let Id = 0
-
-    const currentUser = useSelector(state => state.Clothbea.currentuser)
 
     const orders = useSelector(state => state.Clothbea.orders)
 
@@ -53,7 +51,6 @@ const PostCart = (props) => {
     }
 
     useEffect(async () => {
-        await dispatch(CURRENTUSER(emailUser))
         await dispatch(GETCART(emailUser))
         await dispatch(GETORDERS())
         !userCart ? setLoading(true) : setLoading(false);
@@ -62,8 +59,6 @@ const PostCart = (props) => {
     const handleInputChange = (event) => {
         setDataUser({ ...dataUser, [event.target.name]: event.target.value })
     }
-
-    console.log(orders)
 
     const handleSubmitChange = async (event) => {
         event.preventDefault()
@@ -83,7 +78,7 @@ const PostCart = (props) => {
             .then(response => {
                 if (response.data === 'Order created') {
                     toast.info(response.data)
-                    setTimeout(() => window.location.href = `http://localhost:3000/Payment?Id=${Id}`, 2000)
+                    setTimeout(() => window.location.href = `https://clothbea.netlify.app/Payment?Id=${Id}`, 1000)
                 }
                 else {
                     toast.error(response.data)
@@ -103,7 +98,9 @@ const PostCart = (props) => {
 
     return (
         <div className={styles.ContainerPost} >
-            <ToastContainer />
+            <ToastContainer
+                autoClose={800}
+            />
             <div className={styles.sortPost} >
                 {loading ?
                     <div>
@@ -113,7 +110,8 @@ const PostCart = (props) => {
                     <Reveal className={styles.zoom} >
                         <div className={styles.boxPost} >
                             <div className={styles.sortTitle} >
-                                <p className={styles.titlePost} >Shipping Information <TruckMonster className={styles.truck} /> </p>
+                                <p className={styles.titlePost} >Shipping Information </p>
+                                <p className={styles.titlePost}> <TruckMonster className={styles.truck} />  </p>
                             </div>
                             <div className={styles.sortForm} >
                                 <form onSubmit={handleSubmitChange} className={styles.form} >

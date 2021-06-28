@@ -26,11 +26,11 @@ align-items: center;
 justify-content: center;
 text-align: center;
 top: 100%;
-right: 5%;
+right: 2%;
 }
 
 .auxDiv{
-    width: 100%;
+width: 100%;
 }
 
 .BoxDrop{
@@ -88,11 +88,24 @@ animation-iteration-count: infinite;
 100% {transform: scale(1) rotate(0);} 
 } 
 
-
 .IconDrop{
 min-width: 2rem;
 max-width: 2rem;
 max-height: 2rem;
 min-height: 2rem;
 padding-right: 4%;
+}
+
+@media (max-width: 1248px) {
+.ContainerDrop{
+right: 7%;
+
+.StyleDrop{
+margin: 0;
+padding: 0;
+margin-top: 5%;
+padding-left: 5%;
+margin-bottom: 2%;
+}
+}
 }

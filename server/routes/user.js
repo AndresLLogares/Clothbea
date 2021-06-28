@@ -7,7 +7,7 @@ dotenv.config()
 import User from '../models/users.js';
 import { OAuth2Client } from 'google-auth-library';
 
-const secret = process.env.Secret;
+const secret = process.env.SECRET;
 
 const clientId = process.env.GOOGLE_CLIENT_ID;
 

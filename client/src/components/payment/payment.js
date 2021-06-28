@@ -4,7 +4,7 @@ import { Reveal } from "react-awesome-reveal";
 import styles from '../../scss/create/create.module.scss';
 import { ToastContainer, toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
-import { GETORDERBYID } from '../actions';
+import { GETORDERBYID, GETCART } from '../actions';
 import { Mail } from '@styled-icons/entypo/Mail';
 import { Address } from '@styled-icons/entypo/Address';
 import { City } from '@styled-icons/boxicons-solid/City';
@@ -17,11 +17,13 @@ import axios from 'axios';
 
 const Payment = (props) => {
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const search = props.location.search;
 
     const params = new URLSearchParams(search);
+
+    const emailUser = localStorage.getItem('Email')
 
     const Id = params.get('Id');
 
@@ -36,6 +38,10 @@ const Payment = (props) => {
         email: '',
     })
 
+    let userCart = useSelector(state => state.Clothbea.cart)
+
+    console.log(userCart)
+
     const [city, setCity] = useState(' ')
 
     const [line1, setLine1] = useState(' ')
@@ -48,11 +54,10 @@ const Payment = (props) => {
 
     const order = useSelector(state => state.Clothbea.ordersById)
 
-    useEffect(() => {
-        dispatch(GETORDERBYID(Id))
+    useEffect( async () => {
+        await dispatch(GETCART(emailUser))
+        await dispatch(GETORDERBYID(Id))
     }, [])
-
-    console.log(order)
 
     const handleInputChange = (event) => {
         setDataPayment({ ...dataPayment, [event.target.name]: event.target.value })
@@ -81,7 +86,6 @@ const Payment = (props) => {
     const handleSubmit = async (event) => {
 
         event.preventDefault()
-        console.log(elementsStripe.getElement(CardElement))
 
         const { error, paymentMethod } = await stripeCall.createPaymentMethod({
             type: 'card',
@@ -102,12 +106,13 @@ const Payment = (props) => {
                 Id: Id,
                 stripeId: paymentMethod.id,
                 amount: order.total * 10,
-                email: order.email
+                email: emailUser,
+                products : userCart
             })
                 .then((response) => {
                     if (response.data === "Payment succesful") {
                         toast.success(response.data)
-                        setTimeout(() => window.location.href = 'http://localhost:3000/Home', 2000)
+                        setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Home', 1000)
                     }
                     else {
                         return toast.error(response.data)
@@ -129,7 +134,7 @@ const Payment = (props) => {
     const iframeStyles = {
         base: {
             color: "#231B1B",
-            fontSize: "25px",
+            fontSize: "15px",
             iconColor: "#0C637F",
             "::placeholder": {
                 color: "#231B1B"

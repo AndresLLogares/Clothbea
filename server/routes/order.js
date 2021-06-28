@@ -4,11 +4,23 @@ import Order from '../models/orders.js';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
 import User from '../models/users.js';
+import Products from '../models/products.js';
+import NodeMailer from 'nodemailer';
 dotenv.config()
+
+const PassEmail = process.env.PASSEMAIL
 
 const STRIPEKEY = process.env.STRIPE
 
 const stripeClass = new Stripe(STRIPEKEY)
+
+let transporter = NodeMailer.createTransport({
+    service: 'hotmail',
+    auth: {
+        user: 'Clothbea@hotmail.com',
+        pass: PassEmail
+    }
+})
 
 OrderRoute.post('/createorder', async (req, res) => {
 
@@ -93,7 +105,26 @@ OrderRoute.post('/orderbyuser', async (req, res) => {
 })
 
 OrderRoute.post('/changestatus', async (req, res) => {
-    const { Id, status } = req.body
+    const { Id, status, email } = req.body
+
+    let options = ''
+
+    if (status === 'Canceled') {
+        options = {
+            from: 'Clothbea@hotmail.com',
+            to: email,
+            subject: 'Your order was canceled',
+            text: 'We hope see you again.'
+        };
+    }
+    else {
+        options = {
+            from: 'Clothbea@hotmail.com',
+            to: email,
+            subject: 'Your order was Sended',
+            text: 'In a few days your order is arriving'
+        };
+    }
 
     await Order.findOne({ Id: Id })
         .then(order => {
@@ -101,6 +132,13 @@ OrderRoute.post('/changestatus', async (req, res) => {
                 return res.send('Order doen´t exists')
             }
             else {
+                transporter.sendMail(options, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                });
                 order.status = status
                 order
                     .save()
@@ -113,9 +151,18 @@ OrderRoute.post('/changestatus', async (req, res) => {
 OrderRoute.post('/paymentcheckout', async (req, res) => {
 
     const Id = req.body.Id
+
     const StripeId = req.body.stripeId
+
     const amount = req.body.amount
+
     const email = req.body.email
+
+    const products = req.body.products
+
+    let count = 0
+
+    console.log(products[count].Id)
 
     await Order.findOne({ Id: Id })
         .then(async (order) => {
@@ -138,6 +185,29 @@ OrderRoute.post('/paymentcheckout', async (req, res) => {
                         })
                     order.status = "Paided"
                     order.save()
+                    while (count < products.length) {
+                        await Products.findOne({ Id: products[count].Id })
+                            .then(product => {
+                                product.stock = product.stock - products[count].quantity
+                                product.save()
+                            })
+                        count++
+                    }
+
+                    const options = {
+                        from: 'Clothbea@hotmail.com',
+                        to: email,
+                        subject: 'Thanks for your purchase!!',
+                        text: 'Now our admins are going to send you your clothes in a few days.'
+                    };
+
+                    transporter.sendMail(options, function (error, info) {
+                        if (error) {
+                            console.log(error);
+                        } else {
+                            console.log('Email sent: ' + info.response);
+                        }
+                    });
                     return res.send("Payment succesful")
                 }
                 else {

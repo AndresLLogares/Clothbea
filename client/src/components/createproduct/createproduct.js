@@ -26,7 +26,7 @@ const CreateProduct = () => {
         price: ''
     })
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const dispatch = useDispatch()
 

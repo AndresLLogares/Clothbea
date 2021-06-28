@@ -10,7 +10,7 @@ import { Reveal } from "react-awesome-reveal";
 
 const CreateCategory = () => {
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const [category, setCategory] = useState('')
 

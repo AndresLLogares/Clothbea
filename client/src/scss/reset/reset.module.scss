@@ -153,8 +153,22 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 }
 
-
 .iconsLogin{
 padding-bottom: 5%;
 width: 2rem;
+}
+
+@media (max-width: 1248px) {
+
+    .sortReset{
+        padding-top: 40%;
+    }
+
+    .label{
+        font-size: 3vh;
+    }
+
+    .buttonReset{
+        width: 40%;
+    }
 }

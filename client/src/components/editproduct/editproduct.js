@@ -16,7 +16,7 @@ import axios from 'axios';
 
 const EditProduct = () => {
 
-    let URL = 'http://localhost:5000';
+    let URL = 'https://clothbea.herokuapp.com';
 
     const dispatch = useDispatch()
 
@@ -33,7 +33,13 @@ const EditProduct = () => {
 
     const [changeCategory, setChangeCategory] = useState("Dresses")
 
+    const [changeCategoryFilter, setChangeCategoryFilter] = useState("Dresses")
+
     const [genre, setGenre] = useState('Men');
+
+    const [genreFilter, setGenreFilter] = useState('Men');
+
+    const [subCategoryFilter, setSubCategoryFilter] = useState('T-Shirt')
 
     const [subCategory, setSubCategory] = useState('T-Shirt')
 
@@ -88,8 +94,17 @@ const EditProduct = () => {
         genre !== "Men" ? setChangeCategory("Dresses") : setChangeCategory("Shirts")
     }
 
+    const handleSelectGenreFilter = (event) => {
+        setGenreFilter(event)
+        genreFilter !== "Men" ? setChangeCategoryFilter("Dresses") : setChangeCategoryFilter("Shirts")
+    }
+
     const handleSelectSub = (event) => {
         setSubCategory(event)
+    }
+
+    const handleSelectSubFilter = (event) => {
+        setSubCategoryFilter(event)
     }
 
     return (
@@ -106,8 +121,30 @@ const EditProduct = () => {
                             <div className={styles.sortTitle} >
                                 <p className={styles.titleEdit} >Select a product</p>
                             </div>
+                            <div className={styles.sortUpSelect}>
+                            <div className={styles.eachInputUp} >
+                                    <label className={styles.label} ><Category className={styles.iconsLogin} /> SubCategory</label>
+                                    <select
+                                        onChange={(event) => handleSelectSubFilter(event.target.value)}
+                                        className={styles.select} >
+                                        {categories && categories.filter(item => item.name !== changeCategoryFilter).map((item, index) => (
+                                            <option value={item.name} >{item.name}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div className={styles.eachInputUp} >
+                                    <label className={styles.label} ><CategoryAlt className={styles.iconsLogin} /> Category</label>
+                                    <select
+                                        onChange={(event) => handleSelectGenreFilter(event.target.value)}
+                                        className={styles.select} >
+                                        <option value='Men' >Men</option>
+                                        <option value='Women' >Women</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
                             <div className={styles.sortCards} >
-                                {products && products.map((item, index) => (
+                                {products && products.filter((item) => item.category === genreFilter && item.subcategory === subCategoryFilter).map((item, index) => (
                                     <div className={styles.boxEachProduct} >
                                         <div className={styles.titleCard} >
                                             <p className={styles.titlecardStyle}>Name: {item.name}</p>

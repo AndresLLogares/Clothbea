@@ -48,14 +48,16 @@ const NavigationBar = () => {
             <ul className={click ? styles.nav_options_active : styles.nav_options}>
                 <li className={styles.SortNav} onClick={closeMobileMenu} >
                     <Link
+                        className={styles.responsive}
                         style={{ textDecoration: 'none' }}
                         to='/Shopping' >
                         <div className={styles.Links}><Cart3 className={styles.iconCart} />
-                        {typeof(numberCart) !== Array ? numberCart.length : 0}</div>
+                            {typeof (numberCart) !== Array ? numberCart.length : 0}</div>
                     </Link>
                 </li>
                 <li className={styles.SortNav} onClick={closeMobileMenu} >
                     <Link
+                        className={styles.responsive}
                         style={{ textDecoration: 'none' }}
                         to='/Home' >
                         <div className={styles.Links}>Home</div>
@@ -63,6 +65,7 @@ const NavigationBar = () => {
                 </li>
                 <li className={styles.SortNav} onClick={closeMobileMenu} >
                     <Link
+                        className={styles.responsive}
                         style={{ textDecoration: 'none' }}
                         to='/AboutMe' >
                         <div className={styles.Links}>About Me</div>
@@ -70,7 +73,7 @@ const NavigationBar = () => {
                 </li>
                 {nameUser ?
                     <li className={styles.SortNav} >
-                        <div onClick={handleDrop} className={styles.Links}>{nameUser}</div>
+                        <div onClick={handleDrop} className={styles.LinksDrop}>{nameUser}</div>
                         {changeDrop ?
                             <DropDown />
                             :
@@ -80,6 +83,7 @@ const NavigationBar = () => {
                     :
                     <li className={styles.SortNav} onClick={closeMobileMenu} >
                         <Link
+                            className={styles.responsive}
                             style={{ textDecoration: 'none' }}
                             to='/Login' >
                             <div className={styles.Links}>Login</div>

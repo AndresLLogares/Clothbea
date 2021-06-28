@@ -21,7 +21,7 @@ export const GET_ORDERS = 'GETORDERS';
 export const GET_ORDER_BYID = 'GETORDERBYID';
 export const GET_ORDER_BYUSER = 'GETORDERBYUSER';
 
-let URL = 'http://localhost:5000';
+let URL = 'https://clothbea.herokuapp.com';
 
 export const GETPRODUCTS = () => {
     return async (dispatch) => {

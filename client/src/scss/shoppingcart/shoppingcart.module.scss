@@ -382,5 +382,63 @@ font-family: 'B612', sans-serif;
 }
 
 .imageSad{
+width: 80%;
+}
+
+.none{
+    display: none;
+}
+
+.sortEachSad{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1248px) {
+
+.sortShopping{
+padding-top: 40%;
+}
+
+.buttonClean{
+width: 90%;
+font-size: 3vh;
+}
+
+.Trash{
+width: 10%;
+}
+
+.sortCarts{
+width: 90%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.eachCart{
 width: 100%;
+margin-top: 10%;
+margin-bottom: 10%;
+}
+
+.hr{
+height: 1rem;
+width: 100%;
+}
+.insideBox{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 90%;
+}
+.eachInside{
+width: 90%;
+}
+
 }

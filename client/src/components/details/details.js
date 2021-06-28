@@ -154,7 +154,10 @@ const Details = (props) => {
     return (
         <div className={styles.containerDetails} >
             <div className={styles.sortDetails} >
-                <ToastContainer />
+                <ToastContainer
+                    autoClose={800}
+                    limit={3}
+                />
                 <Reveal className={styles.zoom} >
                     <div className={styles.boxDetails} >
                         {loading ?

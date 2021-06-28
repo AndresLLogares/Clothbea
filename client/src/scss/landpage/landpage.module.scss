@@ -93,7 +93,7 @@ justify-content: center;
 }
 
 .logoLand{
-width: 50%;
+width: 100%;
 }
 
 .TitleLand{
@@ -128,14 +128,14 @@ margin-bottom: 3%;
 background-color: $White;
 padding: 3%;
 border-radius: 30%/5%;   
-border: solid .5rem $Red;
+border: solid .5rem $Pink;
 color: $Black;
 font-weight: bold;
 }
 
 .numbers1ro:hover{
 transition-duration: 1s;
-background-color: $Red;
+background-color: $Pink;
 border: solid .5rem $Black;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -149,7 +149,7 @@ margin-bottom: 3%;
 background-color: $White;
 padding: 3%;
 border-radius: 30%/5%;   
-border: solid .5rem $Red;
+border: solid .5rem $Pink;
 margin-left: 5%;
 color: $Black;
 font-weight: bold;
@@ -157,7 +157,7 @@ font-weight: bold;
 
 .numbers2do:hover{
 transition-duration: 1s;
-background-color: $Red;
+background-color: $Pink;
 border: solid .5rem $Black;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -171,7 +171,7 @@ margin-bottom: 3%;
 background-color: $White;
 padding: 3%;
 border-radius: 30%/5%;   
-border: solid .5rem $Red;
+border: solid .5rem $Pink;
 margin-left: 10%;
 color: $Black;
 font-weight: bold;
@@ -179,7 +179,7 @@ font-weight: bold;
 
 .numbers3ro:hover{
 transition-duration: 1s;
-background-color: $Red;
+background-color: $Pink;
 border: solid .5rem $Black;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -194,14 +194,14 @@ background-color: $White;
 padding: 3%;
 margin-left: 15%;
 border-radius: 30%/5%;   
-border: solid .5rem $Red;
+border: solid .5rem $Pink;
 color: $Black;
 font-weight: bold;
 }
 
 .numbers4to:hover{
 transition-duration: 1s;
-background-color: $Red;
+background-color: $Pink;
 border: solid .5rem $Black;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -215,7 +215,7 @@ margin-bottom: 3%;
 background-color: $White;
 padding: 3%;
 border-radius: 30%/5%;   
-border: solid .5rem $Red;
+border: solid .5rem $Pink;
 color: $Black;
 margin-left: 20%;
 font-weight: bold;
@@ -223,7 +223,7 @@ font-weight: bold;
 
 .numbers5to:hover{
 transition-duration: 1s;
-background-color: $Red;
+background-color: $Pink;
 border: solid .5rem $Black;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -354,4 +354,27 @@ transform: scale(0.1, 1);
 }
 
 @media (max-width: 1248px) {
+    .separateLand{
+        flex-direction: column;
+    }
+    .boxLand{
+        background: linear-gradient(80deg, $LightGreen 30%, $Yellow 30%);
+    }
+    .sortTitleLand{
+        flex-direction: column;
+    }
+    .TitleLand{
+        font-size: 5vh;
+    }
+    .sortProducts{
+    margin-top: 5%;
+    min-width: 20rem;
+    max-width: 20rem;
+    max-height: 20rem;
+    min-height: 20rem;
+    }
+
+    .buttonContainer{
+    color: $Pink;
+    }
 }

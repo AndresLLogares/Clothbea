@@ -278,3 +278,78 @@ color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
 }
 }
+
+.sortUpSelect{
+display: flex;
+flex-direction: row-reverse;
+align-items: center;
+justify-content: center;
+width: 90%;
+}
+
+.eachInputUp{
+display: flex;
+width: 50%;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+
+@media (max-width: 1248px) {
+
+.sortUpSelect{
+flex-direction: column-reverse;
+margin-top: 5%;
+}
+
+.eachInputUp{
+    width: 100%;
+}
+
+.sortEdit{
+padding-top: 40%;
+}
+
+.sortTitle{
+display: flex;
+width: 100%;
+text-align: center;
+}
+
+.titleEdit{
+font-size: 3vh;
+}
+
+.sortCards{
+display: flex;
+width: 90%;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+}
+
+.boxEachProduct{
+width: 100%;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.label{
+font-size: 3vh;
+}
+
+.imageCard{
+min-width: 16rem;
+max-width: 16rem;
+min-height: 16rem;
+max-height: 16rem;
+}
+
+.buttonCreate{
+margin-top: 5%;
+width: 40%;
+}
+}

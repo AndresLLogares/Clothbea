@@ -18,6 +18,8 @@ const Home = () => {
 
     const dispatch = useDispatch();
 
+    const levelUser = localStorage.getItem('LevelUser')
+
     const [animation, setAnimation] = useState(false);
 
     const [loading, setLoading] = useState(true)
@@ -28,7 +30,7 @@ const Home = () => {
 
     const [changeCategory, setChangeCategory] = useState("Men")
 
-    const products = useSelector(state => state.Clothbea.products);
+    let products = useSelector(state => state.Clothbea.products);
 
     const categories = useSelector(state => state.Clothbea.categories);
 
@@ -49,6 +51,8 @@ const Home = () => {
     const userCart = useSelector(state => state.Clothbea.cart)
 
     const wishes = useSelector(state => state.Clothbea.wishlist)
+
+    const [sortPrice, setSortPrice] = useState("High")
 
     useEffect(async () => {
         await setEmailUser(localStorage.getItem('Email'));
@@ -78,7 +82,7 @@ const Home = () => {
     const setCategory = (cat) => {
         setAnimation(true)
         setCategorieFilter(cat)
-        setTimeout(() => setAnimation(false), 1000)
+        setTimeout(() => setAnimation(false), 2000)
     }
 
     const handleSelect = async (id, sizeSelect) => {
@@ -102,7 +106,7 @@ const Home = () => {
             size: sizeHome.size,
             stock: stock
         }))
-        setTimeout( async() =>  await dispatch(GETCART(emailUserToGet)), 1000 )
+        setTimeout(async () => await dispatch(GETCART(emailUserToGet)), 1000)
 
         const responceAdd = await localStorage.getItem('ResponseAdd')
         responceAdd === "Product added" ? toast.success(responceAdd) : toast.error(responceAdd)
@@ -115,13 +119,14 @@ const Home = () => {
             Id: id,
             email: emailUser
         }))
-        setTimeout( async() =>  await dispatch(GETCART(emailUserToGet)), 1000 )
+        setTimeout(async () => await dispatch(GETCART(emailUserToGet)), 1000)
         const ResponseRemove = await localStorage.getItem('ResponseRemove')
         ResponseRemove === "Product removed" ? toast.success(ResponseRemove) : toast.error(ResponseRemove)
     }
 
     const handleAddWish = async (Id, name, image) => {
         if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        if (levelUser === 'Admin') { return toast.error("Admins can't have Wishlist") }
         if (wishes.find(item => item.Id === Id)) {
             return toast.success('This product is already in your wishlist')
         }
@@ -131,7 +136,7 @@ const Home = () => {
             image: image,
             name: name
         }))
-        setTimeout( async() =>  await dispatch(GETWISH(emailUserToGet)), 1000 )
+        setTimeout(async () => await dispatch(GETWISH(emailUserToGet)), 1000)
         toast.success("Product added to your wishlist")
     }
 
@@ -141,7 +146,7 @@ const Home = () => {
             email: emailUser,
             Id: Id,
         }))
-        setTimeout( async() =>  await dispatch(GETWISH(emailUserToGet)), 1000 )
+        setTimeout(async () => await dispatch(GETWISH(emailUserToGet)), 1000)
 
         toast.success("Product removed of your wishlist")
     }
@@ -150,9 +155,21 @@ const Home = () => {
         toast.error('Sorry, we don`t have stock for this product')
     }
 
+    const handlePrice = (event) => {
+        if (event === 'High') {
+            products = products.sort((a, b) => b.price - a.price)
+        }
+        else {
+            products = products.sort((a, b) => a.price - b.price)
+        }
+    }
+
     return (
         <div className={styles.containeHome} >
-            <ToastContainer />
+            <ToastContainer 
+            autoClose={800}
+            limit={2}
+            />
             <div className={styles.sortHome}>
                 {loading ?
                     <div>
@@ -170,10 +187,22 @@ const Home = () => {
                                 </div>
                             </div>
                         </Reveal>
+                        <Reveal className={styles.reveal} >
+                            <div className={styles.sortSelect} >
+                                <label className={styles.labelPrice} >Sort by Price:</label>
+                                <select
+                                    className={styles.selectPrice}
+                                    onChange={(event) => handlePrice(event.target.value)}
+                                >
+                                    <option value='High' >$ Highest to Lowest</option>
+                                    <option value='Low' >$ Lowest to Highest</option>
+                                </select>
+                            </div>
+                        </Reveal>
                         <div className={styles.separateHome2} >
                             <Reveal className={styles.zoom2} >
                                 <div className={styles.sortCategories} >
-                                    {categories && categories.filter((item) => {return item.category.indexOf(changeCategory) >= 0}).map((item, index) => (
+                                    {categories && categories.filter((item) => { return item.category.indexOf(changeCategory) >= 0 }).map((item, index) => (
                                         <div className={styles.boxCategory} >
                                             <p onClick={() => setCategory(item.name)} className={styles.fontCategory} >{item.name}</p>
                                         </div>
@@ -184,7 +213,7 @@ const Home = () => {
                                 <div className={animation ? styles.animation : styles.sortCarts} >
                                     {products && products.filter(item => item.subcategory === categorieFilter && item.category === genre).slice(limits.base, limits.top).map((item, index) => (
                                         <div className={styles.boxCard} >
-                                            {typeof (wishes) !== String  && !wishes.find(wish => wish.Id === item.Id) ?
+                                            {typeof (wishes) !== String && !wishes.find(wish => wish.Id === item.Id) ?
                                                 <div className={styles.sortStar} >
                                                     <button
                                                         onClick={() => { handleAddWish(item.Id, item.name, item.image) }}
@@ -251,9 +280,7 @@ const Home = () => {
                                                             </button>
                                                         }
                                                     </div>
-
                                                 }
-
                                             </div>
                                         </div>
                                     ))}

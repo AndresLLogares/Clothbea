@@ -80,7 +80,10 @@ margin-bottom: 5%;
 background-color: $Pink;
 border-radius: 10px 10px 0px 0px;
 border-bottom: solid .5rem $DarkBlue;
+flex-direction: column;
 }
+
+
 
 .titleWish{
 font-family: 'Major Mono Display', monospace;
@@ -90,11 +93,19 @@ display: flex;
 align-items: center;
 font-weight: bold;
 justify-content: center;
+text-align: center;
+}
+
+.eachTitle{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
 }
 
 .starWish{
-width: 5%;
-padding-left: 5%;
+width: 20%;
 }
 
 .cross{
@@ -156,6 +167,10 @@ min-height: 15rem;
 max-height: 15rem;
 }
 
+.imageCart:hover{
+cursor: url(../../components/images/pointer.png),pointer;
+}
+
 .titleCart{
 font-family: 'B612', sans-serif;
 color: $White;
@@ -206,24 +221,57 @@ margin-bottom: 5%;
 }
 
 .sortTitle2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 3%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 3%;
 }
 
 .titleWish2{
-    font-size: 5vh;
-    color: $White;
-    font-family: 'B612', sans-serif;
+font-size: 5vh;
+color: $White;
+font-family: 'B612', sans-serif;
 }
 
 .sortSad{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .imageSad{
-    width: 100%;
+width: 100%;
+}
+
+@media (max-width: 1248px) {
+
+    .sortWish{
+        padding-top: 40%;
+    }
+
+    .sortWishes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .cartWish{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 20%;
+    }
+    
+    .sortTitle2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sortNowish{
+        margin-bottom: 15%;
+    }
 }

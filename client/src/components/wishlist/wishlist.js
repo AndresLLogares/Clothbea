@@ -32,14 +32,17 @@ const WishList = () => {
             email: emailUser,
             Id: Id,
         }))
-        setTimeout( async() =>  await dispatch(GETWISH(emailUser)), 500 )
+        setTimeout(async () => await dispatch(GETWISH(emailUser)), 500)
         toast.success("Product removed of your wishlist")
     }
 
     return (
         <div className={styles.containerWish} >
             <div className={styles.sortWish} >
-            <ToastContainer />
+                <ToastContainer
+                    autoClose={800}
+                    limit={2}
+                />
                 <Reveal className={styles.zoom} >
                     {loading ?
                         <div>
@@ -48,8 +51,13 @@ const WishList = () => {
                         :
                         <div className={styles.boxWish} >
                             <div className={styles.sortTitle} >
-                                <p className={styles.titleWish} >This is your wishlist {nameUser} <StarFill
-                                    className={styles.starWish} /></p>
+                                <div className={styles.eachTitle} >
+                                    <p className={styles.titleWish} >This is your wishlist {nameUser} </p>
+                                </div>
+                                <div className={styles.eachTitle} >
+                                    <p className={styles.titleWish} ><StarFill className={styles.starWish} /> </p>
+
+                                </div>
                             </div>
                             <div className={styles.sortWishes} >
                                 {wishes.length !== 0 ?
@@ -59,8 +67,8 @@ const WishList = () => {
                                                 <p className={styles.titleCart} >{item.name}</p>
                                             </div>
                                             <div className={styles.sortButton} >
-                                                <button className={styles.buttonRemove} 
-                                                onClick={() => removeWish(item.Id)}
+                                                <button className={styles.buttonRemove}
+                                                    onClick={() => removeWish(item.Id)}
                                                 >Remove <SquaredCross className={styles.cross} /> </button>
                                             </div>
                                             <Link to={{
@@ -69,9 +77,9 @@ const WishList = () => {
                                                     Id: item.Id,
                                                 }
                                             }}>
-                                            <div className={styles.sortImageCart} >
-                                                <img className={styles.imageCart} src={item.image} alt='' />
-                                            </div>
+                                                <div className={styles.sortImageCart} >
+                                                    <img className={styles.imageCart} src={item.image} alt='' />
+                                                </div>
                                             </Link>
                                         </div>
                                     ))

@@ -30,7 +30,6 @@ const ShoppingCart = () => {
 
     let index = 0
 
-
     useEffect(async () => {
         await dispatch(GETCART(emailUser))
         !cartUser ? setLoading(true) : setLoading(false);
@@ -100,13 +99,16 @@ const ShoppingCart = () => {
     }
 
     const handeLinkToPost = () => {
-        cartUser.length === 0 ? toast.error("Your cart is empty") : window.location.href = `http://localhost:3000/Shipments?Total=${totalProducts}`;
+        cartUser.length === 0 ? toast.error("Your cart is empty") : window.location.href = `https://clothbea.netlify.app/Shipments?Total=${totalProducts}`;
     }
 
     return (
         <div className={styles.containerShopping} >
             <div className={styles.sortShopping} >
-                <ToastContainer />
+                <ToastContainer
+                    autoClose={800}
+                    limit={2}
+                />
                 {loading ?
                     <div>
                         <div className={styles.loader} />
@@ -117,7 +119,7 @@ const ShoppingCart = () => {
                             <div className={styles.sortTitleShopping}>
                                 <p className={styles.styleTitle} >These are your products {nameUser}</p>
                             </div>
-                            <div className={styles.sortButtonClean} >
+                            <div className={cartUser.length !== 0 ? styles.sortButtonClean : styles.none} >
                                 <button className={styles.buttonClean} onClick={handleCLean} ><Trash className={styles.Trash} /> Clean cart</button>
                             </div>
                             <div className={styles.sortCarts}>

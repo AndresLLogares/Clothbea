@@ -47,6 +47,7 @@ width: 100%;
 padding-top: 10%;
 display: flex;
 align-items: center;
+
 justify-content: center;
 }
 
@@ -277,8 +278,6 @@ background-color: $DarkGreen;
 border-top: solid .2rem $Pink;
 }
 
-
-
 .bottomCard2{
 width: 100%;
 display: flex;
@@ -357,6 +356,7 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 
 .sortStar{
+width: 100%;
 display: flex;
 position: relative;
 left:  70%;
@@ -391,5 +391,166 @@ transition-duration: 0.2s;
 background-position: 0;
 color: $Yellow;
 cursor: url(../../components/images/pointer.png),pointer;
+}
+}
+
+.reveal{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+
+.sortSelect{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 90%;
+flex-direction: row;
+margin-bottom: 5%;
+}
+
+.labelPrice{
+    color: $White;
+    font-family: 'B612', sans-serif;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.selectPrice{
+    font-weight: bold;
+    padding: 1%;
+    font-family: 'B612', sans-serif;
+    font-size: 2vh;
+    background-color: $White;
+    border-radius: 10px 10px 10px 10px;
+    border: solid .2rem $Pink
+}
+
+@media (max-width: 1248px) {
+
+    .sortSelect{
+        flex-direction: column;
+    }
+    
+    .labelPrice{
+        margin-bottom: 2%;
+    }
+
+.Toast{
+width: 100%;
+}
+
+.forced{
+width: 100%;
+}
+.containeHome{
+width: 100%;
+}
+
+.sortHome{
+width: 100%;
+margin: 0;
+padding: 0;
+padding-top: 30%;
+}
+
+.genreIcon{
+max-height: 1.5rem;
+min-width: 1.5rem;
+max-width: 1.5rem;
+min-height: 1.5rem;
+margin-right: 1%;
+}
+
+.btnGenre{
+margin-top: 15%;
+font-size: 3vh;
+width: 60%;
+}
+.separateHome1{
+flex-direction: row;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.separateHome2{
+flex-direction: column;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sortCategories{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10%;
+}
+.zoom2{
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.zoom3{
+display: flex;
+width: 90%;
+margin: 0;
+padding: 0;
+flex-direction: column;
+align-items:center;
+justify-content:center;
+}
+
+.sortCarts{
+width: 100%;
+margin: 0;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.animation{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+animation-name: myAnimation;
+animation-duration: 2s;
+animation-iteration-count: 1;
+}
+
+
+.boxCard{
+max-width: 90%;
+min-width: 90%;
+max-height: 90%;
+min-height: 90%;
+margin: 0;
+padding: 0;
+margin-bottom: 10%;
+}
+
+.sortStar{
+margin: 0;
+padding: 0;
+left: 10%;
+margin-top: 2%;
+}
+
+.star{
+width: 2rem;
+}
+.loader {
+margin-top: 30%;
 }
 }
