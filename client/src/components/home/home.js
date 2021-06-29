@@ -90,7 +90,10 @@ const Home = () => {
     }
 
     const handleCartAdd = async (name, price, brand, id, image, stock) => {
-        if (!emailUser) { return toast.error('You must be logged to add products') }
+        if (!emailUser) {
+            setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Login', 1000)
+            return toast.error('You must be logged to add products')
+        }
         localStorage.removeItem("ResponseAdd")
         if (id !== setSizeHome.id) {
             setSizeHome({ size: 'S' })
@@ -125,7 +128,10 @@ const Home = () => {
     }
 
     const handleAddWish = async (Id, name, image) => {
-        if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        if (!emailUser) {
+            setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Login', 1000)
+            return toast.error('You must be logged to add product in your wishlist')
+        }
         if (levelUser === 'Admin') { return toast.error("Admins can't have Wishlist") }
         if (wishes.find(item => item.Id === Id)) {
             return toast.success('This product is already in your wishlist')
@@ -141,7 +147,9 @@ const Home = () => {
     }
 
     const handleRemoveWish = async (Id) => {
-        if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        if (!emailUser) {
+            return toast.error('You must be logged to add product in your wishlist')
+        }
         await dispatch(REMOVEWISH({
             email: emailUser,
             Id: Id,
@@ -166,9 +174,9 @@ const Home = () => {
 
     return (
         <div className={styles.containeHome} >
-            <ToastContainer 
-            autoClose={800}
-            limit={2}
+            <ToastContainer
+                autoClose={800}
+                limit={2}
             />
             <div className={styles.sortHome}>
                 {loading ?

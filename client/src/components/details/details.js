@@ -49,7 +49,9 @@ const Details = (props) => {
     }
 
     const handleAddWish = async (Id, name, image) => {
-        if (!emailUser) { return toast.error('You must be logged to add product in your wishlist') }
+        if (!emailUser) { 
+            setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Login', 1000)
+            return toast.error('You must be logged to add product in your wishlist') }
         if (wishes.find(item => item.Id === Id)) {
             return toast.success('This product is already in your wishlist')
         }
@@ -75,7 +77,9 @@ const Details = (props) => {
     }
 
     const handleCartAdd = async (name, price, brand, id, image, stock) => {
-        if (!emailUser) { return toast.error('You must be logged to add products') }
+        if (!emailUser) { 
+            setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Login', 1000)
+            return toast.error('You must be logged to add products') }
         localStorage.removeItem("ResponseAdd")
         if (id !== setSizeHome.id) {
             setSizeHome({ size: 'S' })
@@ -123,6 +127,7 @@ const Details = (props) => {
     const handleSubmitComment = async (event) => {
         event.preventDefault()
         if (!emailUser) {
+            setTimeout(() => window.location.href = 'https://clothbea.netlify.app/Login', 1000)
             return toast.error('You must be logged to add a comment')
         }
         else if (commentsUsers.find(item => item.email === emailUser)) {
