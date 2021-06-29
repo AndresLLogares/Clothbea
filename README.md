@@ -9,7 +9,7 @@ Esta pagina es un E-Commerce el cual realice en solitario utilizando React y Red
 - ![Redux](https://img.shields.io/badge/-Redux-red)
 - ![Javascript](https://img.shields.io/badge/-Javascript-yellow)
 - ![Node](https://img.shields.io/badge/-Node-green)
-- ![SCSS](https://img.shields.io/badge/-CSS-yellowgreen)
+- ![CSS](https://img.shields.io/badge/-SCSS-yellowgreen)
 - ![Express](https://img.shields.io/badge/-Express-blue)
 - ![MongoDB](https://img.shields.io/badge/-MongoDB-lightgrey)
 
@@ -28,7 +28,7 @@ This website is an E-Commerce which I made alone using React and Redux to develo
 - ![Redux](https://img.shields.io/badge/-Redux-red)
 - ![Javascript](https://img.shields.io/badge/-Javascript-yellow)
 - ![Node](https://img.shields.io/badge/-Node-green)
-- ![SCSS](https://img.shields.io/badge/-CSS-yellowgreen)
+- ![CSS](https://img.shields.io/badge/-SCSS-yellowgreen)
 - ![Express](https://img.shields.io/badge/-Express-blue)
 - ![MongoDB](https://img.shields.io/badge/-MongoDB-lightgrey)
 
