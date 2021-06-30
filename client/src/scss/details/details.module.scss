@@ -28,6 +28,7 @@ border-radius: 10%;
 width: 120px;
 height: 120px;
 animation: spin 2s linear infinite;
+margin-bottom: 25%;
 }
 
 @keyframes spin {
@@ -347,7 +348,7 @@ justify-content: flex-start;
 width: 90%;
 background-color: $White;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Red;
+border: solid .4rem $Pink;
 box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 
 }
@@ -403,4 +404,121 @@ background-position: 0;
 color: $Yellow;
 cursor: url(../../components/images/pointer.png),pointer;
 }
+}
+
+@media (max-width: 1248px) {
+
+.sortStar{
+left: 0;
+}
+
+.sortDetails{
+padding-top: 40%;
+}
+
+.separateDetails{
+flex-direction: column;
+display: flex;
+align-items: center;
+width: 100%;
+justify-content: center;
+}
+
+.sortImage1{
+display: flex;
+align-items: center;
+width: 100%;
+justify-content: center;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.sortImage2{
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 5%;
+}
+
+.insideBox{
+width: 100%;
+}
+
+.sizeImage{
+min-width: 15rem;
+max-width: 15rem;
+min-height: 15rem;
+max-height: 15rem;
+}
+
+.boxDetails{
+padding: 0;
+margin: 0;
+margin-bottom: 10%;
+}
+
+.pDetails{
+font-size: 3vh;
+}
+
+.textarea{
+width: 90%;
+}
+
+.secondBox{
+width: 90%;
+}
+
+.sortTitle{
+display: flex;
+width: 100%;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+.buttonBuy{
+width: 60%;
+}
+
+.sortForm{
+display: flex;
+width: 90%;
+text-align: center;
+justify-content: center;
+align-items: center;
+margin-top: 10%;
+}
+
+.form{
+margin: 0;
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
+}
+
+.label{
+margin-top: 5%;
+}
+
+.sortReview{
+width: 100%;
+}
+
+.sortTitleReview{
+display: flex;
+width: 90%;
+text-align: center;
+justify-content: center;
+align-items: center;
+margin-top: 10%;
+margin-bottom: 5%;
+}
+
+.sortComments{
+margin-bottom: 10%;
+}
+
 }

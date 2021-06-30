@@ -1,0 +1,49 @@
+$Yellow:#ffbe0b;
+$Green:#06D6A0;
+$Red:#d90429;
+$LightGreen:#0CB0A9;
+$LightBlue:#118AB2;
+$DarkBlue:#0C637F;
+$Pink:#EF476F;
+$DarkGreen:#09C3A5;
+$White: #FFFFFF;
+$Black: #231B1B;
+
+@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+.example{
+font-family: 'B612', sans-serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Major Mono Display', monospace;
+}
+
+.footer{
+width: 100%;
+display: flex;
+}
+
+.footer{
+width: 90%;
+display: flex;
+flex-direction: row;
+border-top: solid .5rem $Black;
+margin-top: 5%;
+align-items: center;
+text-align: center;
+justify-content: center;
+font-family: 'B612', sans-serif;
+background-color: transparent;
+font-size: 2vh;
+text-decoration: none;
+color: $Black;
+font-weight: bold;
+margin-bottom: 3%;
+}
+
+.imageLic{
+margin-top: 2%;
+margin-bottom: 2%;
+width: 10%;
+}

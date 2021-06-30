@@ -5,6 +5,7 @@ import styles from '../../scss/landpage/landpage.module.scss';
 import logo from '../images/Logo.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { GETPRODUCTS } from '../actions';
+import stylesLic from '../../scss/license/license.module.scss';
 
 const Landpage = () => {
 
@@ -25,31 +26,31 @@ const Landpage = () => {
 
     const buttonOne = () => {
         setAnimation(false)
-        setProductLand({base:0, top:1})
+        setProductLand({ base: 0, top: 1 })
         setTimeout(() => setAnimation(true), 600)
     }
 
     const buttonTwo = () => {
         setAnimation(false)
-        setProductLand({base:10, top:11})
+        setProductLand({ base: 10, top: 11 })
         setTimeout(() => setAnimation(true), 600)
     }
 
     const buttonThree = () => {
         setAnimation(false)
-        setProductLand({base:20, top:21})
+        setProductLand({ base: 20, top: 21 })
         setTimeout(() => setAnimation(true), 600)
     }
 
     const buttonFour = () => {
         setAnimation(false)
-        setProductLand({base:30, top:31})
+        setProductLand({ base: 30, top: 31 })
         setTimeout(() => setAnimation(true), 600)
     }
 
     const buttonFive = () => {
         setAnimation(false)
-        setProductLand({base:40, top:41})
+        setProductLand({ base: 40, top: 41 })
         setTimeout(() => setAnimation(true), 600)
     }
 
@@ -75,16 +76,16 @@ const Landpage = () => {
                                 <p onClick={buttonFour} className={styles.numbers4to} >4</p>
                                 <p onClick={buttonFive} className={styles.numbers5to} >5</p>
                             </div>
-                            <div className={animation? styles.sortImage :styles.animation } >
+                            <div className={animation ? styles.sortImage : styles.animation} >
                                 {products && products.slice(productLand.base, productLand.top).map((item, index) => (
-                                        <Link to={{
-                                            pathname: '/Details',
-                                            state: {
-                                                Id: item.Id,
-                                            }
-                                        }}>
-                                            <img key={item.Id} className={styles.sortProducts} src={item.image} alt='' />
-                                        </Link>
+                                    <Link to={{
+                                        pathname: '/Details',
+                                        state: {
+                                            Id: item.Id,
+                                        }
+                                    }}>
+                                        <img key={item.Id} className={styles.sortProducts} src={item.image} alt='' />
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -99,6 +100,21 @@ const Landpage = () => {
                         </div>
                     </div>
                 </Reveal>
+                <Reveal className={stylesLic.footer} >
+                    <div className={stylesLic.footerDiv} >
+                        <a style={{ textDecoration: 'none' }}
+                            target="_blank"
+                            rel="license"
+                            href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                            <img className={stylesLic.imageLic} alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                        <br />Esta obra está bajo una <a style={{ textDecoration: 'none', color: '#231B1B' }}
+                            target="_blank"
+                            rel="license"
+                            href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                            Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+                    </div>
+                </Reveal>
+
             </div>
         </div>
     )

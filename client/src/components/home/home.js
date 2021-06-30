@@ -13,6 +13,7 @@ import { Star } from '@styled-icons/bootstrap/Star';
 import { ToastContainer, toast } from 'react-toastify';
 import { CartDashFill } from '@styled-icons/bootstrap/CartDashFill';
 import 'react-toastify/dist/ReactToastify.css';
+import stylesLic from '../../scss/license/license.module.scss';
 
 const Home = () => {
 
@@ -295,8 +296,24 @@ const Home = () => {
                                 </div>
                             </Reveal>
                         </div>
+                        <Reveal className={stylesLic.footer} >
+                            <div className={stylesLic.footerDiv} >
+                                <a style={{ textDecoration: 'none' }}
+                                    target="_blank"
+                                    rel="license"
+                                    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                    <img className={stylesLic.imageLic} alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                                <br />Esta obra está bajo una <a style={{ textDecoration: 'none', color: '#231B1B' }}
+                                    target="_blank"
+                                    rel="license"
+                                    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                    Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+                            </div>
+                        </Reveal>
                     </div>
+
                 }
+
             </div>
         </div>
     )
