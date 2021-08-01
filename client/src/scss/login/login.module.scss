@@ -1,3 +1,6 @@
+@import url('https://rsms.me/inter/inter.css');
+
+
 $Yellow:#ffbe0b;
 $Green:#06D6A0;
 $Red:#d90429;
@@ -57,8 +60,8 @@ background-color: $Pink;
 text-align: center;
 padding-top: 2%;
 margin-bottom: 2%;
-border-radius: 10px 10px 0px 0px;
-border-bottom: solid .5rem $DarkBlue;
+border-radius: 5px 5px 0px 0px;
+border-bottom: solid .5rem $Black;
 }
 
 .fontTitle{
@@ -79,8 +82,12 @@ justify-content: center;
 background-color: $LightGreen;
 width: 90%;
 margin-bottom: 15%;
-border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius: 10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 }
 
 .sortForm{
@@ -116,7 +123,7 @@ margin-bottom: 5%;
 color: $White;
 }
 
-.input{
+.input55{
 width: 15rem;
 height: 2.5rem;
 background-color: $White;
@@ -162,13 +169,16 @@ font-size: 3vh;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
 color: $Black;
-padding: 3%;
+width: 15rem;
+height: 7rem;
+padding: 1%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
+box-shadow: .5rem .5rem 0 $Black;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -192,9 +202,9 @@ margin-bottom: 5%;
 .buttonGoogle{
 width: 40%;
 display: flex;
+
 align-items: center;
 justify-content: center;   
-background-color: $LightGreen;
 border: transparent;
 margin-bottom: 5%;
 &:hover{
@@ -263,6 +273,12 @@ cursor: url(../../components/images/pointer.png),pointer;
 }
 
 @media (max-width: 1248px) {
+
+.titleAdd{
+text-align: center;
+margin-top: 5%;
+margin-bottom: 5%;
+}
 
 .fontTitle{
 font-size: 3vh;

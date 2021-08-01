@@ -49,10 +49,14 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: $LightGreen;
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 border-radius: 10px 10px 10px 10px;
 margin-bottom: 10%;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .sortTitle{
@@ -65,7 +69,7 @@ text-align: center;
 border-radius: 10px 10px 0px 0px;
 padding-top: 2%;
 margin-bottom: 2%;
-border-bottom: solid .5rem $DarkBlue;
+border-bottom: solid .5rem $Black;
 }
 
 .fontTitle{
@@ -137,10 +141,11 @@ color: $Black;
 padding: 1%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
+box-shadow: .5rem .5rem 0 $Black;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }

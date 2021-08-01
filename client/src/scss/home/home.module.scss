@@ -101,23 +101,23 @@ background-color: $Pink;
 border: transparent;
 color: $White;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 5px 5px 5px 5px $Black;
+box-shadow: .5rem .5rem 0 $Black;
+
 }
 
 .btnGenre:hover{
+transform: scale(1.1);
 transition-duration: 2s;
-animation-name: bounce;
-animation-duration: 2s;
-animation-iteration-count: infinite;
-box-shadow: none;
 cursor: url(../../components/images/pointer.png),pointer;
 }
 
 @keyframes bounce {
 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-40% {transform: translateY(-20px);} 
-60% {transform: translateY(-10px);} 
+40% {transform: translateY(-10px);} 
+60% {transform: translateY(-5px);} 
 } 
+
+
 
 .zoom1{
 display: flex;
@@ -143,6 +143,7 @@ width: 100%;
 flex-direction: row;
 align-items:flex-start;
 justify-content:center;
+
 }
 
 
@@ -152,11 +153,14 @@ display: flex;
 align-items:flex-start;
 justify-content:left;
 flex-direction: column;
-background-color: $DarkGreen;
-border-radius: 10px/30px;
+background: 
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);
+border-radius:  10px 10px 10px 10px;
 border: solid .5rem $Pink;
+box-shadow: .5rem .5rem 0 $Black;
 padding: 2%;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
 .boxCategory{
@@ -169,7 +173,7 @@ font-size: 4vh;
 border: transparent;
 font-family: 'Oswald', sans-serif;
 font-weight: bold;
-color: $Black;
+color: $White;
 padding-left: 5%;
 letter-spacing: .1rem;
 background-color: transparent;
@@ -180,7 +184,7 @@ size: 400%;
 }
 transition: background 300ms ease-in-out;
 &:hover {
-transition-duration: 0.2s;
+transition-duration: 0.6s;
 background-position: 0;
 color: $White;
 cursor: url(../../components/images/pointer.png),pointer;
@@ -196,6 +200,8 @@ justify-content: flex-start;
 flex-direction: row;
 }
 
+
+
 .animation{
 width: 100%;
 display: flex;
@@ -210,12 +216,12 @@ animation-iteration-count: 1;
 
 @keyframes myAnimation{
 0% {
-    opacity: 0;
-    transform: translateX(-30px);
+opacity: 0;
+transform: translateX(-30px);
 }
 100% {
-    opacity: 0.5;
-    transform: translateX(0);
+opacity: 0.5;
+transform: translateX(0);
 }
 }   
 
@@ -226,15 +232,11 @@ max-height: 25%;
 min-height: 25%;
 margin-right: 5%;
 margin-bottom: 5%;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-background-color: $White;
--webkit-border-top-left-radius: 40px;
--moz-border-radius-topleft: 40px;
-border-top-left-radius: 40px;
+
 }
 
 
@@ -294,9 +296,9 @@ height: 2rem;
 background-color: $White;
 color: $Black;
 border:solid .2rem $Black ;
+box-shadow: .1rem .1rem 0 $Black;
 font-size: 2vh;
 font-weight: bold;
-border-radius: 10px 10px 10px 10px;
 font-family: 'B612', sans-serif;
 }
 
@@ -350,8 +352,8 @@ background-color: transparent;
 }
 
 .cartButtom:hover{
+transform: scale(1.1);
 transition-duration: 2s;
-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
 cursor: url(../../components/images/pointer.png),pointer;
 }
 
@@ -364,7 +366,7 @@ padding-top: 5%;
 }
 
 .star{
-    width: 40%;
+width: 40%;
 }
 
 .buttonStar{
@@ -411,31 +413,31 @@ margin-bottom: 5%;
 }
 
 .labelPrice{
-    color: $White;
-    font-family: 'B612', sans-serif;
-    font-size: 3vh;
-    font-weight: bold;
-    margin-right: 5%;
+color: $White;
+font-family: 'B612', sans-serif;
+font-size: 3vh;
+font-weight: bold;
+margin-right: 5%;
 }
 
 .selectPrice{
-    font-weight: bold;
-    padding: 1%;
-    font-family: 'B612', sans-serif;
-    font-size: 2vh;
-    background-color: $White;
-    border-radius: 10px 10px 10px 10px;
-    border: solid .2rem $Pink
+font-weight: bold;
+padding: 1%;
+font-family: 'B612', sans-serif;
+box-shadow: .2rem .2rem 0 $Black;
+font-size: 2vh;
+background-color: $White;
+border: solid .2rem $Pink
 }
 
 @media (max-width: 1248px) {
 
 .sortSelect{
-    flex-direction: column;
+flex-direction: column;
 }
 
 .labelPrice{
-    margin-bottom: 2%;
+margin-bottom: 2%;
 }
 
 .Toast{
@@ -499,13 +501,7 @@ justify-content: center;
 }
 
 .zoom3{
-display: flex;
 width: 90%;
-margin: 0;
-padding: 0;
-flex-direction: column;
-align-items:center;
-justify-content:center;
 }
 
 .sortCarts{

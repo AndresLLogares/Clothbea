@@ -64,10 +64,14 @@ display: flex;
 align-items: center;
 width: 90%;
 justify-content: center;
-background-color: $DarkGreen;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
-border-radius: 10px 10px 10px 10px;
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
 margin-bottom: 10%;
+border-radius: 10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 flex-direction: column;
 }
 
@@ -79,7 +83,7 @@ width: 100%;
 margin-bottom: 5%;
 background-color: $Pink;
 border-radius: 10px 10px 0px 0px;
-border-bottom: solid .5rem $DarkBlue;
+border-bottom: solid .5rem $Black;
 flex-direction: column;
 }
 
@@ -129,9 +133,10 @@ margin-bottom: 5%;
 align-items: center;
 justify-content: center;
 background-color: $Green;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 flex-direction: column;
 border-radius: 10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 }
 
 .sortTitleWish{
@@ -192,10 +197,10 @@ padding: 2%;
 margin-bottom: 5%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -215,8 +220,9 @@ justify-content: center;
 width: 90%;
 flex-direction: column;
 background-color: $LightGreen;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius: 10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 margin-bottom: 5%;
 }
 

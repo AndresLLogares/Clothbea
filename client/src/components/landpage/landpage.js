@@ -6,6 +6,7 @@ import logo from '../images/Logo.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { GETPRODUCTS } from '../actions';
 import stylesLic from '../../scss/license/license.module.scss';
+import Canvas from '../canvas/canvas';
 
 const Landpage = () => {
 
@@ -56,6 +57,7 @@ const Landpage = () => {
 
     return (
         <div className={styles.containerLand} >
+            <Canvas />
             <div className={styles.sortLand} >
                 <Reveal className={styles.fade}>
                     <div className={styles.boxLand}>
@@ -111,10 +113,9 @@ const Landpage = () => {
                             target="_blank"
                             rel="license"
                             href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                            Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+                            Licencia Creative Commons Atribución-NoComercial-Compartir-Igual 4.0 Internacional</a>.
                     </div>
                 </Reveal>
-
             </div>
         </div>
     )

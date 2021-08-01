@@ -13,6 +13,8 @@ import { Stock } from '@styled-icons/remix-fill/Stock';
 import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt'
 import { Category } from '@styled-icons/material-rounded/Category';
 import axios from 'axios';
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const EditProduct = () => {
 
@@ -109,6 +111,7 @@ const EditProduct = () => {
 
     return (
         <div className={styles.containerEdit} >
+            <Canvas />
             <div className={styles.sortEdit} >
                 <ToastContainer />
                 <Reveal className={styles.Jack} >
@@ -122,7 +125,7 @@ const EditProduct = () => {
                                 <p className={styles.titleEdit} >Select a product</p>
                             </div>
                             <div className={styles.sortUpSelect}>
-                            <div className={styles.eachInputUp} >
+                                <div className={styles.eachInputUp} >
                                     <label className={styles.label} ><Category className={styles.iconsLogin} /> SubCategory</label>
                                     <select
                                         onChange={(event) => handleSelectSubFilter(event.target.value)}
@@ -142,7 +145,7 @@ const EditProduct = () => {
                                     </select>
                                 </div>
                             </div>
-                          
+
                             <div className={styles.sortCards} >
                                 {products && products.filter((item) => item.category === genreFilter && item.subcategory === subCategoryFilter).map((item, index) => (
                                     <div className={styles.boxEachProduct} >
@@ -169,59 +172,94 @@ const EditProduct = () => {
                                 </div>
                                 <form onSubmit={handleSubmit} className={styles.form}>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><Rename className={styles.iconsLogin} /> Name</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={productToEdit.name}
-                                            type='text'
-                                            className={styles.input}
-                                            name='name'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.name}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='name'
+                                            />
+                                            <span class="input__label"><Rename className={styles.iconsLogin} /> Name</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><DriveFileRenameOutline className={styles.iconsLogin} /> Brand</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={productToEdit.brand}
-                                            type='text'
-                                            className={styles.input}
-                                            name='brand'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.brand}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='brand'
+                                            />
+                                            <span class="input__label"><DriveFileRenameOutline className={styles.iconsLogin} /> Brand</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><Pricetag className={styles.iconsLogin} /> Price</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={productToEdit.price}
-                                            type='text'
-                                            className={styles.input}
-                                            name='price'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.brand}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='brand'
+                                            />
+                                            <span class="input__label"><DriveFileRenameOutline className={styles.iconsLogin} /> Brand</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><Image className={styles.iconsLogin} /> Image</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={productToEdit.image}
-                                            type='text'
-                                            className={styles.input}
-                                            name='image'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.price}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='price'
+                                            />
+                                            <span class="input__label"><Pricetag className={styles.iconsLogin} /> Price</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><Stock className={styles.iconsLogin} /> Stock</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={productToEdit.stock}
-                                            type='text'
-                                            className={styles.input}
-                                            name='stock'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.image}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='image'
+                                            />
+                                            <span class="input__label"><Image className={styles.iconsLogin} /> Image</span>
+                                        </label>
+                                    </div>
+                                    <div className={styles.eachInput} >
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={productToEdit.stock}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='stock'
+                                            />
+                                            <span class="input__label"><Stock className={styles.iconsLogin} /> Stock</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
                                         <label className={styles.label} ><CategoryAlt className={styles.iconsLogin} /> Category</label>

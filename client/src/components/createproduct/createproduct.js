@@ -14,6 +14,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { CLOUDINARY_URL } from '../Secret/secret.js';
 import { CLOUDINARY_UPLOAD_PRESET } from '../Secret/secret.js';
 import { Reveal } from "react-awesome-reveal";
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const CreateProduct = () => {
 
@@ -114,6 +116,7 @@ const CreateProduct = () => {
 
     return (
         <div className={styles.containerCreate} >
+            <Canvas />
             <div className={styles.sortCreate} >
                 <ToastContainer />
                 <Reveal className={styles.Effect} >
@@ -124,38 +127,51 @@ const CreateProduct = () => {
                         <div className={styles.sortForm}>
                             <form onSubmit={handleSubmitChange} className={styles.form}>
                                 <div className={styles.eachInput} >
-                                    <label className={styles.label} ><Rename className={styles.iconsLogin} /> Name</label>
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={newProduct.name}
-                                        type='text'
-                                        className={styles.input}
-                                        name='name'
-                                        required={true}
-                                    />
+                                    <label class="input">
+                                        <input
+                                            class="input__field"
+                                            type='text'
+                                            placeholder=" "
+                                            onChange={handleInputChange}
+                                            value={newProduct.name}
+                                            autoComplete={false}
+                                            required={true}
+                                            name='name'
+                                        />
+                                        <span class="input__label"><Rename className={styles.iconsLogin} /> Name</span>
+                                    </label>
                                 </div>
                                 <div className={styles.eachInput} >
-                                    <label className={styles.label} ><DriveFileRenameOutline className={styles.iconsLogin} /> Brand</label>
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={newProduct.brand}
-                                        type='text'
-                                        className={styles.input}
-                                        name='brand'
-                                        required={true}
-                                    />
+                                    <label class="input">
+                                        <input
+                                            class="input__field"
+                                            type='text'
+                                            placeholder=" "
+                                            onChange={handleInputChange}
+                                            value={newProduct.brand}
+                                            autoComplete={false}
+                                            required={true}
+                                            name='brand'
+                                        />
+                                        <span class="input__label"><DriveFileRenameOutline className={styles.iconsLogin} /> Brand</span>
+                                    </label>
                                 </div>
                                 <div className={styles.eachInput} >
-                                    <label className={styles.label} ><Pricetag className={styles.iconsLogin} /> Price</label>
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={newProduct.price}
-                                        type='text'
-                                        className={styles.input}
-                                        name='price'
-                                        required={true}
-                                    />
+                                    <label class="input">
+                                        <input
+                                            class="input__field"
+                                            type='text'
+                                            placeholder=" "
+                                            onChange={handleInputChange}
+                                            value={newProduct.price}
+                                            autoComplete={false}
+                                            required={true}
+                                            name='price'
+                                        />
+                                        <span class="input__label"><Pricetag className={styles.iconsLogin} /> Price</span>
+                                    </label>
                                 </div>
+
                                 <div className={styles.eachInput} >
                                     <label className={styles.label} ><Image className={styles.iconsLogin} /> Image</label>
                                     <img
@@ -170,15 +186,19 @@ const CreateProduct = () => {
                                     />
                                 </div>
                                 <div className={styles.eachInput} >
-                                    <label className={styles.label} ><Stock className={styles.iconsLogin} /> Stock</label>
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={newProduct.stock}
-                                        type='text'
-                                        className={styles.input}
-                                        name='stock'
-                                        required={true}
-                                    />
+                                    <label class="input">
+                                        <input
+                                            class="input__field"
+                                            type='text'
+                                            placeholder=" "
+                                            onChange={handleInputChange}
+                                            value={newProduct.stock}
+                                            autoComplete={false}
+                                            required={true}
+                                            name='stock'
+                                        />
+                                        <span class="input__label"><Stock className={styles.iconsLogin} /> Stock</span>
+                                    </label>
                                 </div>
                                 <div className={styles.eachInput} >
                                     <label className={styles.label} ><CategoryAlt className={styles.iconsLogin} /> Category</label>

@@ -11,6 +11,7 @@ import { MinusCircle } from '@styled-icons/boxicons-regular/MinusCircle';
 import { Reveal } from "react-awesome-reveal";
 import { CashRegister } from '@styled-icons/fa-solid/CashRegister';
 import Sad from '../images/Sad.gif';
+import Canvas from '../canvas/canvas';
 
 const ShoppingCart = () => {
 
@@ -22,8 +23,6 @@ const ShoppingCart = () => {
 
     const nameUser = localStorage.getItem('UserName')
 
-    const [update, setUpdate] = useState(true)
-
     const [loading, setLoading] = useState(true)
 
     const [disabled, setDisabled] = useState(true)
@@ -33,7 +32,7 @@ const ShoppingCart = () => {
     useEffect(async () => {
         await dispatch(GETCART(emailUser))
         !cartUser ? setLoading(true) : setLoading(false);
-    }, [update])
+    }, [])
 
     const handleCLean = async () => {
         await dispatch(CLEANCART(emailUser))
@@ -104,6 +103,7 @@ const ShoppingCart = () => {
 
     return (
         <div className={styles.containerShopping} >
+            <Canvas />
             <div className={styles.sortShopping} >
                 <ToastContainer
                     autoClose={800}

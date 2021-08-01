@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { CartDashFill } from '@styled-icons/bootstrap/CartDashFill';
 import 'react-toastify/dist/ReactToastify.css';
 import stylesLic from '../../scss/license/license.module.scss';
+import Canvas from '../canvas/canvas';
 
 const Home = () => {
 
@@ -64,26 +65,26 @@ const Home = () => {
         await dispatch(GETWISH(emailUserToGet))
     }, [])
 
-    const setGenreWomen = () => {
-        setAnimation(true)
-        setGenre('Women')
-        setCategorieFilter('T-Shirt')
-        setChangeCategory("Women")
-        setTimeout(() => setAnimation(false), 1000)
+    const setGenreWomen = async () => {
+        await setAnimation(true)
+        await setGenre('Women')
+        await setCategorieFilter('T-Shirt')
+        await setChangeCategory("Women")
+        await setTimeout(() => setAnimation(false), 1000)
     }
 
-    const setGenreMen = () => {
-        setAnimation(true)
-        setGenre('Men')
-        setCategorieFilter('T-Shirt')
-        setChangeCategory("Men")
-        setTimeout(() => setAnimation(false), 1000)
+    const setGenreMen = async () => {
+        await setAnimation(true)
+        await setGenre('Men')
+        await setCategorieFilter('T-Shirt')
+        await setChangeCategory("Men")
+        await setTimeout(() => setAnimation(false), 1000)
     }
 
-    const setCategory = (cat) => {
-        setAnimation(true)
-        setCategorieFilter(cat)
-        setTimeout(() => setAnimation(false), 2000)
+    const setCategory = async (cat) => {
+        await setAnimation(true)
+        await setCategorieFilter(cat)
+        await setTimeout(() => setAnimation(false), 2000)
     }
 
     const handleSelect = async (id, sizeSelect) => {
@@ -111,7 +112,6 @@ const Home = () => {
             stock: stock
         }))
         setTimeout(async () => await dispatch(GETCART(emailUserToGet)), 1000)
-
         const responceAdd = await localStorage.getItem('ResponseAdd')
         responceAdd === "Product added" ? toast.success(responceAdd) : toast.error(responceAdd)
     }
@@ -179,6 +179,7 @@ const Home = () => {
                 autoClose={800}
                 limit={2}
             />
+            <Canvas />
             <div className={styles.sortHome}>
                 {loading ?
                     <div>
@@ -218,83 +219,85 @@ const Home = () => {
                                     ))}
                                 </div>
                             </Reveal>
-                            <Reveal className={styles.zoom3} >
-                                <div className={animation ? styles.animation : styles.sortCarts} >
-                                    {products && products.filter(item => item.subcategory === categorieFilter && item.category === genre).slice(limits.base, limits.top).map((item, index) => (
+                            <div className={animation ? styles.animation : styles.sortCarts} >
+                                {products && products.filter(item => item.subcategory === categorieFilter && item.category === genre)
+                                    .slice(limits.base, limits.top).map((item, index) => (
                                         <div className={styles.boxCard} >
-                                            {typeof (wishes) !== String && !wishes.find(wish => wish.Id === item.Id) ?
-                                                <div className={styles.sortStar} >
-                                                    <button
-                                                        onClick={() => { handleAddWish(item.Id, item.name, item.image) }}
-                                                        className={styles.buttonStar} ><Star className={styles.star} />
-                                                    </button>
-                                                </div>
-                                                :
-                                                <div
-
-                                                    className={styles.sortStar} >
-                                                    <button
-                                                        onClick={() => handleRemoveWish(item.Id)}
-                                                        className={styles.buttonStar}  ><StarFill className={styles.star} />
-                                                    </button>
-                                                </div>
-                                            }
-                                            <Link to={{
-                                                pathname: '/Details',
-                                                state: {
-                                                    Id: item.Id,
-                                                }
-                                            }}>
-                                                <div className={styles.imageCard} >
-                                                    <img className={styles.sizeImage} src={item.image} alt='' />
-                                                </div>
-                                            </Link>
-                                            <div className={styles.bottomCard2} >
-                                                <div className={styles.eachBottom1} >
-                                                    <label className={styles.price}>
-                                                        Size
-                                                    </label>
-                                                </div>
-                                                <div className={styles.eachBottom2} >
-                                                    <select
-                                                        onChange={(event) => handleSelect(item.Id, event.target.value)}
-                                                        className={styles.select} >
-                                                        <option value='S' className={styles.option} >S</option>
-                                                        <option value='M' className={styles.option} >M</option>
-                                                        <option value='L' className={styles.option} >L</option>
-                                                        <option value='XL' className={styles.option} >XL</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div className={styles.bottomCard} >
-                                                <div className={styles.eachBottom1} >
-                                                    <p className={styles.price} >${item.price}</p>
-                                                </div>
-                                                {item.stock === 0 ?
-                                                    <div className={styles.eachBottom2} >
-                                                        <button onClick={handleNoStock} className={styles.cartButtom}> <CancelPresentation /></button>
+                                            <Reveal className={styles.zoom3} >
+                                                {typeof (wishes) !== String && !wishes.find(wish => wish.Id === item.Id) ?
+                                                    <div className={styles.sortStar} >
+                                                        <button
+                                                            onClick={() => { handleAddWish(item.Id, item.name, item.image) }}
+                                                            className={styles.buttonStar} ><Star className={styles.star} />
+                                                        </button>
                                                     </div>
                                                     :
-                                                    <div className={styles.eachBottom2}>
-                                                        {typeof (userCart) !== String && !userCart.find(product => product.Id === item.Id) ?
-                                                            <button
-                                                                onClick={() => handleCartAdd(item.name, item.price, item.brand, item.Id, item.image, item.stock)}
-                                                                className={styles.cartButtom}> <CartPlusFill />
-                                                            </button>
-                                                            :
-                                                            <button
-                                                                onClick={() => handleRemoveAdd(item.Id)}
-                                                                className={styles.cartButtom}> <CartDashFill />
-                                                            </button>
-                                                        }
+                                                    <div
+                                                        className={styles.sortStar} >
+                                                        <button
+                                                            onClick={() => handleRemoveWish(item.Id)}
+                                                            className={styles.buttonStar}  ><StarFill className={styles.star} />
+                                                        </button>
                                                     </div>
                                                 }
-                                            </div>
+                                                <Link 
+                                                className={styles.link}
+                                                to={{
+                                                    pathname: '/Details',
+                                                    state: {
+                                                        Id: item.Id,
+                                                    }
+                                                }}>
+                                                    <div className={styles.imageCard} >
+                                                        <img className={styles.sizeImage} src={item.image} alt='' />
+                                                    </div>
+                                                </Link>
+                                                <div className={styles.bottomCard2} >
+                                                    <div className={styles.eachBottom1} >
+                                                        <label className={styles.price}>
+                                                            Size
+                                                        </label>
+                                                    </div>
+                                                    <div className={styles.eachBottom2} >
+                                                        <select
+                                                            onChange={(event) => handleSelect(item.Id, event.target.value)}
+                                                            className={styles.select} >
+                                                            <option value='S' className={styles.option} >S</option>
+                                                            <option value='M' className={styles.option} >M</option>
+                                                            <option value='L' className={styles.option} >L</option>
+                                                            <option value='XL' className={styles.option} >XL</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div className={styles.bottomCard} >
+                                                    <div className={styles.eachBottom1} >
+                                                        <p className={styles.price} >${item.price}</p>
+                                                    </div>
+                                                    {item.stock === 0 ?
+                                                        <div className={styles.eachBottom2} >
+                                                            <button onClick={handleNoStock} className={styles.cartButtom}> <CancelPresentation /></button>
+                                                        </div>
+                                                        :
+                                                        <div className={styles.eachBottom2}>
+                                                            {typeof (userCart) !== String && !userCart.find(product => product.Id === item.Id) ?
+                                                                <button
+                                                                    onClick={() => handleCartAdd(item.name, item.price, item.brand, item.Id, item.image, item.stock)}
+                                                                    className={styles.cartButtom}> <CartPlusFill />
+                                                                </button>
+                                                                :
+                                                                <button
+                                                                    onClick={() => handleRemoveAdd(item.Id)}
+                                                                    className={styles.cartButtom}> <CartDashFill />
+                                                                </button>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </Reveal>
                                         </div>
                                     ))}
-                                </div>
-                            </Reveal>
+                            </div>
                         </div>
                         <Reveal className={stylesLic.footer} >
                             <div className={stylesLic.footerDiv} >
@@ -307,7 +310,7 @@ const Home = () => {
                                     target="_blank"
                                     rel="license"
                                     href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                    Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.
+                                    Licencia Creative Commons Atribución-NoComercial-Compartir-Igual 4.0 Internacional</a>.
                             </div>
                         </Reveal>
                     </div>

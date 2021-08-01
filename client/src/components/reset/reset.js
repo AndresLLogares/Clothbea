@@ -5,6 +5,8 @@ import { Mail } from '@styled-icons/entypo/Mail';
 import { Reveal } from 'react-awesome-reveal';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const Reset = () => {
 
@@ -41,6 +43,7 @@ const Reset = () => {
 
     return (
         <div className={styles.containerReset} >
+            <Canvas />
             <div className={styles.sortReset} >
                 <ToastContainer
                     autoClose={800}
@@ -52,46 +55,49 @@ const Reset = () => {
                         </div>
                         <form onSubmit={handleSubmit} className={styles.form} >
                             <div className={styles.eachInput} >
-                                <label className={styles.label} >
-                                    <Mail className={styles.iconsLogin} />
-                                    Email
+                                <label class="input">
+                                    <input
+                                        class="input__field"
+                                        type='email'
+                                        placeholder=" "
+                                        onChange={handleInput}
+                                        value={dataUser.email}
+                                        autoComplete={false}
+                                        required={true}
+                                        name='email'
+                                    />
+                                    <span class="input__label"><Mail className={styles.iconsLogin} /> E-Mail</span>
                                 </label>
-                                <input
-                                    onChange={handleInput}
-                                    value={dataUser.email}
-                                    type='email'
-                                    className={styles.input}
-                                    name='email'
-                                    required={true}
-                                />
                             </div>
                             <div className={styles.eachInput} >
-                                <label className={styles.label} >
-                                    <LockPassword className={styles.iconsLogin} />
-                                    Old Password
+                                <label class="input">
+                                    <input
+                                        class="input__field"
+                                        type='password'
+                                        placeholder=" "
+                                        onChange={handleInput}
+                                        value={dataUser.oldpassword}
+                                        autoComplete={false}
+                                        required={true}
+                                        name='oldpassword'
+                                    />
+                                    <span class="input__label"><LockPassword className={styles.iconsLogin} /> Old Password</span>
                                 </label>
-                                <input
-                                    onChange={handleInput}
-                                    value={dataUser.oldpassword}
-                                    type='password'
-                                    className={styles.input}
-                                    name='oldpassword'
-                                    required={true}
-                                />
                             </div>
                             <div className={styles.eachInput} >
-                                <label className={styles.label} >
-                                    <LockPassword className={styles.iconsLogin} />
-                                    New Password
-                                </label>
-                                <input
-                                    onChange={handleInput}
+                                <label class="input">
+                                    <input
+                                        class="input__field"
+                                        type='password'
+                                        placeholder=" "
+                                        onChange={handleInput}
                                     value={dataUser.newpassword}
-                                    type='password'
-                                    className={styles.input}
-                                    name='newpassword'
-                                    required={true}
-                                />
+                                        autoComplete={false}
+                                        required={true}
+                                        name='newpassword'
+                                    />
+                                    <span class="input__label"><LockPassword className={styles.iconsLogin} />New Password</span>
+                                </label>
                             </div>
                             <div className={styles.sortButton} >
                                 <button className={styles.buttonReset} type='submit' >Reset Password</button>

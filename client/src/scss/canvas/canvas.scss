@@ -1,0 +1,52 @@
+$Yellow:#ffbe0b;
+$Green:#06D6A0;
+$Red:#d90429;
+$LightGreen:#0CB0A9;
+$LightBlue:#118AB2;
+$DarkBlue:#0C637F;
+$Pink:#EF476F;
+$DarkGreen:#09C3A5;
+$White: #FFFFFF;
+$Black: #231B1B;
+
+#angle-bg {
+    height: 700px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* canvas svg css start */
+#angle-bg {
+  height: 700px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+/* === */
+.fss-container {
+  height: 700px;
+  position: absolute;
+  top: 0;
+	width: 100%;
+}
+.wellcome_area{
+  background: none!important;
+  height: 700px;
+  width: 100%;
+	position: relative;
+}
+
+.wellcome_area::before{
+	z-index: -9!important;
+}
+/* === */
+canvas {
+  height: 700px;
+  left: 0;
+  position: absolute;
+}

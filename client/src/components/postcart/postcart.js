@@ -12,6 +12,8 @@ import { DocumentOnePage } from '@styled-icons/fluentui-system-filled/DocumentOn
 import { RealEstate } from '@styled-icons/fluentui-system-filled/RealEstate';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const PostCart = (props) => {
 
@@ -98,6 +100,7 @@ const PostCart = (props) => {
 
     return (
         <div className={styles.ContainerPost} >
+            <Canvas />
             <ToastContainer
                 autoClose={800}
             />
@@ -108,7 +111,7 @@ const PostCart = (props) => {
                     </div>
                     :
                     <Reveal className={styles.zoom} >
-                        <div className={styles.boxPost} >
+                        <div className={styles.boxPost} >                        
                             <div className={styles.sortTitle} >
                                 <p className={styles.titlePost} >Shipping Information </p>
                                 <p className={styles.titlePost}> <TruckMonster className={styles.truck} />  </p>
@@ -116,101 +119,102 @@ const PostCart = (props) => {
                             <div className={styles.sortForm} >
                                 <form onSubmit={handleSubmitChange} className={styles.form} >
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <DocumentOnePage className={styles.iconLabel} />
-                                            Name
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='name'
+                                                value={dataUser.name}
+                                                required={true}
+                                            />
+                                            <span class="input__label">  <DocumentOnePage className={styles.iconLabel} /> Name</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='name'
-                                            value={dataUser.name}
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <DocumentOnePage className={styles.iconLabel} />
-                                            Last Name
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='lastname'
+                                                value={dataUser.lastname}
+                                                required={true}
+                                            />
+                                            <span class="input__label">  <DocumentOnePage className={styles.iconLabel} />Last Name</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='lastname'
-                                            value={dataUser.lastname}
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <Flag className={styles.iconLabel} />
-                                            Country
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='country'
+                                                value={dataUser.country}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><Flag className={styles.iconLabel} />Country</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='country'
-                                            value={dataUser.country}
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <City className={styles.iconLabel} />
-                                            City
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='city'
+                                                value={dataUser.city}
+                                                required={true}
+                                            />
+                                            <span class="input__label"> <City className={styles.iconLabel} />City</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='city'
-                                            value={dataUser.city}
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <RealEstate className={styles.iconLabel} />
-                                            State
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='state'
+                                                value={dataUser.state}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><RealEstate className={styles.iconLabel} />State</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='state'
-                                            value={dataUser.state}
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <Address className={styles.iconLabel} />
-                                            Address
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='address'
+                                                value={dataUser.address}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><Address className={styles.iconLabel} />Address</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='address'
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                        />
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} >
-                                            <Mailbox className={styles.iconLabel} />
-                                            ZIP
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='number'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                name='ZIP'
+                                                value={dataUser.ZIP}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><Mailbox className={styles.iconLabel} />ZIP</span>
                                         </label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            name='ZIP'
-                                            value={dataUser.ZIP}
-                                            className={styles.input}
-                                            required={true}
-                                            type='number'
-                                        />
                                     </div>
                                     <div className={styles.productsBox}>
                                         {userCart && userCart.map((item, index) => (

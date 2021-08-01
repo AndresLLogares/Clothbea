@@ -25,8 +25,12 @@ flex-direction: column;
 width: 90%;
 align-items: center;
 justify-content: center;
-background-color: $DarkGreen;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 border-radius:  10px 10px 10px 10px;
 margin-bottom: 10%;
 }
@@ -46,7 +50,8 @@ flex-direction: column;
 align-items: center;
 background-color: $LightGreen;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
 margin-bottom: 5%;
 justify-content: center;
 }

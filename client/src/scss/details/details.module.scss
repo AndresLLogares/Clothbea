@@ -63,14 +63,13 @@ justify-content: center;
 
 .boxDetails{
 width: 90%;
-background-color: $Green;
+background-color: transparent;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 padding: 2%;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 margin-bottom: 5%;
 }
 
@@ -96,11 +95,14 @@ justify-content: flex-start;
 
 .insideBox{
 display: flex;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 border-radius: 10px 10px 10px 10px;
-background-color: $LightGreen;
-padding: 2%;
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;padding: 2%;
 margin: 0;
+box-shadow: .5rem .5rem 0 $Black;
+border: solid .2rem $Black;
 justify-content: center;
 align-items:flex-start;
 width: 90%;
@@ -131,8 +133,8 @@ color: $Black;
 border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
-border-radius: 10px 10px 10px 10px;
 font-family: 'B612', sans-serif;
+box-shadow: .5rem .5rem 0 $Black;
 }
 
 .select:hover{
@@ -173,10 +175,11 @@ font-weight: bold;
 color: $Black;
 padding: 1%;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
+box-shadow: .5rem .5rem 0 $Black;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -196,12 +199,17 @@ width: 30%;
 .secondBox{
 display: flex;
 width: 95%;
-background-color: $LightGreen;
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
+margin-bottom: 10%;
+box-shadow: .5rem .5rem 0 $Black;
 justify-content: center;
+border: solid .2rem $Black;
 align-items: center;
 margin-bottom: 10%;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .sortSecondBox{
@@ -219,7 +227,7 @@ align-items: center;
 justify-content: center;
 background-color: $Pink;
 border-radius: 10px 10px 0px 0px;
-border-bottom: solid .5rem $DarkBlue;
+border-bottom: solid .5rem $Black;
 margin-bottom: 2%;
 }
 
@@ -264,8 +272,8 @@ color: $Black;
 border:solid .2rem $Pink ;
 font-size: 2vh;
 font-weight: bold;
-border-radius: 10px 10px 10px 10px;
 font-family: 'B612', sans-serif;
+box-shadow: .5rem .5rem 0 $Black;
 &:focus{
 background-color: $White;
 transition-duration: 2s;
@@ -280,9 +288,9 @@ background-color: $White;
 color: $Black;
 background-color: $White;
 border:solid .2rem $Pink ;
+box-shadow: .5rem .5rem 0 $Black;
 font-size: 2vh;
 font-weight: bold;
-border-radius: 10px 10px 10px 10px;
 font-family: 'B612', sans-serif;
 resize: none;
 margin-bottom: 5%;
@@ -301,15 +309,16 @@ justify-content: center;
 width: 70%;
 font-size: 3.5vh;
 font-family: 'Oswald', sans-serif;
+box-shadow: .5rem .5rem 0 $Black;
 font-weight: bold;
 color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }
@@ -349,8 +358,6 @@ width: 90%;
 background-color: $White;
 border-radius: 10px 10px 10px 10px;
 border: solid .4rem $Pink;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
-
 }
 
 .eachItemComment{

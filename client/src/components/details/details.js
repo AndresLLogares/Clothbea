@@ -9,6 +9,7 @@ import { StarFill } from '@styled-icons/bootstrap/StarFill';
 import { Star } from '@styled-icons/bootstrap/Star';
 import { ToastContainer, toast } from 'react-toastify';
 import { CartDashFill } from '@styled-icons/bootstrap/CartDashFill';
+import Canvas from '../canvas/canvas';
 
 const Details = (props) => {
 
@@ -160,17 +161,19 @@ const Details = (props) => {
 
     return (
         <div className={styles.containerDetails} >
-            <div className={styles.sortDetails} >
-                <ToastContainer
-                    autoClose={800}
-                    limit={3}
-                />
-                <Reveal className={styles.zoom} >
-                    {loading ?
-                        <div>
-                            <div className={styles.loader} />
-                        </div>
-                        :
+            <Canvas />
+            {loading ?
+                <div className={styles.sortDetails} >
+                    <div className={styles.loader} />
+                </div>
+                :
+                <div className={styles.sortDetails} >
+                    <ToastContainer
+                        autoClose={800}
+                        limit={3}
+                    />
+                    <Reveal className={styles.zoom} >
+
                         <div className={styles.boxDetails} >
                             <div className={styles.separateDetails} >
                                 <div className={styles.sortImage1} >
@@ -236,65 +239,65 @@ const Details = (props) => {
                                 </div>
                             </div>
                         </div>
-                    }
-                </Reveal>
-                <Reveal className={styles.zoom} >
-                    <div className={styles.secondBox} >
-                        <div className={styles.sortSecondBox} >
-                            <div className={styles.sortTitle} >
-                                <p className={styles.titleComment} >Leave your comment here</p>
-                            </div>
-                            <div className={styles.separateDetails} >
-                                <div className={styles.sortForm} >
-                                    <form onSubmit={handleSubmitComment} className={styles.form} >
-                                        <label className={styles.label} >
-                                            Title
-                                        </label>
-                                        <input
-                                            className={styles.input}
-                                            required={true}
-                                            type='text'
-                                            value={title}
-                                            onChange={handleTitle}
-                                        />
-                                        <label className={styles.label} >
-                                            Review
-                                        </label>
-                                        <textarea
-                                            className={styles.textarea}
-                                            required={true}
-                                            type='text'
-                                            value={comment}
-                                            onChange={handleComment}
-                                        />
-                                        <div className={styles.sortButton2} >
-                                            <button type='submit' className={styles.buttonSend} >Send</button>
-                                        </div>
-                                    </form>
+                    </Reveal>
+                    <Reveal className={styles.zoom} >
+                        <div className={styles.secondBox} >
+                            <div className={styles.sortSecondBox} >
+                                <div className={styles.sortTitle} >
+                                    <p className={styles.titleComment} >Leave your comment here</p>
                                 </div>
-                                <div className={styles.sortReview} >
-                                    <div className={styles.sortTitleReview}>
-                                        <p className={styles.titleReview} >Reviews</p>
+                                <div className={styles.separateDetails} >
+                                    <div className={styles.sortForm} >
+                                        <form onSubmit={handleSubmitComment} className={styles.form} >
+                                            <label className={styles.label} >
+                                                Title
+                                            </label>
+                                            <input
+                                                className={styles.input}
+                                                required={true}
+                                                type='text'
+                                                value={title}
+                                                onChange={handleTitle}
+                                            />
+                                            <label className={styles.label} >
+                                                Review
+                                            </label>
+                                            <textarea
+                                                className={styles.textarea}
+                                                required={true}
+                                                type='text'
+                                                value={comment}
+                                                onChange={handleComment}
+                                            />
+                                            <div className={styles.sortButton2} >
+                                                <button type='submit' className={styles.buttonSend} >Send</button>
+                                            </div>
+                                        </form>
                                     </div>
-                                    {commentsUsers && commentsUsers.map((item, index) => (
-                                        <div className={styles.sortComments} >
-                                            <div className={styles.eachItemComment} >
-                                                <p className={styles.comments} >By: {item.email}</p>
-                                            </div>
-                                            <div className={styles.eachItemComment} >
-                                                <p className={styles.comments}>Title: {item.title}</p>
-                                            </div>
-                                            <div className={styles.eachItemComment} >
-                                                <p className={styles.comments}>{item.comment}</p>
-                                            </div>
+                                    <div className={styles.sortReview} >
+                                        <div className={styles.sortTitleReview}>
+                                            <p className={styles.titleReview} >Reviews</p>
                                         </div>
-                                    ))}
+                                        {commentsUsers && commentsUsers.map((item, index) => (
+                                            <div className={styles.sortComments} >
+                                                <div className={styles.eachItemComment} >
+                                                    <p className={styles.comments} >By: {item.email}</p>
+                                                </div>
+                                                <div className={styles.eachItemComment} >
+                                                    <p className={styles.comments}>Title: {item.title}</p>
+                                                </div>
+                                                <div className={styles.eachItemComment} >
+                                                    <p className={styles.comments}>{item.comment}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </Reveal>
-            </div>
+                    </Reveal>
+                </div>
+            }
         </div>
     )
 }

@@ -27,6 +27,23 @@ const NavigationBar = () => {
 
     const numberCart = useSelector(state => state.Clothbea.cart)
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const [height, setHeight] = useState(window.innerHeight);
+
+    const updateWidthAndHeight = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateWidthAndHeight);
+        if (window.innerWidth > 1248) {
+            setClick(false)
+        }
+        return () => window.removeEventListener("resize", updateWidthAndHeight);
+    });
+
     useEffect(() => {
         setNameUser(localStorage.getItem('UserName'));
         dispatch(GETCART(emailUser))

@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import SubCategories from '../models/subcategories.js';
+import SubCategories from '../../mongo/models/subcategories.js';
 const subcategories = express.Router();
 
 subcategories.use(bodyParser.json({ limit: "30mb", extended: true }));

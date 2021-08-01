@@ -7,6 +7,7 @@ import axios from 'axios';
 import { GETORDERS } from '../actions';
 import { Reveal } from "react-awesome-reveal";
 import SadBag from '../images/SadBag.gif';
+import Canvas from '../canvas/canvas';
 
 const OrdersAdmin = () => {
 
@@ -51,6 +52,7 @@ const OrdersAdmin = () => {
 
     return (
         <div className={styles.containerCreate}>
+            <Canvas />
             <div className={styles.sortCreate} >
                 <ToastContainer />
                 <Reveal className={styles.Effect} >

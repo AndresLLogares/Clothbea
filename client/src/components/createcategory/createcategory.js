@@ -7,6 +7,8 @@ import { CategoryAlt } from '@styled-icons/boxicons-solid/CategoryAlt'
 import { Category } from '@styled-icons/material-rounded/Category';
 import { ToastContainer, toast } from 'react-toastify';
 import { Reveal } from "react-awesome-reveal";
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const CreateCategory = () => {
 
@@ -66,6 +68,7 @@ const CreateCategory = () => {
 
     return (
         <div className={styles.containerCreateCat} >
+            <Canvas />
             <div className={styles.sortCreate} >
                 <ToastContainer />
                 <Reveal className={styles.Effect} >
@@ -112,15 +115,19 @@ const CreateCategory = () => {
                                     />
                                 </div>
                                 <div className={styles.eachInput} >
-                                    <label className={styles.label} ><Category className={styles.iconsLogin} /> Category</label>
-                                    <input
-                                        onChange={handleInputChange}
-                                        value={category}
-                                        type='text'
-                                        className={styles.input}
-                                        name='category'
-                                        required={true}
-                                    />
+                                    <label class="input">
+                                        <input
+                                            class="input__field"
+                                            type='text'
+                                            placeholder=" "
+                                            onChange={handleInputChange}
+                                            value={category}
+                                            autoComplete={false}
+                                            required={true}
+                                            name='category'
+                                        />
+                                        <span class="input__label"><Category className={styles.iconsLogin} /> Category</span>
+                                    </label>
                                 </div>
                                 <div className={styles.sortButtons} >
                                     <button type='submit' className={styles.buttonCreate} >Create</button>

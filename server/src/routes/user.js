@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config()
-import User from '../models/users.js';
+import User from '../../mongo/models/users.js';
 import { OAuth2Client } from 'google-auth-library';
 
 const secret = process.env.SECRET;
@@ -119,7 +119,7 @@ UsersRoute.post("/reset", async (req, res) => {
                                 user.password = hash;
                                 user
                                     .save()
-                                    .then(user => res.send('Reset Password Correct'))
+                                    .then(user => res.send('You have a new password!'))
                                     .catch(err => res.send("Reset Incorrect"));
                             });
                         });

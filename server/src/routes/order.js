@@ -1,10 +1,10 @@
 import express from 'express';
 const OrderRoute = express.Router();
-import Order from '../models/orders.js';
+import Order from '../../mongo/models/orders.js';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
-import User from '../models/users.js';
-import Products from '../models/products.js';
+import User from '../../mongo/models/users.js';
+import Products from '../../mongo/models/products.js';
 import NodeMailer from 'nodemailer';
 dotenv.config()
 

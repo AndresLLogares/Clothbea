@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Reveal } from "react-awesome-reveal";
 import stylesOrders from '../../scss/orders/orders.module.scss';
 import SadBag from '../images/SadBag.gif';
+import Canvas from '../canvas/canvas';
 
 const OrdersUsers = () => {
 
@@ -27,7 +28,7 @@ const OrdersUsers = () => {
         setLoading(false)
     }, [])
 
-    if (typeof orders !== Array || orders !== "order doesn't exist" ) {
+    if (typeof orders !== Array || orders !== "order doesn't exist") {
         orders = [orders]
     }
 
@@ -47,6 +48,7 @@ const OrdersUsers = () => {
 
     return (
         <div className={styles.containerCreate}>
+            <Canvas />
             <div className={styles.sortCreate} >
                 <ToastContainer />
                 <Reveal className={styles.Effect} >
@@ -60,7 +62,7 @@ const OrdersUsers = () => {
                                 <p className={styles.titleCreate} >Orders of {nameUser}</p>
                             </div>
                             <div className={stylesOrders.sortOders}>
-                            {orders.length > 0 && orders.toString() !== "order doesn't exist" ? orders.map((item, index) => (
+                                {orders.length > 0 && orders.toString() !== "order doesn't exist" ? orders.map((item, index) => (
                                     <div className={stylesOrders.sortEachOrder}>
                                         <div className={stylesOrders.sortUpOrder}>
                                             <div className={stylesOrders.eachUpUser} >
@@ -107,8 +109,8 @@ const OrdersUsers = () => {
                                             </div>
                                         </div>
                                     </div>
-                                )) 
-                                :
+                                ))
+                                    :
                                     <div className={stylesOrders.empty}>
                                         <p className={stylesOrders.pEmpty}>You doesn't have any order emited</p>
                                         <img className={stylesOrders.Bag} src={SadBag} alt='' />

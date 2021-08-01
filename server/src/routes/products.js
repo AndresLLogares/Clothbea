@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import Products from '../models/products.js';
+import Products from '../../mongo/models/products.js';
 const productsRoute = express.Router();
 
 productsRoute.use(bodyParser.json({ limit: "30mb", extended: true }));

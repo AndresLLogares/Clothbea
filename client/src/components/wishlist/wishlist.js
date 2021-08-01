@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import styles from '../../scss/wishlist/wishlist.module.scss';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Canvas from '../canvas/canvas';
 
 const WishList = () => {
 
@@ -38,6 +39,7 @@ const WishList = () => {
 
     return (
         <div className={styles.containerWish} >
+            <Canvas />
             <div className={styles.sortWish} >
                 <ToastContainer
                     autoClose={800}

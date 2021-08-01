@@ -67,21 +67,26 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-background-color: $LightGreen;
-border-radius: 10px 10px 10px 10px;
-box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
 margin-bottom: 10%;
+border-radius: 10px 10px 10px 10px;
+border: solid .2rem $Black;
+box-shadow: .5rem .5rem 0 $Black;
+background:
+repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
+repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
+background-color: rgba(12, 99, 127, 0.25);
 }
 
 .sortTitle{
 width: 100%;
 display: flex;
-border-radius: 10px 10px 0px 0px;
+border-radius: 5px 5px 0px 0px;
 justify-content: center;
 background-color: $Pink;
 flex-direction: row;
 align-items: center;
-border-bottom: solid .5rem $DarkBlue;
+border-bottom: solid .5rem $Black;
+margin-bottom: 5%;
 }
 
 .titlePost{
@@ -120,8 +125,8 @@ display: flex;
 align-items: flex-start;
 justify-content: flex-start;
 flex-direction: column;
-margin-top: 2%;
-margin-bottom: 2%;
+margin-top: 3%;
+margin-bottom: 3%;
 }
 
 .label{
@@ -165,7 +170,7 @@ flex-direction: column;
 background-color: $Pink;
 border: double .3rem $White;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 5px 5px 5px 5px $Black;
+box-shadow: .5rem .5rem 0 $Black;
 padding: 2%;
 }
 
@@ -206,7 +211,7 @@ align-items: center;
 justify-content: center;
 padding: 2%;
 border-radius: 10px 10px 10px 10px;
-box-shadow: 5px 5px 5px 5px $Black;
+box-shadow: .5rem .5rem 0 $Black;
 margin-top: 2%;
 margin-bottom: 2%;
 }
@@ -240,10 +245,11 @@ color: $Black;
 padding: 3%;
 letter-spacing: .1rem;
 border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
+border: solid .4rem $Pink;
 background-color: $White;
+box-shadow: .5rem .5rem 0 $Black;
 background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
+image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
 position: 100%;
 size: 400%;
 }

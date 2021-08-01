@@ -13,6 +13,8 @@ import axios from 'axios';
 import jwt_decode from "jwt-decode";
 import setAuthToken from '../Utils/SethAuthToken.js';
 import { GOOGLEID } from '../Secret/secret.js'
+import Canvas from '../canvas/canvas';
+import '../../scss/login/login.scss';
 
 const Login = () => {
 
@@ -153,6 +155,7 @@ const Login = () => {
 
     return (
         <div className={styles.containerLogin} >
+            <Canvas />
             <div className={styles.sortLogin} >
                 <ToastContainer
                     autoClose={800}
@@ -174,28 +177,36 @@ const Login = () => {
                                 </div>
                                 <form onSubmit={handleSubmitLogin} className={styles.form}>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label} ><Mail className={styles.iconsLogin} /> Email</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.email}
-                                            type='email'
-                                            className={styles.input}
-                                            name='email'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='email'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={infoUser.email}
+                                                autoComplete={false}
+                                                required={true}
+                                                name='email'
+                                            />
+                                            <span class="input__label"><Mail className={styles.iconsLogin} /> E-Mail</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><LockPassword className={styles.iconsLogin} /> Password</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.password}
-                                            minLength={5}
-                                            maxLength={10}
-                                            type='password'
-                                            className={styles.input}
-                                            name='password'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                minLength={5}
+                                                maxLength={10}
+                                                type='password'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={infoUser.password}
+                                                name='password'
+                                                autoComplete={false}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><LockPassword className={styles.iconsLogin} />Password</span>
+                                        </label>
                                     </div>
                                     <div className={styles.sortButtons} >
                                         <div className={styles.eachButtonLogin}>
@@ -223,52 +234,68 @@ const Login = () => {
                             <div className={styles.sortForm}>
                                 <form onSubmit={handleSubmitSignIn} className={styles.form}>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><Mail className={styles.iconsLogin} />Email</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.email}
-                                            type='email'
-                                            className={styles.input}
-                                            name='email'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                type='email'
+                                                placeholder=" "
+                                                name="email"
+                                                onChange={handleInputChange}
+                                                value={infoUser.email}
+                                                autoComplete={false}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><Mail className={styles.iconsLogin} /> E-Mail</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><LockPassword className={styles.iconsLogin} />Password</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.password}
-                                            minLength={5}
-                                            maxLength={10}
-                                            type='password'
-                                            className={styles.input}
-                                            name='password'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                minLength={5}
+                                                maxLength={10}
+                                                type='password'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={infoUser.password}
+                                                name='password'
+                                                autoComplete={false}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><LockPassword className={styles.iconsLogin} />Password</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><LockPassword className={styles.iconsLogin} />Repeat Password</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.controlpassword}
-                                            minLength={5}
-                                            maxLength={10}
-                                            type='password'
-                                            className={styles.input}
-                                            name='controlpassword'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                minLength={5}
+                                                maxLength={10}
+                                                type='password'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={infoUser.controlpassword}
+                                                name='controlpassword'
+                                                autoComplete={false}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><LockPassword className={styles.iconsLogin} />Repeat</span>
+                                        </label>
                                     </div>
                                     <div className={styles.eachInput} >
-                                        <label className={styles.label}><DriveFileRenameOutline className={styles.iconsLogin} />Username</label>
-                                        <input
-                                            onChange={handleInputChange}
-                                            value={infoUser.username}
-                                            type='text'
-                                            className={styles.input}
-                                            name='username'
-                                            required={true}
-                                        />
+                                        <label class="input">
+                                            <input
+                                                class="input__field"
+                                                name='username'
+                                                type='text'
+                                                placeholder=" "
+                                                onChange={handleInputChange}
+                                                value={infoUser.username}
+                                                autoComplete={false}
+                                                required={true}
+                                            />
+                                            <span class="input__label"><DriveFileRenameOutline className={styles.iconsLogin} /> Username</span>
+                                        </label>
                                     </div>
                                     <div className={styles.sortButtons} >
                                         <div className={styles.eachButtonLogin}>

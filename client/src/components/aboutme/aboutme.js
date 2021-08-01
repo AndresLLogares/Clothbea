@@ -6,11 +6,13 @@ import { Github } from '@styled-icons/boxicons-logos/Github';
 import { Portfolio } from '@styled-icons/zondicons/Portfolio';
 import styles from '../../scss/aboutme/aboutme.module.scss';
 import Hi from '../images/loading.gif';
+import Canvas from '../canvas/canvas';
 
 const AboutMe = () => {
 
     return (
         <div className={styles.containerAbout} >
+            <Canvas />
             <div className={styles.sortAbout} >
                 <Reveal className={styles.slide} >
                     <div className={styles.boxAbout} >
@@ -37,7 +39,7 @@ const AboutMe = () => {
                                 <a style={{ textDecoration: 'none' }}
                                     target="_blank"
                                     className={styles.eachLink}
-                                    href="https://andreslogares.netlify.app/Blog">
+                                    href="https://andreslogares.netlify.app/">
                                     <p className={styles.links}><Portfolio className={styles.iconAbout} />Portfolio</p>
                                 </a>
                             </div>
