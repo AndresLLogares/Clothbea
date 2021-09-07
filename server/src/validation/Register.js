@@ -1,5 +1,5 @@
-import Validator from 'validator';
-import isEmpty from 'is-empty';
+import Validator from "validator";
+import isEmpty from "is-empty";
 
 const validateRegisterInput = (data) => {
   let errors = {};
@@ -29,7 +29,7 @@ const validateRegisterInput = (data) => {
 
   return {
     errors,
-    isValid: isEmpty(errors)
+    isValid: isEmpty(errors),
   };
 };
 
