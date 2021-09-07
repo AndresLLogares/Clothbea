@@ -1,531 +1,554 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
 .loader {
-border: 16px solid $White; 
-border-top: 16px solid $Pink; 
-border-left: solid 16px $LightBlue;
-border-right: solid 16px $Black;
-border-radius: 10%;
-width: 120px;
-height: 120px;
-animation: spin 2s linear infinite;
-margin-bottom: 25%;
+  border: 16px solid $White;
+  border-top: 16px solid $Pink;
+  border-left: solid 16px $LightBlue;
+  border-right: solid 16px $Black;
+  border-radius: 10%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-bottom: 25%;
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-.containerDetails{
-width: 100%;
-background-color: $DarkBlue; 
-height: fit-content;
-min-height: 100vh;
+.containerDetails {
+  width: 100%;
+  background-color: $DarkBlue;
+  height: fit-content;
+  min-height: 100vh;
 }
 
-.sortDetails{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-top: 15%;
-justify-content: center;
+.sortDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15%;
+  justify-content: center;
 }
 
-.zoom{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
+.zoom {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.boxDetails{
-width: 90%;
-background-color: transparent;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 2%;
-border-radius: 10px 10px 10px 10px;
-margin-bottom: 5%;
+.boxDetails {
+  width: 90%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 5%;
 }
 
-.separateDetails{
-width: 100%;
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: flex-start;
+.separateDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.sortImage1{
-width: 50%;
-align-items: flex-start;
-justify-content: left;
+.sortImage1 {
+  width: 50%;
+  align-items: flex-start;
+  justify-content: left;
 }
 
-.sortImage2{
-width: 50%;
-align-items: flex-start;
-justify-content: flex-start;
+.sortImage2 {
+  width: 50%;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.insideBox{
-display: flex;
-border-radius: 10px 10px 10px 10px;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;padding: 2%;
-margin: 0;
-box-shadow: .5rem .5rem 0 $Black;
-border: solid .2rem $Black;
-justify-content: center;
-align-items:flex-start;
-width: 90%;
-flex-direction: column;
+.insideBox {
+  display: flex;
+  border-radius: 10px 10px 10px 10px;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  padding: 2%;
+  margin: 0;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border: solid 0.2rem $Black;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  flex-direction: column;
 }
 
-.pDetails{
-display: flex;
-margin-top: 2%;
-margin-bottom: 2%;
-margin-left: 5%;
-font-family: 'Oswald', sans-serif;
-color: $White;
-font-weight: bold;
-font-size: 4vh;
+.pDetails {
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  font-family: "Oswald", sans-serif;
+  color: $White;
+  font-weight: bold;
+  font-size: 4vh;
 }
 
-.sortSelect{
-display: flex;
-margin-left: 5%;
+.sortSelect {
+  display: flex;
+  margin-left: 5%;
 }
 
-.select{
-width: 10rem;
-height: 2.5rem;
-background-color: $White;
-color: $Black;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-font-family: 'B612', sans-serif;
-box-shadow: .5rem .5rem 0 $Black;
+.select {
+  width: 10rem;
+  height: 2.5rem;
+  background-color: $White;
+  color: $Black;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
 }
 
-.select:hover{
-cursor: url(../../components/images/pointer.png),pointer;
+.select:hover {
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.sizeImage{
-min-width: 35rem;
-max-width: 35rem;
-min-height: 35rem;
-max-height: 35rem;
+.sizeImage {
+  min-width: 35rem;
+  max-width: 35rem;
+  min-height: 35rem;
+  max-height: 35rem;
 }
 
-.sortButton{
-display: flex;
-width: 100%;
-margin-bottom: 5%;
-margin-top: 5%;
-text-align: center;
-align-items: center;
-justify-content: center;
+.sortButton {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.sortButton2{
-display: flex;
-width: 50%;
-margin-bottom: 5%;
-margin-top: 5%;
-text-align: center;
-align-items: center;
-justify-content: center;
+.sortButton2 {
+  display: flex;
+  width: 50%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttonBuy{
-width: 40%;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 1%;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
-}
-
-.cartIcon{
-width: 30%;
+.buttonBuy {
+  width: 40%;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 1%;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.secondBox{
-display: flex;
-width: 95%;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-margin-bottom: 10%;
-box-shadow: .5rem .5rem 0 $Black;
-justify-content: center;
-border: solid .2rem $Black;
-align-items: center;
-margin-bottom: 10%;
-border-radius: 10px 10px 10px 10px;
+.cartIcon {
+  width: 30%;
 }
 
-.sortSecondBox{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.secondBox {
+  display: flex;
+  width: 95%;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  justify-content: center;
+  border: solid 0.2rem $Black;
+  align-items: center;
+  margin-bottom: 10%;
+  border-radius: 10px 10px 10px 10px;
 }
 
-.sortTitle{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-border-radius: 10px 10px 0px 0px;
-border-bottom: solid .5rem $Black;
-margin-bottom: 2%;
+.sortSecondBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.titleComment{
-font-family: 'Major Mono Display', monospace;
-font-size: 4vh;
-color: $White;
-font-weight: bold;
+.sortTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: solid 0.5rem $Black;
+  margin-bottom: 2%;
 }
 
-.sortForm{
-width: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.titleComment {
+  font-family: "Major Mono Display", monospace;
+  font-size: 4vh;
+  color: $White;
+  font-weight: bold;
 }
 
-.form{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: left;
-margin-left: 10%;
+.sortForm {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 3vh;
-font-weight: bold;
-color: $White;
-margin-bottom: 2%;
-margin-top: 2%;
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  margin-left: 10%;
 }
 
-.input{
-width: 10rem;
-height: 2.5rem;
-background-color: $White;
-color: $Black;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-font-family: 'B612', sans-serif;
-box-shadow: .5rem .5rem 0 $Black;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 13rem;
-}
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 3vh;
+  font-weight: bold;
+  color: $White;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 
-.textarea{
-width: 20rem;
-height: 10rem;
-background-color: $White;
-color: $Black;
-background-color: $White;
-border:solid .2rem $Pink ;
-box-shadow: .5rem .5rem 0 $Black;
-font-size: 2vh;
-font-weight: bold;
-font-family: 'B612', sans-serif;
-resize: none;
-margin-bottom: 5%;
+.input {
+  width: 10rem;
+  height: 2.5rem;
+  background-color: $White;
+  color: $Black;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 13rem;
+  }
 }
 
-.sortReview{
-width: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.textarea {
+  width: 20rem;
+  height: 10rem;
+  background-color: $White;
+  color: $Black;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  font-size: 2vh;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
+  resize: none;
+  margin-bottom: 5%;
 }
 
-
-.buttonSend{
-width: 70%;
-font-size: 3.5vh;
-font-family: 'Oswald', sans-serif;
-box-shadow: .5rem .5rem 0 $Black;
-font-weight: bold;
-color: $Black;
-padding: 3%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.sortReview {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.sortTitleReview{
-display: flex;
-align-items: flex-start;
-flex-direction: column;
-justify-content: flex-start;
-width: 100%;
+.buttonSend {
+  width: 70%;
+  font-size: 3.5vh;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  font-weight: bold;
+  color: $Black;
+  padding: 3%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.titleReview{
-margin: 0;
-font-family: 'Oswald', sans-serif;
-font-size: 5vh;
-color: $White;
-font-weight: bold;
+.sortTitleReview {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-
-.sortComments{
-margin-top: 5%;
-display: flex;
-align-items: flex-start;
-flex-direction: column;
-justify-content: flex-start;
-width: 90%;
-background-color: $White;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
+.titleReview {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: 5vh;
+  color: $White;
+  font-weight: bold;
 }
 
-.eachItemComment{
-display: flex;
-flex-direction: column;
-width: 100%;
-padding-left: 2%;
+.sortComments {
+  margin-top: 5%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 90%;
+  background-color: $White;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
 }
 
-.comments{
-font-size: 2vh;
-font-family: 'B612', sans-serif;
-font-weight: bold;
-color: $Black;
+.eachItemComment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 2%;
 }
 
-.sortStar{
-display: flex;
-position: relative;
-left:  20%;
-align-self:flex-end;
-padding-top: 5%;
+.comments {
+  font-size: 2vh;
+  font-family: "B612", sans-serif;
+  font-weight: bold;
+  color: $Black;
 }
 
-.star{
-width: 40%;
+.sortStar {
+  display: flex;
+  position: relative;
+  left: 20%;
+  align-self: flex-end;
+  padding-top: 5%;
 }
 
-.buttonStar{
-width: 25%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 2%;
-border-radius: 10% 50%;
-border: transparent;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$Black 50%, transparent 50%);
-position: 100%;
-size: 400%;
+.star {
+  width: 40%;
 }
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $Yellow;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+
+.buttonStar {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 2%;
+  border-radius: 10% 50%;
+  border: transparent;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $Black 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $Yellow;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
 @media (max-width: 1248px) {
+  .sortStar {
+    left: 0;
+  }
 
-.sortStar{
-left: 0;
-}
+  .sortDetails {
+    padding-top: 40%;
+  }
 
-.sortDetails{
-padding-top: 40%;
-}
+  .separateDetails {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
 
-.separateDetails{
-flex-direction: column;
-display: flex;
-align-items: center;
-width: 100%;
-justify-content: center;
-}
+  .sortImage1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 
-.sortImage1{
-display: flex;
-align-items: center;
-width: 100%;
-justify-content: center;
-margin-top: 5%;
-margin-bottom: 5%;
-}
+  .sortImage2 {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
 
-.sortImage2{
-width: 90%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 5%;
-}
+  .insideBox {
+    width: 100%;
+  }
 
-.insideBox{
-width: 100%;
-}
+  .sizeImage {
+    min-width: 15rem;
+    max-width: 15rem;
+    min-height: 15rem;
+    max-height: 15rem;
+  }
 
-.sizeImage{
-min-width: 15rem;
-max-width: 15rem;
-min-height: 15rem;
-max-height: 15rem;
-}
+  .boxDetails {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10%;
+  }
 
-.boxDetails{
-padding: 0;
-margin: 0;
-margin-bottom: 10%;
-}
+  .pDetails {
+    font-size: 3vh;
+  }
 
-.pDetails{
-font-size: 3vh;
-}
+  .textarea {
+    width: 90%;
+  }
 
-.textarea{
-width: 90%;
-}
+  .secondBox {
+    width: 90%;
+  }
 
-.secondBox{
-width: 90%;
-}
+  .sortTitle {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 
-.sortTitle{
-display: flex;
-width: 100%;
-text-align: center;
-justify-content: center;
-align-items: center;
-}
+  .buttonBuy {
+    width: 60%;
+  }
 
-.buttonBuy{
-width: 60%;
-}
+  .sortForm {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+  }
 
-.sortForm{
-display: flex;
-width: 90%;
-text-align: center;
-justify-content: center;
-align-items: center;
-margin-top: 10%;
-}
+  .form {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
-.form{
-margin: 0;
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-}
+  .label {
+    margin-top: 5%;
+  }
 
-.label{
-margin-top: 5%;
-}
+  .sortReview {
+    width: 100%;
+  }
 
-.sortReview{
-width: 100%;
-}
+  .sortTitleReview {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
 
-.sortTitleReview{
-display: flex;
-width: 90%;
-text-align: center;
-justify-content: center;
-align-items: center;
-margin-top: 10%;
-margin-bottom: 5%;
-}
-
-.sortComments{
-margin-bottom: 10%;
-}
-
+  .sortComments {
+    margin-bottom: 10%;
+  }
 }

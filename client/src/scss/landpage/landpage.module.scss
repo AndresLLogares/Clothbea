@@ -1,380 +1,376 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Simonetta', cursive;
-font-family: 'Major Mono Display', monospace;
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Simonetta", cursive;
+  font-family: "Major Mono Display", monospace;
 }
 
 ::-webkit-scrollbar {
-width: .8rem;               
+  width: 0.8rem;
 }
 
 ::-webkit-scrollbar-track {
-background: $White;
-border: solid .1rem $Black;       
-border-radius: 0rem;
+  background: $White;
+  border: solid 0.1rem $Black;
+  border-radius: 0rem;
 }
 
 ::-webkit-scrollbar-thumb {
-background-color: $Green;    
-border-radius: 0.6rem;
-border: solid .2rem $Black;
+  background-color: $Green;
+  border-radius: 0.6rem;
+  border: solid 0.2rem $Black;
 }
 
-.containerLand{
-width: 100%;
-height: fit-content;
-min-height: 100vh;
-background-color: $Green;
+.containerLand {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  background-color: $Green;
 }
 
-.sortLand{
-padding-top: 5%;
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-bottom: 5%;
+.sortLand {
+  padding-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5%;
 }
 
-.fade{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 100%;
+.fade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-
-.boxLand{
-display: flex;    
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background: linear-gradient(80deg, $LightBlue 30%, $Yellow 30%);
-width: 95%;
-height: fit-content;
+.boxLand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(80deg, $LightBlue 30%, $Yellow 30%);
+  width: 95%;
+  height: fit-content;
 }
 
-.sortTitleLand{
-display: flex;
-align-items: center;
-width: 50%;
-flex-direction: row;
-margin-top: 2%;
-margin-bottom: 2%;
+.sortTitleLand {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  flex-direction: row;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.containerTitle1{
-width: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
+.containerTitle1 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.containerTitle2{
-width: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
+.containerTitle2 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logoLand{
-width: 100%;
+.logoLand {
+  width: 100%;
 }
 
-.TitleLand{
-font-family: 'Major Mono Display', monospace;
-font-size: 8vh;
-color: $Black;
-font-weight: bold;
+.TitleLand {
+  font-family: "Major Mono Display", monospace;
+  font-size: 8vh;
+  color: $Black;
+  font-weight: bold;
 }
 
-.separateLand{
-display: flex;
-flex-direction: row;
-width: 90%;
-align-items: center;
-justify-content: center;
-margin-bottom: 5%;
+.separateLand {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
 }
 
-.sortList{
-display: flex;
-flex-direction: column;
-width: 40%;
-align-items:center;
-justify-content: center;
+.sortList {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+  justify-content: center;
 }
 
-.numbers1ro{
-font-family: 'Simonetta', cursive;
-font-size: 3vh;
-margin: 0;
-margin-bottom: 3%;
-background-color: $White;
-padding: 3%;
-border-radius: 30%/5%;   
-border: solid .5rem $Pink;
-color: $Black;
-font-weight: bold;
+.numbers1ro {
+  font-family: "Simonetta", cursive;
+  font-size: 3vh;
+  margin: 0;
+  margin-bottom: 3%;
+  background-color: $White;
+  padding: 3%;
+  border-radius: 30%/5%;
+  border: solid 0.5rem $Pink;
+  color: $Black;
+  font-weight: bold;
 }
 
-.numbers1ro:hover{
-transition-duration: 1s;
-background-color: $Pink;
-border: solid .5rem $Black;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+.numbers1ro:hover {
+  transition-duration: 1s;
+  background-color: $Pink;
+  border: solid 0.5rem $Black;
+  color: $White;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.numbers2do{
-font-family: 'Simonetta', cursive;
-font-size: 3vh;
-margin: 0;
-margin-bottom: 3%;
-background-color: $White;
-padding: 3%;
-border-radius: 30%/5%;   
-border: solid .5rem $Pink;
-margin-left: 5%;
-color: $Black;
-font-weight: bold;
+.numbers2do {
+  font-family: "Simonetta", cursive;
+  font-size: 3vh;
+  margin: 0;
+  margin-bottom: 3%;
+  background-color: $White;
+  padding: 3%;
+  border-radius: 30%/5%;
+  border: solid 0.5rem $Pink;
+  margin-left: 5%;
+  color: $Black;
+  font-weight: bold;
 }
 
-.numbers2do:hover{
-transition-duration: 1s;
-background-color: $Pink;
-border: solid .5rem $Black;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+.numbers2do:hover {
+  transition-duration: 1s;
+  background-color: $Pink;
+  border: solid 0.5rem $Black;
+  color: $White;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.numbers3ro{
-font-family: 'Simonetta', cursive;
-font-size: 3vh;
-margin: 0;
-margin-bottom: 3%;
-background-color: $White;
-padding: 3%;
-border-radius: 30%/5%;   
-border: solid .5rem $Pink;
-margin-left: 10%;
-color: $Black;
-font-weight: bold;
+.numbers3ro {
+  font-family: "Simonetta", cursive;
+  font-size: 3vh;
+  margin: 0;
+  margin-bottom: 3%;
+  background-color: $White;
+  padding: 3%;
+  border-radius: 30%/5%;
+  border: solid 0.5rem $Pink;
+  margin-left: 10%;
+  color: $Black;
+  font-weight: bold;
 }
 
-.numbers3ro:hover{
-transition-duration: 1s;
-background-color: $Pink;
-border: solid .5rem $Black;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+.numbers3ro:hover {
+  transition-duration: 1s;
+  background-color: $Pink;
+  border: solid 0.5rem $Black;
+  color: $White;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.numbers4to{
-font-family: 'Simonetta', cursive;
-font-size: 3vh;
-margin: 0;
-margin-bottom: 3%;
-background-color: $White;
-padding: 3%;
-margin-left: 15%;
-border-radius: 30%/5%;   
-border: solid .5rem $Pink;
-color: $Black;
-font-weight: bold;
+.numbers4to {
+  font-family: "Simonetta", cursive;
+  font-size: 3vh;
+  margin: 0;
+  margin-bottom: 3%;
+  background-color: $White;
+  padding: 3%;
+  margin-left: 15%;
+  border-radius: 30%/5%;
+  border: solid 0.5rem $Pink;
+  color: $Black;
+  font-weight: bold;
 }
 
-.numbers4to:hover{
-transition-duration: 1s;
-background-color: $Pink;
-border: solid .5rem $Black;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+.numbers4to:hover {
+  transition-duration: 1s;
+  background-color: $Pink;
+  border: solid 0.5rem $Black;
+  color: $White;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.numbers5to{
-font-family: 'Simonetta', cursive;
-font-size: 3vh;
-margin: 0;
-margin-bottom: 3%;
-background-color: $White;
-padding: 3%;
-border-radius: 30%/5%;   
-border: solid .5rem $Pink;
-color: $Black;
-margin-left: 20%;
-font-weight: bold;
+.numbers5to {
+  font-family: "Simonetta", cursive;
+  font-size: 3vh;
+  margin: 0;
+  margin-bottom: 3%;
+  background-color: $White;
+  padding: 3%;
+  border-radius: 30%/5%;
+  border: solid 0.5rem $Pink;
+  color: $Black;
+  margin-left: 20%;
+  font-weight: bold;
 }
 
-.numbers5to:hover{
-transition-duration: 1s;
-background-color: $Pink;
-border: solid .5rem $Black;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+.numbers5to:hover {
+  transition-duration: 1s;
+  background-color: $Pink;
+  border: solid 0.5rem $Black;
+  color: $White;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.sortImage{
-display: flex;
-width: 70%;
-align-items: center;
-justify-content: center;
+.sortImage {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.animation{
-display: flex;
-width: 70%;
-align-items: center;
-justify-content: center;
-animation-name: myAnimation;
-animation-duration: 1s;
-animation-iteration-count: infinite;
+.animation {
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  animation-name: myAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
 
-@keyframes myAnimation{
-0%{
-opacity: 1;
-transform: rotateX(90deg);
-}
-50%{
-opacity: 0.5;
-transform: rotateX(0deg);
-}
-100%{
-display: none;
-opacity: 0;
-transform: rotateX(90deg);
-}
-}
-
-.sortProducts{
-max-width: 30rem;
-min-width: 30rem;
-max-height: 30rem;
-min-height: 30rem;
-cursor: url(../../components/images/pointer.png),pointer;
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: rotateX(0deg);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
 }
 
-.sortButton{
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 5%;
+.sortProducts {
+  max-width: 30rem;
+  min-width: 30rem;
+  max-height: 30rem;
+  min-height: 30rem;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.buttonContainer{
-display: flex;
-height: 6rem;
-width: 15rem;
-color: $DarkBlue;
-font-family: 'Bebas Neue', cursive;
-letter-spacing: .3rem;
-font-size: 5vh;
-font-weight: bold;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-transition: all 0.3s;
-cursor: url(../../components/images/pointer.png),pointer;
-border: solid $DarkBlue .2rem;
-position: relative;
+.sortButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
 }
-.buttonContainer:hover{
-border: solid transparent .2rem;
+
+.buttonContainer {
+  display: flex;
+  height: 6rem;
+  width: 15rem;
+  color: $DarkBlue;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.3rem;
+  font-size: 5vh;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: url(../../components/images/pointer.png), pointer;
+  border: solid $DarkBlue 0.2rem;
+  position: relative;
+}
+.buttonContainer:hover {
+  border: solid transparent 0.2rem;
 }
 
 .buttonContainer p {
-display: flex;
-text-align: center;
-padding: 0;
-margin: 0;
-align-items: center;
-justify-content: center;
-transition: all 0.3s;
-
+  display: flex;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
 }
 .buttonContainer::before {
-content: '';
-position: absolute;
-bottom: 0%;
-top: 0%;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-opacity: 0;
-transition: all 0.3s;
-border-bottom-width: .5rem;
-border-bottom-style: solid;
-padding: 0;
-margin: 0;
-border-bottom-color: $Black;
-transform: scale(0.1, 1);
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-bottom-width: 0.5rem;
+  border-bottom-style: solid;
+  padding: 0;
+  margin: 0;
+  border-bottom-color: $Black;
+  transform: scale(0.1, 1);
 }
 .buttonContainer:hover p {
-letter-spacing: 2px;
-color: $DarkBlue;
+  letter-spacing: 2px;
+  color: $DarkBlue;
 }
 .buttonContainer:hover::before {
-opacity: 1;	
-transform: scale(1, .6);	
-
+  opacity: 1;
+  transform: scale(1, 0.6);
 }
 .buttonContainer::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-transition: all 0.3s;
-background-color: rgba(239, 71, 111, 0.2);;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(239, 71, 111, 0.2);
 }
 .buttonContainer:hover::after {
-opacity: 0;	
+  opacity: 0;
 
-transform: scale(0.1, 1);
+  transform: scale(0.1, 1);
 }
 
 @media (max-width: 1248px) {
-    .separateLand{
-        flex-direction: column;
-    }
-    .boxLand{
-        background: linear-gradient(80deg, $LightGreen 30%, $Yellow 30%);
-    }
-    .sortTitleLand{
-        flex-direction: column;
-    }
-    .TitleLand{
-        font-size: 5vh;
-    }
-    .sortProducts{
+  .separateLand {
+    flex-direction: column;
+  }
+  .boxLand {
+    background: linear-gradient(80deg, $LightGreen 30%, $Yellow 30%);
+  }
+  .sortTitleLand {
+    flex-direction: column;
+  }
+  .TitleLand {
+    font-size: 5vh;
+  }
+  .sortProducts {
     margin-top: 5%;
     min-width: 20rem;
     max-width: 20rem;
     max-height: 20rem;
     min-height: 20rem;
-    }
+  }
 
-    .buttonContainer{
+  .buttonContainer {
     color: $Pink;
-    }
+  }
 }

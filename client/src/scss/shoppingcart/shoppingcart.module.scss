@@ -1,451 +1,460 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Simonetta', cursive;
-font-family: 'Major Mono Display', monospace;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Simonetta", cursive;
+  font-family: "Major Mono Display", monospace;
 }
 
-
 .loader {
-border: 16px solid $White; 
-border-top: 16px solid $Pink; 
-border-left: solid 16px $LightBlue;
-border-right: solid 16px $Black;
-border-radius: 10%;
-width: 120px;
-height: 120px;
-animation: spin 2s linear infinite;
+  border: 16px solid $White;
+  border-top: 16px solid $Pink;
+  border-left: solid 16px $LightBlue;
+  border-right: solid 16px $Black;
+  border-radius: 10%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.containerShopping{
-width: 100%;
-min-height: 100vh;
-height: fit-content;
-background-color: $DarkBlue;
+.containerShopping {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: $DarkBlue;
 }
 
-.sortShopping{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-top: 10%;
+.sortShopping {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
 }
 
-.zoom{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.zoom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.boxShopping{
-width: 90%;
-height: fit-content;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-margin-bottom: 10%;
-box-shadow: .5rem .5rem 0 $Black;
-border-radius: 10px 10px 10px 10px;
-margin-bottom: 10%;
+.boxShopping {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
 }
 
-.sortTitleShopping{
-width: 100%;
-display: flex;
-align-items: center;
-text-align: center;
-border-radius: 10px 10px 0px 0px;
-justify-content: center;
-background-color: $Pink;
-border-bottom: solid .5rem $Black; 
-margin-bottom: 5%;
+.sortTitleShopping {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: center;
+  background-color: $Pink;
+  border-bottom: solid 0.5rem $Black;
+  margin-bottom: 5%;
 }
 
-.styleTitle{
-font-family: 'Major Mono Display', monospace;
-font-size: 5vh;
-font-weight: bold;
-color: $White;
+.styleTitle {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5vh;
+  font-weight: bold;
+  color: $White;
 }
 
-.sortButtonClean{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-margin-bottom: 3%;
+.sortButtonClean {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3%;
 }
 
-.Trash{
-width: 20%;
-padding-right: 5%;
+.Trash {
+  width: 20%;
+  padding-right: 5%;
 }
 
-.cross{
-width: 10%;
-padding-left: 5%;
+.cross {
+  width: 10%;
+  padding-left: 5%;
 }
 
-.plus{
-width: 50%;
+.plus {
+  width: 50%;
 }
 
-.buttonClean{
-width: 20%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-font-size: 4vh;
-font-family: 'Oswald', sans-serif;
-box-shadow: .5rem .5rem 0 $Black;
-font-weight: bold;
-color: $Black;
-padding: 2%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
-}
-
-.buttonDelete{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 2%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
-background-color: $White;
-box-shadow: .2rem .2rem 0 $Black;
-background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.buttonClean {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 4vh;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  font-weight: bold;
+  color: $Black;
+  padding: 2%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.cash{
-width: 20%;
-margin-left: 5%;
+.buttonDelete {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 2%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $DarkBlue;
+  background-color: $White;
+  box-shadow: 0.2rem 0.2rem 0 $Black;
+  background: {
+    image: linear-gradient(45deg, $Pink 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.bottonBuy{
-width: 70%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-box-shadow: .5rem .5rem 0 $Black;
-color: $Black;
-padding: 2%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.cash {
+  width: 20%;
+  margin-left: 5%;
 }
 
-.bottonBot{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-font-weight: bold;
-color: $Black;
-padding: 2%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
-}
-    
-.sortCarts{
-display: flex;
-width: 95%;
-flex-wrap: wrap;
-align-items: flex-start;
-justify-content: center;
-margin-bottom: 5%;
+.bottonBuy {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  color: $Black;
+  padding: 2%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.eachCart{
-width: 25%;
-background-color: $DarkGreen;
-margin: 2%;
-box-shadow: .5rem .5rem 0 $Black;
-border-radius: 10px 10px 10px 10px;
+.bottonBot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-weight: bold;
+  color: $Black;
+  padding: 2%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $DarkBlue;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $Pink 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.sortElementCartsName{
-display: flex;
-align-items: center;
-border-radius: 10px 10px 0px 0px;
-justify-content: center;
-background-color: $Pink;
-padding: 3%;
-border-bottom: solid .2rem $White;
+.sortCarts {
+  display: flex;
+  width: 95%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 5%;
 }
 
-.sortElementCartsPrice{
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-padding: 3%;
-border-bottom: solid .2rem $White;
+.eachCart {
+  width: 25%;
+  background-color: $DarkGreen;
+  margin: 2%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border-radius: 10px 10px 10px 10px;
 }
 
-.sortElementCartsSize{
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 3%;
-border-bottom: solid .2rem $White;
+.sortElementCartsName {
+  display: flex;
+  align-items: center;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: center;
+  background-color: $Pink;
+  padding: 3%;
+  border-bottom: solid 0.2rem $White;
 }
 
-.sortElementCartsButton{
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 3%;
-border-bottom: solid .2rem $White;
+.sortElementCartsPrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  padding: 3%;
+  border-bottom: solid 0.2rem $White;
 }
 
-.sortElementCartsImage{
-display: flex;
-align-items: center;
-border-radius: 10px 10px 0px 0px;
-justify-content: center;
-padding: 3%;
-border-bottom: solid .2rem $White;
+.sortElementCartsSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  border-bottom: solid 0.2rem $White;
 }
 
-.imageCart{
-min-width: 15rem;
-max-width: 15rem;
-min-height: 15rem;
-max-height: 15rem;
+.sortElementCartsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  border-bottom: solid 0.2rem $White;
 }
 
-.pCart{
-font-size: 3vh;
-color: $White;
-font-weight: bold;
-font-family: 'B612', sans-serif;
-margin: 0;
+.sortElementCartsImage {
+  display: flex;
+  align-items: center;
+  border-radius: 10px 10px 0px 0px;
+  justify-content: center;
+  padding: 3%;
+  border-bottom: solid 0.2rem $White;
 }
 
-.sortBotton{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-padding: 2%;
-width: 100%;
+.imageCart {
+  min-width: 15rem;
+  max-width: 15rem;
+  min-height: 15rem;
+  max-height: 15rem;
 }
 
-.eachBotton{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 30%;
-
+.pCart {
+  font-size: 3vh;
+  color: $White;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
+  margin: 0;
 }
 
-.eachBottonDisabeld{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 30%;
-opacity: 0.5;
+.sortBotton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  width: 100%;
 }
 
-
-.insideBox{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-width: 90%;
-background-color: $LightBlue;
-margin-bottom: 5%;
-margin-top: 5%;
-box-shadow: .5rem .5rem 0 $Black;
-border-radius: 10px 10px 10px 10px;
-padding: 2%;
+.eachBotton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
 }
 
-.eachInside{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 30%;
+.eachBottonDisabeld {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  opacity: 0.5;
 }
 
-.hr{
-height: 5rem;
-width: 1rem;
-border: transparent;
-border-radius: 10px 10px 10px 10px;
-background-color: $Pink;
+.insideBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  background-color: $LightBlue;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border-radius: 10px 10px 10px 10px;
+  padding: 2%;
 }
 
-.sortSad{
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-margin-top: 5%;
+.eachInside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
 }
 
-
-.pSad{
-font-size: 5vh;
-color: $White;
-font-weight: bold;
-font-family: 'B612', sans-serif;
+.hr {
+  height: 5rem;
+  width: 1rem;
+  border: transparent;
+  border-radius: 10px 10px 10px 10px;
+  background-color: $Pink;
 }
 
-.imageSad{
-width: 80%;
+.sortSad {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
 }
 
-.none{
-    display: none;
+.pSad {
+  font-size: 5vh;
+  color: $White;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
 }
 
-.sortEachSad{
-    display: flex;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.imageSad {
+  width: 80%;
+}
+
+.none {
+  display: none;
+}
+
+.sortEachSad {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1248px) {
+  .sortShopping {
+    padding-top: 40%;
+  }
 
-.sortShopping{
-padding-top: 40%;
-}
+  .buttonClean {
+    width: 90%;
+    font-size: 3vh;
+  }
 
-.buttonClean{
-width: 90%;
-font-size: 3vh;
-}
+  .Trash {
+    width: 10%;
+  }
 
-.Trash{
-width: 10%;
-}
+  .sortCarts {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sortCarts{
-width: 90%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
+  .eachCart {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 
-.eachCart{
-width: 100%;
-margin-top: 10%;
-margin-bottom: 10%;
-}
-
-.hr{
-height: 1rem;
-width: 100%;
-}
-.insideBox{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 90%;
-}
-.eachInside{
-width: 90%;
-}
-
+  .hr {
+    height: 1rem;
+    width: 100%;
+  }
+  .insideBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+  .eachInside {
+    width: 90%;
+  }
 }

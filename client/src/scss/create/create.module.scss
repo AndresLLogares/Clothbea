@@ -1,452 +1,475 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
-
 .loader {
-border: 16px solid $White; 
-border-top: 16px solid $Pink; 
-border-left: solid 16px $LightBlue;
-border-right: solid 16px $Black;
-border-radius: 10%;
-width: 120px;
-height: 120px;
-animation: spin 2s linear infinite;
+  border: 16px solid $White;
+  border-top: 16px solid $Pink;
+  border-left: solid 16px $LightBlue;
+  border-right: solid 16px $Black;
+  border-radius: 10%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-.containerCreate{
-width: 100%;
-min-height: 150vh;
-height: fit-content;
-background-color: $DarkBlue;
+.containerCreate {
+  width: 100%;
+  min-height: 150vh;
+  height: fit-content;
+  background-color: $DarkBlue;
 }
 
-.containerCreateCat{
-width: 100%;
-min-height: 150vh;
-height: fit-content;
-background-color: $DarkBlue;
+.containerCreateCat {
+  width: 100%;
+  min-height: 150vh;
+  height: fit-content;
+  background-color: $DarkBlue;
 }
 
-.ContainerOrders{
-width: 100%;
-min-height: 150vh;
-height: fit-content;
-background-color: $DarkBlue;
+.ContainerOrders {
+  width: 100%;
+  min-height: 150vh;
+  height: fit-content;
+  background-color: $DarkBlue;
 }
 
-.sortCreate{
-width: 100%;
-display: flex;
-flex-direction: column;
-padding-top: 10%;
-align-items: center;
-justify-content: center;
+.sortCreate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  justify-content: center;
 }
 
-.Effect{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.Effect {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.createBox{
-display: flex;
-flex-direction: column;
-width: 90%;
-align-items: center;
-justify-content: center;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-margin-bottom: 10%;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
+.createBox {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
 }
 
-.createBoxCat{
-display: flex;
-flex-direction: column;
-width: 90%;
-align-items: center;
-justify-content: center;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
-margin-bottom: 10%;
-
+.createBoxCat {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  margin-bottom: 10%;
 }
 
-.sortTitle{
-display: flex;
-background-color: $Pink;
-width: 100%;
-border-radius:  10px 10px 0 0 ;
-border-bottom: solid .5rem $Black;
-align-items: center;
-justify-content: center;
+.sortTitle {
+  display: flex;
+  background-color: $Pink;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  border-bottom: solid 0.5rem $Black;
+  align-items: center;
+  justify-content: center;
 }
 
-.sortTitle2{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
+.sortTitle2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.titleCreate{
-font-size: 6vh;
-margin: 0;
-margin-top: 2%;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Major Mono Display', monospace;
-color: $White;
+.titleCreate {
+  font-size: 6vh;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-family: "Major Mono Display", monospace;
+  color: $White;
 }
 
-
-.titleCreate2{
-font-size: 5vh;
-margin: 0;
-margin-top: 2%;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Oswald', sans-serif;
-color: $White;
+.titleCreate2 {
+  font-size: 5vh;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+  color: $White;
 }
 
-.categories{
-display: flex;
-width: 100%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.categories {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.sortCategories{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-width: 90%;
-flex-wrap: wrap;
+.sortCategories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  flex-wrap: wrap;
 }
 
-.eachCategory{
-display: flex;
-width: 20%;
-align-items: center;
-justify-content: center;
-background-color: $DarkBlue;
-padding: 2%;
-margin: 2%;
-box-shadow: .5rem .5rem 0 $Black;
-border: solid .2rem $Pink;
-border-radius: 10px 10px 10px 10px;
+.eachCategory {
+  display: flex;
+  width: 20%;
+  align-items: center;
+  justify-content: center;
+  background-color: $DarkBlue;
+  padding: 2%;
+  margin: 2%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border: solid 0.2rem $Pink;
+  border-radius: 10px 10px 10px 10px;
 }
 
-.styleCategory{
-    font-size: 3vh;
-margin: 0;
-font-weight: bold;
-font-family: 'B612', sans-serif;
-color: $White;
+.styleCategory {
+  font-size: 3vh;
+  margin: 0;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
+  color: $White;
 }
 
-.sortForm{
-display: flex;
-width: 90%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.sortForm {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.form{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.eachInput{
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-width:25%;
-margin-top: 2%;
-margin-bottom: 2%;
+.eachInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 25%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-font-weight: bold;
-margin-bottom: 5%;
-color: $White;
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: $White;
 }
 
-.select{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
+.select {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
 }
 
-.input{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 18rem;
-}
-}
-
-.inputCheck{
-width: 15rem;
-height: 2.5rem;
-cursor: url(../../components/images/pointer.png),pointer;
+.input {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 18rem;
+  }
 }
 
-.CheckBox{
-    border-radius: 50%;
+.inputCheck {
+  width: 15rem;
+  height: 2.5rem;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
-}
-    
-.sortButtons{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-margin-bottom: 5%;
-margin-top: 2%;
+.CheckBox {
+  border-radius: 50%;
 }
 
-.buttonCreate{
-width: 20%;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 1%;
-box-shadow: .5rem .5rem 0 $Black;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
+.iconsLogin {
+  padding-bottom: 5%;
+  width: 2rem;
 }
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
+
+.sortButtons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 2%;
 }
+
+.buttonCreate {
+  width: 20%;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 1%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
 .buttonCreateDisabled {
-width: 20%;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 1%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Black;
-background-color: $White;
-opacity: 0.5;
-background: {
-image: linear-gradient(45deg,$Red 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
-}
-
-.imageCreate{
-width: 100%;
-margin-bottom: 5%;
+  width: 20%;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 1%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Black;
+  background-color: $White;
+  opacity: 0.5;
+  background: {
+    image: linear-gradient(45deg, $Red 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.inputImage{
-display: flex;
-flex-direction: column;
-background-color: $White;
-width: 100%;
-height: fit-content;
+.imageCreate {
+  width: 100%;
+  margin-bottom: 5%;
 }
 
-.labelCard{
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-font-weight: bold;
-color: $Black;
+.inputImage {
+  display: flex;
+  flex-direction: column;
+  background-color: $White;
+  width: 100%;
+  height: fit-content;
 }
 
-.labelCardExample{
-font-family: 'B612', sans-serif;
-font-size: 2vh;
-font-weight: bold;
-color: $Black;
+.labelCard {
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  font-weight: bold;
+  color: $Black;
 }
 
-.divLabel{
-width: 100%;
-display: flex;
-flex-direction: column;
-margin-bottom: 2%;
+.labelCardExample {
+  font-family: "B612", sans-serif;
+  font-size: 2vh;
+  font-weight: bold;
+  color: $Black;
 }
 
-.sortForm{
-display: flex;
-width: 90%;
-margin-top: 5%;
-margin-bottom: 5%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.divLabel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
 }
 
-.Card{
-width: 50%;
-padding: 2%;
-border-radius: 10px 10px 10px 10px;
-border: solid .3rem $Pink;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
+.sortForm {
+  display: flex;
+  width: 90%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Card {
+  width: 50%;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.3rem $Pink;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
 }
 
 @media (max-width: 1248px) {
+  .sortCreate {
+    padding-top: 40%;
+  }
 
-.sortCreate{
-padding-top: 40%;
-}
+  .sortCategories {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sortCategories{
-display: flex;
-width: 90%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
+  .eachCategory {
+    width: 90%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 
-.eachCategory{
-width: 90%;
-margin-top: 5%;
-margin-bottom: 5%;
-}
+  .sortTitle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-.sortTitle{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-}
+  .titleCreate {
+    font-size: 3vh;
+    text-align: center;
+  }
 
-.titleCreate{
-font-size: 3vh;
-text-align: center;
-}
+  .sortForm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sortForm{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
+  .form {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.form{
-width: 90%;
-display: flex;
-align-items: center;
-justify-content: center;
-}
+  .eachInput {
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+  }
 
-.eachInput{
-width:80%;
-display: flex;
-align-items:flex-start;
-justify-content: left;
-}
+  .label {
+    font-size: 3vh;
+  }
 
-.label{
-font-size: 3vh;
-}
+  .Card {
+    width: 100%;
+    margin-top: 10%;
+  }
 
-.Card{
-width: 100%;
-margin-top: 10%;
-}
+  .labelCard {
+    font-size: 2vh;
+  }
 
-.labelCard{
-font-size: 2vh;
-}
+  .buttonCreate {
+    margin-top: 10%;
+    width: 50%;
+  }
 
-.buttonCreate{
-margin-top: 10%;
-width: 50%;
+  .buttonCreateDisabled {
+    margin-top: 10%;
+    width: 50%;
+  }
 }
-
-.buttonCreateDisabled{
-margin-top: 10%;
-width: 50%;
-}
-}   

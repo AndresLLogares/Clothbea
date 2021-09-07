@@ -1,361 +1,371 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
-}
-
-.containerEdit{
-width: 100%;
-background-color: $DarkBlue;
-height: fit-content;
-min-height: 100vh;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
-.sortEdit{
-display: flex;
-align-items: center;
-justify-content: center;
-padding-top: 10%;
-width: 100%;
+.containerEdit {
+  width: 100%;
+  background-color: $DarkBlue;
+  height: fit-content;
+  min-height: 100vh;
 }
 
-.Jack{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
+.sortEdit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
+  width: 100%;
 }
 
-.boxEdit{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 90%;
-border-radius:  10px 10px 10px 10px;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
-margin-bottom: 10%;
+.Jack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.sortTitle{
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-width: 100%;
-border-radius:  10px 10px 0 0 ;
-border-bottom: solid .5rem $Black;
+.boxEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-radius: 10px 10px 10px 10px;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  margin-bottom: 10%;
 }
 
-.titleEdit{
-font-size: 6vh;
-margin: 0;
-margin-top: 2%;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Major Mono Display', monospace;
-color: $White;
+.sortTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  border-bottom: solid 0.5rem $Black;
 }
 
-.sortCards{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-margin-top: 2%;
-flex-wrap: wrap;
-width: 90%;
+.titleEdit {
+  font-size: 6vh;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-family: "Major Mono Display", monospace;
+  color: $White;
 }
 
-.boxEachProduct{
-width: 15%;
-margin-right: 3%;
-margin-bottom: 3%;
-display: flex;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-background-color: $DarkGreen;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
-border-radius:  10px 10px 10px 10px;
+.sortCards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  flex-wrap: wrap;
+  width: 90%;
 }
 
-.titleCard{
-width: 100%;
-display: flex;
-background-color: $Pink;
-align-items: center;
-text-align: center;
-margin-bottom: 5%;
-justify-content: center;
-border-radius:  10px 10px 0 0 ;
-border-bottom: solid .2rem $DarkBlue;
+.boxEachProduct {
+  width: 15%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $DarkGreen;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border-radius: 10px 10px 10px 10px;
 }
 
-.titleCardOther{
-width: 100%;
-display: flex;
-background-color: $Pink;
-align-items: center;
-text-align: center;
-margin-bottom: 5%;
-justify-content: center;
-border-bottom: solid .2rem $DarkBlue;
+.titleCard {
+  width: 100%;
+  display: flex;
+  background-color: $Pink;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5%;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  border-bottom: solid 0.2rem $DarkBlue;
 }
 
-.titlecardStyle{
-width: 90%;
-color: $White;
-margin: 0;
-margin-top: 2%;
-margin-bottom: 2%;
-font-family: 'B612', sans-serif;
-font-size: 2vh;
+.titleCardOther {
+  width: 100%;
+  display: flex;
+  background-color: $Pink;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5%;
+  justify-content: center;
+  border-bottom: solid 0.2rem $DarkBlue;
 }
 
-.imageCardsize{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-margin-top: 2%;
-margin-bottom: 2%;
-border-top: solid .5rem $Pink;
+.titlecardStyle {
+  width: 90%;
+  color: $White;
+  margin: 0;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: "B612", sans-serif;
+  font-size: 2vh;
 }
 
-.imageCard{
-margin-top: 5%;
-min-width: 20rem;
-max-width: 20rem;
-min-height: 20rem;
-max-height: 20rem;
+.imageCardsize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-top: solid 0.5rem $Pink;
 }
 
-.sortButtonCard{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-margin-top: 2%;
-margin-bottom: 3%;
+.imageCard {
+  margin-top: 5%;
+  min-width: 20rem;
+  max-width: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
 }
 
-.buttonSelect{
-width: 90%;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 3%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $DarkBlue;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$Pink 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.sortButtonCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 3%;
 }
 
-.sortForm{
-display: flex;
-width: 90%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.buttonSelect {
+  width: 90%;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 3%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $DarkBlue;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $Pink 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.form{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.sortForm {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.eachInput{
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-margin-top: 5%;
-margin-bottom: 5%;
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-font-weight: bold;
-margin-bottom: 5%;
-color: $White;
+.eachInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.select{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-box-shadow: .3rem .3rem 0 $Black;
-font-size: 2vh;
-font-weight: bold;
-font-family: 'B612', sans-serif;
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: $White;
 }
 
-.input{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 18rem;
-}
+.select {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  box-shadow: 0.3rem 0.3rem 0 $Black;
+  font-size: 2vh;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
 }
 
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
-}
-    
-.sortButtons{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-margin-bottom: 5%;
-}
-
-.buttonCreate{
-width: 20%;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 1%;
-box-shadow: .5rem .5rem 0 $Black;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.input {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 18rem;
+  }
 }
 
-.sortUpSelect{
-display: flex;
-flex-direction: row-reverse;
-align-items: center;
-justify-content: center;
-width: 90%;
+.iconsLogin {
+  padding-bottom: 5%;
+  width: 2rem;
 }
 
-.eachInputUp{
-display: flex;
-width: 50%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-margin-top: 2%;
-margin-bottom: 2%;
+.sortButtons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
 }
 
+.buttonCreate {
+  width: 20%;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 1%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
+}
+
+.sortUpSelect {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.eachInputUp {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
 
 @media (max-width: 1248px) {
+  .sortUpSelect {
+    flex-direction: column-reverse;
+    margin-top: 5%;
+  }
 
-.sortUpSelect{
-flex-direction: column-reverse;
-margin-top: 5%;
-}
-
-.eachInputUp{
+  .eachInputUp {
     width: 100%;
-}
+  }
 
-.sortEdit{
-padding-top: 40%;
-}
+  .sortEdit {
+    padding-top: 40%;
+  }
 
-.sortTitle{
-display: flex;
-width: 100%;
-text-align: center;
-}
+  .sortTitle {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
 
-.titleEdit{
-font-size: 3vh;
-}
+  .titleEdit {
+    font-size: 3vh;
+  }
 
-.sortCards{
-display: flex;
-width: 90%;
-align-items: center;
-flex-direction: column;
-justify-content: center;
-}
+  .sortCards {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.boxEachProduct{
-width: 100%;
-margin-top: 5%;
-margin-bottom: 5%;
-}
+  .boxEachProduct {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 
-.label{
-font-size: 3vh;
-}
+  .label {
+    font-size: 3vh;
+  }
 
-.imageCard{
-min-width: 16rem;
-max-width: 16rem;
-min-height: 16rem;
-max-height: 16rem;
-}
+  .imageCard {
+    min-width: 16rem;
+    max-width: 16rem;
+    min-height: 16rem;
+    max-height: 16rem;
+  }
 
-.buttonCreate{
-margin-top: 5%;
-width: 40%;
-}
+  .buttonCreate {
+    margin-top: 5%;
+    width: 40%;
+  }
 }

@@ -1,10 +1,10 @@
 const categories = [
-    {
-        name:'Men'
-    },
-    {
-        name:'Women'
-    }
-]
+  {
+    name: "Men",
+  },
+  {
+    name: "Women",
+  },
+];
 
 export default categories;

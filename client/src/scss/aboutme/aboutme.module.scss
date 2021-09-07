@@ -1,197 +1,207 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
-.containerAbout{
-width: 100%;
-height: fit-content;
-min-height: 100vh;
-background-color: $DarkBlue;
+.containerAbout {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  background-color: $DarkBlue;
 }
 
-.sortAbout{
-width: 100%;
-padding-top: 10%;
-display: flex;
-align-items: center;
-justify-content: center;
+.sortAbout {
+  width: 100%;
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.slide{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+.slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.boxAbout{
-display: flex;
-width: 90%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius: 10px 10px 10px 10px;
-border-radius: 10px 10px 10px 10px;
-margin-bottom: 10%;
-box-shadow: .5rem .5rem 0 $Black;
-border: solid .2rem $Black;
-
+.boxAbout {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border: solid 0.2rem $Black;
 }
 
-.sortTitle1{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-border-radius: 10px 10px 0px 0px;
-border-bottom: solid .4rem $Black;
+.sortTitle1 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: solid 0.4rem $Black;
 }
 
-.titleAbout{
-font-family: 'Oswald', sans-serif;
-color: $White;
-font-size: 5vh;
+.titleAbout {
+  font-family: "Oswald", sans-serif;
+  color: $White;
+  font-size: 5vh;
 }
 
-.secondBox{
-display: flex;
-width: 90%;
-margin-top: 3%;
-margin-bottom: 3%;
-flex-direction: row;
-align-items: center;
-background-color: $LightBlue;
-border-radius: 10px 10px 10px 10px;
-justify-content: center;
-box-shadow: .5rem .5rem 0 $Black;
-border: solid .2rem $Black;
+.secondBox {
+  display: flex;
+  width: 90%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  flex-direction: row;
+  align-items: center;
+  background-color: $LightBlue;
+  border-radius: 10px 10px 10px 10px;
+  justify-content: center;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border: solid 0.2rem $Black;
 }
 
-.firstSide{
-width: 70%;
-padding: 3%;
-display: flex;
-align-items: flex-start;
-justify-content: left;
-flex-direction: column;
+.firstSide {
+  width: 70%;
+  padding: 3%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: column;
 }
 
-.iconAbout{
-min-width: 3rem;
-max-width: 3rem;
-min-height: 3rem;
-max-height: 3rem;
-padding-right: 5%;
+.iconAbout {
+  min-width: 3rem;
+  max-width: 3rem;
+  min-height: 3rem;
+  max-height: 3rem;
+  padding-right: 5%;
 }
 
-.eachLink{
-display: flex;
-flex-direction: row;
-margin-top: 2%;
-align-items: flex-start;
-justify-content: left;
+.eachLink {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2%;
+  align-items: flex-start;
+  justify-content: left;
 }
 
-.eachLink:hover{
-cursor: url(../../components/images/pointer.png),pointer;
+.eachLink:hover {
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-.links1{
-    display: flex;
-align-items: center;
-justify-content: left;
-font-family: 'B612', sans-serif;
-color: $White;
-font-weight: bold;
+.links1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: "B612", sans-serif;
+  color: $White;
+  font-weight: bold;
 }
 
-.links{
-display: flex;
-align-items: center;
-justify-content: left;
-font-family: 'B612', sans-serif;
-color: $White;
-font-weight: bold;
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: "B612", sans-serif;
+  color: $White;
+  font-weight: bold;
 }
 
-.links:hover{
-animation-name:rotateIn ;
-transform: scale(1.3);
-animation-duration: 1s;
-animation-iteration-count: 1;
-text-shadow: 5px 5px $Black;
-cursor: url(../../components/images/pointer.png),pointer;
+.links:hover {
+  animation-name: rotateIn;
+  transform: scale(1.3);
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  text-shadow: 5px 5px $Black;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
 
-@keyframes rotateIn { 
-0% { 
-transform-origin: center center; 
-transform: rotate(-10deg); 
-opacity: 0; 
-} 
-100% { 
-transform-origin: center center; 
-transform: rotate(0deg); 
-opacity: 1; 
-}
-}
-
-.secondSide{
-display: flex;
-width: 30%;
+@keyframes rotateIn {
+  0% {
+    transform-origin: center center;
+    transform: rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: center center;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
 }
 
-.imageAbout{
-width: 90%;
+.secondSide {
+  display: flex;
+  width: 30%;
+}
+
+.imageAbout {
+  width: 90%;
 }
 
 @media (max-width: 1248px) {
+  .sortAbout {
+    padding-top: 40%;
+  }
 
-    .sortAbout{
-        padding-top: 40%;
-    }
+  .sortTitle1 {
+    display: flex;
+    text-align: center;
+  }
 
-    .sortTitle1{
-        display: flex;
-        text-align: center;   
-    }
+  .secondBox {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    flex-direction: column-reverse;
+  }
 
-    .secondBox{
-        display: flex;
-        margin-top: 5%;
-        margin-bottom: 10%;
-        flex-direction: column-reverse;
-    }
+  .firstSide {
+    width: 90%;
+  }
 
-    .firstSide{
-        width: 90%;
-    }
-
-    .secondSide{
-        width: 90%;
-        margin-bottom: 10%;
-        align-items: center;
-        justify-content: center;
-    }
+  .secondSide {
+    width: 90%;
+    margin-bottom: 10%;
+    align-items: center;
+    justify-content: center;
+  }
 }

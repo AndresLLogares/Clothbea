@@ -1,179 +1,190 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
-}
-
-.containerReset{
-    width: 100%;
-    height: fit-content;
-    min-height: 100vh;
-    background-color: $DarkBlue;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
-.sortReset{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-top: 15%;
+.containerReset {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  background-color: $DarkBlue;
 }
 
-.Zoom{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.sortReset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15%;
 }
 
-.boxReset{
-width: 90%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius:  10px 10px 10px 10px;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
-border-radius: 10px 10px 10px 10px;
-margin-bottom: 10%;
+.Zoom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.sortTitle{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-text-align: center;
-border-radius: 10px 10px 0px 0px;
-padding-top: 2%;
-margin-bottom: 2%;
-border-bottom: solid .5rem $Black;
+.boxReset {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  border-radius: 10px 10px 10px 10px;
+  margin-bottom: 10%;
 }
 
-.fontTitle{
-font-size: 6vh;
-margin: 0;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Major Mono Display', monospace;
-color: $White;
+.sortTitle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  text-align: center;
+  border-radius: 10px 10px 0px 0px;
+  padding-top: 2%;
+  margin-bottom: 2%;
+  border-bottom: solid 0.5rem $Black;
 }
 
-.form{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.fontTitle {
+  font-size: 6vh;
+  margin: 0;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-family: "Major Mono Display", monospace;
+  color: $White;
 }
 
-.eachInput{
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-margin-top: 2%;
-margin-bottom: 2%;
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-font-weight: bold;
-margin-bottom: 5%;
-color: $White;
+.eachInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.input{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 18rem;
-}
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: $White;
 }
 
-.sortButton{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-margin-top: 5%;
-margin-bottom: 5%;
+.input {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 18rem;
+  }
 }
 
-.buttonReset{
-width: 20%;
-height: fit-content;
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 1%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.sortButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
+.buttonReset {
+  width: 20%;
+  height: fit-content;
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 1%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
+}
+
+.iconsLogin {
+  padding-bottom: 5%;
+  width: 2rem;
 }
 
 @media (max-width: 1248px) {
+  .sortReset {
+    padding-top: 40%;
+  }
 
-    .sortReset{
-        padding-top: 40%;
-    }
+  .label {
+    font-size: 3vh;
+  }
 
-    .label{
-        font-size: 3vh;
-    }
-
-    .buttonReset{
-        width: 40%;
-    }
+  .buttonReset {
+    width: 40%;
+  }
 }

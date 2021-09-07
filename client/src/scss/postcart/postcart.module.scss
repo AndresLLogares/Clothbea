@@ -1,322 +1,335 @@
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Simonetta', cursive;
-font-family: 'Major Mono Display', monospace;
-font-family: 'Oswald', sans-serif;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Simonetta", cursive;
+  font-family: "Major Mono Display", monospace;
+  font-family: "Oswald", sans-serif;
 }
 
 .loader {
-border: 16px solid $White; 
-border-top: 16px solid $Pink; 
-border-left: solid 16px $LightBlue;
-border-right: solid 16px $Black;
-border-radius: 10%;
-width: 120px;
-height: 120px;
-animation: spin 2s linear infinite;
+  border: 16px solid $White;
+  border-top: 16px solid $Pink;
+  border-left: solid 16px $LightBlue;
+  border-right: solid 16px $Black;
+  border-radius: 10%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.ContainerPost{
-width: 100%;
-height: fit-content;
-min-height: 100vh;
-background-color: $DarkBlue;
+.ContainerPost {
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  background-color: $DarkBlue;
 }
 
-.sortPost{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-top: 10%;
+.sortPost {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10%;
 }
 
-.zoom{
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.zoom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.boxPost{
-width: 90%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-margin-bottom: 10%;
-border-radius: 10px 10px 10px 10px;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);
+.boxPost {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10%;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
 }
 
-.sortTitle{
-width: 100%;
-display: flex;
-border-radius: 5px 5px 0px 0px;
-justify-content: center;
-background-color: $Pink;
-flex-direction: row;
-align-items: center;
-border-bottom: solid .5rem $Black;
-margin-bottom: 5%;
+.sortTitle {
+  width: 100%;
+  display: flex;
+  border-radius: 5px 5px 0px 0px;
+  justify-content: center;
+  background-color: $Pink;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid 0.5rem $Black;
+  margin-bottom: 5%;
 }
 
-.titlePost{
-color: $White;
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-display: flex;
-align-items: center;
-text-transform: uppercase; 
-justify-content: center;
+.titlePost {
+  color: $White;
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  justify-content: center;
 }
 
-.truck{
-width: 10%;
-padding-left: 5%;
+.truck {
+  width: 10%;
+  padding-left: 5%;
 }
 
-.sortForm{
-display: flex;
-width: 90%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.sortForm {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.form{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.eachInput{
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-margin-top: 3%;
-margin-bottom: 3%;
+.eachInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 3vh;
-display: flex;
-align-items: center;
-justify-content: center;
-font-weight: bold;
-margin-bottom: 5%;
-color: $White;
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: $White;
 }
 
-.input{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 18rem;
-}
-}
-
-.iconLabel{
-padding-right: 5%;
-width: 2rem;
+.input {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 18rem;
+  }
 }
 
-.productsBox{
-width: 90%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-background-color: $Pink;
-border: double .3rem $White;
-border-radius: 10px 10px 10px 10px;
-box-shadow: .5rem .5rem 0 $Black;
-padding: 2%;
+.iconLabel {
+  padding-right: 5%;
+  width: 2rem;
 }
 
-.eachProduct{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-flex-direction: row;
+.productsBox {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $Pink;
+  border: double 0.3rem $White;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  padding: 2%;
 }
 
-.itemProduct{
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: row;
-width: 100%;
+.eachProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: row;
 }
 
-.pProduct{
-width: 40%;
-align-items: center;
-justify-content: center;
-font-family: 'B612', sans-serif;
-font-size: 3vh;
-flex-direction: row;
-font-weight: bolds;
-color: $White;
+.itemProduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
 }
 
-.sortTotal{
-display: flex;
-flex-direction: column;
-width: 90%;
-border: double .5rem $White;
-background-color: $Pink;
-align-items: center;
-justify-content: center;
-padding: 2%;
-border-radius: 10px 10px 10px 10px;
-box-shadow: .5rem .5rem 0 $Black;
-margin-top: 2%;
-margin-bottom: 2%;
+.pProduct {
+  width: 40%;
+  align-items: center;
+  justify-content: center;
+  font-family: "B612", sans-serif;
+  font-size: 3vh;
+  flex-direction: row;
+  font-weight: bolds;
+  color: $White;
 }
 
-.TotalStyle{
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: 'Oswald', sans-serif;
-font-size: 6vh;
-font-weight: bold;
-width: 100%;
-color: $White;
+.sortTotal {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: double 0.5rem $White;
+  background-color: $Pink;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.sortButton{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 30%;
-margin-top: 5%;
-margin-bottom: 5%;
+.TotalStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 6vh;
+  font-weight: bold;
+  width: 100%;
+  color: $White;
 }
 
-.buttonSend{
-width: 100%;
-font-size: 5vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-padding: 3%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
+.sortButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+
+.buttonSend {
+  width: 100%;
+  font-size: 5vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  padding: 3%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
 @media (max-width: 1248px) {
+  .sortPost {
+    padding-top: 40%;
+  }
 
-.sortPost{
-padding-top: 40%;
-}
+  .sortTitle {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sortTitle{
-display: flex;
-width: 100%;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
+  .titlePost {
+    text-align: center;
+  }
 
-.titlePost{
-text-align: center;
-}
+  .truck {
+    width: 30%;
+    padding: 0;
+  }
 
-.truck{
-width: 30%;
-padding:0;
-}
+  .label {
+    font-size: 2vh;
+  }
 
-.label{
-font-size: 2vh;
-}
+  .pProduct {
+    font-size: 2vh;
+  }
 
-.pProduct{
-font-size: 2vh;
-}
+  .productsBox {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .eachProduct {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 0.2rem $DarkBlue;
+  }
 
-.productsBox{
-margin-top: 10%;
-margin-bottom: 10%;
-}
-.eachProduct{
-display: flex;
-flex-direction: column;
-width: 95%;
-align-items: center;
-justify-content: center;
-border-bottom: solid .2rem $DarkBlue;
-}
+  .itemProduct {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .sortButton {
+    width: 70%;
+  }
 
-.itemProduct{
-width: 100%;
-display: flex;
-align-items: center;
-text-align: center;
-}
-.sortButton{
-width: 70%;
-}
-
-.buttonSend{
-width: 100%;
-}
+  .buttonSend {
+    width: 100%;
+  }
 }

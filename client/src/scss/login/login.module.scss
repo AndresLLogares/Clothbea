@@ -1,307 +1,315 @@
-@import url('https://rsms.me/inter/inter.css');
+@import url("https://rsms.me/inter/inter.css");
 
+$Yellow: #ffbe0b;
+$Green: #06d6a0;
+$Red: #d90429;
+$LightGreen: #0cb0a9;
+$LightBlue: #118ab2;
+$DarkBlue: #0c637f;
+$Pink: #ef476f;
+$DarkGreen: #09c3a5;
+$White: #ffffff;
+$Black: #231b1b;
 
-$Yellow:#ffbe0b;
-$Green:#06D6A0;
-$Red:#d90429;
-$LightGreen:#0CB0A9;
-$LightBlue:#118AB2;
-$DarkBlue:#0C637F;
-$Pink:#EF476F;
-$DarkGreen:#09C3A5;
-$White: #FFFFFF;
-$Black: #231B1B;
+@import url("https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=B612&family=Bebas+Neue&family=Major+Mono+Display&family=Simonetta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-
-.example{
-font-family: 'B612', sans-serif;
-font-family: 'Bebas Neue', cursive;
-font-family: 'Oswald', sans-serif;
-font-family: 'Major Mono Display', monospace;
+.example {
+  font-family: "B612", sans-serif;
+  font-family: "Bebas Neue", cursive;
+  font-family: "Oswald", sans-serif;
+  font-family: "Major Mono Display", monospace;
 }
 
-.containerLogin{
-width: 100%;
-background-color: $DarkBlue;
-height: fit-content;
-min-height: 100vh;
+.containerLogin {
+  width: 100%;
+  background-color: $DarkBlue;
+  height: fit-content;
+  min-height: 100vh;
 }
 
-.iconsLogin{
-padding-bottom: 5%;
-width: 2rem;
+.iconsLogin {
+  padding-bottom: 5%;
+  width: 2rem;
 }
 
-.sortLogin{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding-top: 15%;
-width: 100%;
+.sortLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15%;
+  width: 100%;
 }
 
-.sortZoom{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 100%;
+.sortZoom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.sortTitle{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-background-color: $Pink;
-text-align: center;
-padding-top: 2%;
-margin-bottom: 2%;
-border-radius: 5px 5px 0px 0px;
-border-bottom: solid .5rem $Black;
+.sortTitle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: $Pink;
+  text-align: center;
+  padding-top: 2%;
+  margin-bottom: 2%;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: solid 0.5rem $Black;
 }
 
-.fontTitle{
-font-size: 6vh;
-margin: 0;
-margin-bottom: 2%;
-font-weight: bold;
-font-family: 'Major Mono Display', monospace;
-color: $White;
+.fontTitle {
+  font-size: 6vh;
+  margin: 0;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-family: "Major Mono Display", monospace;
+  color: $White;
 }
 
-
-.boxLogin{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-background-color: $LightGreen;
-width: 90%;
-margin-bottom: 15%;
-background:
-repeating-linear-gradient(45deg, rgba(12,99, 127, 1) 0%, rgba(239, 71, 111, 0.6) 5%, transparent 5%, transparent 10%),
-repeating-linear-gradient(-45deg, rgba(12, 99, 127, 0.4) 0%, rgba(239, 71, 111, 0.5) 5%, transparent 5%, transparent 10%);
-background-color: rgba(12, 99, 127, 0.25);border-radius: 10px 10px 10px 10px;
-border: solid .2rem $Black;
-box-shadow: .5rem .5rem 0 $Black;
+.boxLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $LightGreen;
+  width: 90%;
+  margin-bottom: 15%;
+  background: repeating-linear-gradient(
+      45deg,
+      rgba(12, 99, 127, 1) 0%,
+      rgba(239, 71, 111, 0.6) 5%,
+      transparent 5%,
+      transparent 10%
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(12, 99, 127, 0.4) 0%,
+      rgba(239, 71, 111, 0.5) 5%,
+      transparent 5%,
+      transparent 10%
+    );
+  background-color: rgba(12, 99, 127, 0.25);
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.2rem $Black;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
 }
 
-.sortForm{
-display: flex;
-width: 90%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.sortForm {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.form{
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+.form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.eachInput{
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-flex-direction: column;
-margin-top: 2%;
-margin-bottom: 2%;
+.eachInput {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.label{
-font-family: 'B612', sans-serif;
-font-size: 4vh;
-font-weight: bold;
-margin-bottom: 5%;
-color: $White;
+.label {
+  font-family: "B612", sans-serif;
+  font-size: 4vh;
+  font-weight: bold;
+  margin-bottom: 5%;
+  color: $White;
 }
 
-.input55{
-width: 15rem;
-height: 2.5rem;
-background-color: $White;
-border:solid .2rem $Pink ;
-font-size: 2vh;
-font-weight: bold;
-border-radius: 10px 10px 10px 10px;
-font-family: 'B612', sans-serif;
-&:focus{
-background-color: $White;
-transition-duration: 2s;
-width: 18rem;
-}
-}
-
-.span{
-color: $Black;
-font-size: 2vh;
-margin-bottom: 5%;
-font-weight: bold;
-font-family: 'B612', sans-serif;
+.input55 {
+  width: 15rem;
+  height: 2.5rem;
+  background-color: $White;
+  border: solid 0.2rem $Pink;
+  font-size: 2vh;
+  font-weight: bold;
+  border-radius: 10px 10px 10px 10px;
+  font-family: "B612", sans-serif;
+  &:focus {
+    background-color: $White;
+    transition-duration: 2s;
+    width: 18rem;
+  }
 }
 
-.sortButtons{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
-width: 90%;
-margin-bottom: 5%;
-margin-top: 2%;
+.span {
+  color: $Black;
+  font-size: 2vh;
+  margin-bottom: 5%;
+  font-weight: bold;
+  font-family: "B612", sans-serif;
 }
 
-.eachButtonLogin{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 50%;
+.sortButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-bottom: 5%;
+  margin-top: 2%;
 }
 
-.buttonLogin{
-font-size: 3vh;
-font-family: 'Oswald', sans-serif;
-font-weight: bold;
-color: $Black;
-width: 15rem;
-height: 7rem;
-padding: 1%;
-letter-spacing: .1rem;
-border-radius: 10px 10px 10px 10px;
-border: solid .4rem $Pink;
-background-color: $White;
-box-shadow: .5rem .5rem 0 $Black;
-background: {
-image: linear-gradient(45deg,$DarkBlue 50%, transparent 50%);
-position: 100%;
-size: 400%;
-}
-transition: background 300ms ease-in-out;
-&:hover {
-transition-duration: 0.2s;
-background-position: 0;
-color: $White;
-cursor: url(../../components/images/pointer.png),pointer;
-}
+.eachButtonLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 
-.sortGoogle{
-display: flex;
-align-items: center;
-width: 100%;
-justify-content: center;
-margin-bottom: 5%;
+.buttonLogin {
+  font-size: 3vh;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: $Black;
+  width: 15rem;
+  height: 7rem;
+  padding: 1%;
+  letter-spacing: 0.1rem;
+  border-radius: 10px 10px 10px 10px;
+  border: solid 0.4rem $Pink;
+  background-color: $White;
+  box-shadow: 0.5rem 0.5rem 0 $Black;
+  background: {
+    image: linear-gradient(45deg, $DarkBlue 50%, transparent 50%);
+    position: 100%;
+    size: 400%;
+  }
+  transition: background 300ms ease-in-out;
+  &:hover {
+    transition-duration: 0.2s;
+    background-position: 0;
+    color: $White;
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
-.buttonGoogle{
-width: 40%;
-display: flex;
-
-align-items: center;
-justify-content: center;   
-border: transparent;
-margin-bottom: 5%;
-&:hover{
-transition-duration: 0.2s;
-transform:scale(1, 1.2);
-}
+.sortGoogle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 5%;
 }
 
-.addInfo{
-display: flex;
-flex-direction:column;
-width: 100%;
-align-items: left;
-justify-content: center;
+.buttonGoogle {
+  width: 40%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  border: transparent;
+  margin-bottom: 5%;
+  &:hover {
+    transition-duration: 0.2s;
+    transform: scale(1, 1.2);
+  }
 }
 
-.titleAdd{
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 2%;
-width: 100%;
+.addInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: left;
+  justify-content: center;
 }
 
-.littleBox{
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-margin-top: 1%;
-margin-bottom: 1%;
+.titleAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+  width: 100%;
 }
 
-.pInfo{
-color: $White;
-margin-top: 1%;
-margin-bottom: 1%;
-font-size: 3vh;
-font-family: 'B612', sans-serif;
+.littleBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
-.buttonInfo{
-border: transparent;
-margin-top: 1%;
-margin-bottom: 1%;
-background-color: $DarkBlue;
-color: $White;
-border-radius: 10px 10px 10px 10px;
-box-shadow: 3px 3px 3px 3px $Black;
-font-weight: bold;
-padding: 1%;
+.pInfo {
+  color: $White;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 3vh;
+  font-family: "B612", sans-serif;
 }
 
-.buttonInfo:hover{
-transition-duration: 1s;
-box-shadow: none;
-cursor: url(../../components/images/pointer.png),pointer;
+.buttonInfo {
+  border: transparent;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  background-color: $DarkBlue;
+  color: $White;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 3px 3px 3px 3px $Black;
+  font-weight: bold;
+  padding: 1%;
 }
 
-.google{
-cursor: url(../../components/images/pointer.png),pointer;
-&:hover{
-cursor: url(../../components/images/pointer.png),pointer;
+.buttonInfo:hover {
+  transition-duration: 1s;
+  box-shadow: none;
+  cursor: url(../../components/images/pointer.png), pointer;
 }
+
+.google {
+  cursor: url(../../components/images/pointer.png), pointer;
+  &:hover {
+    cursor: url(../../components/images/pointer.png), pointer;
+  }
 }
 
 @media (max-width: 1248px) {
+  .titleAdd {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
 
-.titleAdd{
-text-align: center;
-margin-top: 5%;
-margin-bottom: 5%;
-}
+  .fontTitle {
+    font-size: 3vh;
+  }
 
-.fontTitle{
-font-size: 3vh;
-}
+  .sortLogin {
+    padding-top: 40%;
+  }
+  .label {
+    font-size: 2vh;
+    margin-top: 10%;
+  }
 
-.sortLogin{
-padding-top: 40%;
-}
-.label{
-font-size: 2vh;
-margin-top: 10%;
-}
+  .pInfo {
+    font-size: 2vh;
+  }
 
-.pInfo{
-font-size: 2vh;
-}
-
-.buttonLogin{
-font-size: 2.5vh;
-max-width: 90%;
-min-width: 90%;
-min-height: 5rem;
-max-height: 5rem;
-}
-
+  .buttonLogin {
+    font-size: 2.5vh;
+    max-width: 90%;
+    min-width: 90%;
+    min-height: 5rem;
+    max-height: 5rem;
+  }
 }
